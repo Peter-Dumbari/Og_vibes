@@ -4,15 +4,13 @@ import { Button } from "@material-tailwind/react";
 
 export default function Navbar() {
   return (
-    <div className="flex">
+    <div className="w-[100%]">
       <section className="notice">
         <Notice
-          title="Breaking News"
+          title="Breaking News:"
           message="Lorem, ipsum dolor sit amet consectetur adipisicing elit. A quos culpa doloremque, maiores facilis necessitatibus!"
         />
       </section>
-
-      <Button>test</Button>
     </div>
   );
 }
