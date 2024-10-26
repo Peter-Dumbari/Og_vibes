@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/components/_headNotice.scss";
+import { StarIcon } from "@heroicons/react/16/solid";
 
 interface NoticeProps {
   title: string;
@@ -8,12 +8,15 @@ interface NoticeProps {
 
 export default function Notice({ title, message }: NoticeProps): JSX.Element {
   return (
-    <div className="flex flex-row">
-      <div className="title-box ">
-        <span className="text-red-500">{title}</span>
+    <div className="notice-cont flex flex-row w-[100%] items-center bg-tabsBackground">
+      <div className="title-box">
+        <span>{title}</span>
       </div>
       <div className="message-box">
-        <span>{message}</span>
+        <div className="flex items-center gap-3 message">
+          <span>{message}</span>
+          <StarIcon className="h-4 w-4 text-defaultText ml-5" />
+        </div>
       </div>
     </div>
   );

@@ -8,7 +8,14 @@ export default withMT({
     "./node_modules/@material-tailwind/react/theme/components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: "#dc1937",
+        tabsBackground: "#273138",
+        defaultBackground: "#333",
+        defaultText: "#fff",
+      },
+    },
   },
   plugins: [require("daisyui")],
 });

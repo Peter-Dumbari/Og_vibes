@@ -1,0 +1,95 @@
+.notice-cont {
+  gap: 30px;
+  padding: 0 60px;
+
+  .title-box {
+    background-color: $primary-color;
+    color: $default-text-color;
+    position: relative;
+    padding: 7px;
+    width: 15%;
+    min-width: 15%;
+    text-align: center;
+
+    span {
+      font-weight: 900;
+    }
+
+    &::after {
+      // Add your styles here
+      content: "";
+      display: block;
+      position: absolute;
+      top: 33%;
+      right: -4px;
+      width: 13px;
+      transform: rotate(45deg);
+      height: 20px;
+      background-color: $primary-color;
+    }
+  }
+
+  .message-box {
+    width: 80%;
+    padding: 7px 20px;
+    overflow: hidden;
+    flex-wrap: wrap;
+
+    .message {
+      animation: slideFromRight 10s linear infinite;
+      flex-wrap: nowrap;
+      display: flex;
+      align-items: center;
+      padding-right: 0; /* No space between the end and start */
+      width: 100%; /* Ensures content takes full width */
+
+      span {
+        display: inline-block;
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .notice-cont {
+    padding: 0 20px;
+    width: 80%;
+    gap: 10px;
+
+    .title-box {
+      width: 100%;
+      z-index: 6;
+
+      span {
+        font-size: 1rem;
+      }
+
+      &::after {
+        // Add your styles here
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: -1;
+        top: 60%;
+        right: 50%;
+        width: 13px;
+        transform: rotate(40deg);
+        height: 20px;
+        background-color: $primary-color;
+      }
+    }
+    .message-box {
+      width: 100%;
+      padding: 0 5px;
+
+      .message {
+        animation: slideFromRight 5s linear infinite;
+        display: flex;
+        white-space: nowrap;
+        gap: 10px;
+        align-items: center;
+      }
+    }
+  }
+}
