@@ -12,6 +12,7 @@ export default withMT({
       colors: {
         primary: "#dc1937",
         tabsBackground: "#273138",
+        darkBackground: "#171e22",
         defaultBackground: "#333",
         defaultText: "#fff",
       },

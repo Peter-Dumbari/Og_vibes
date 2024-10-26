@@ -1,0 +1,32 @@
+.account-sec {
+  min-height: 100px;
+  max-height: 500px;
+  background-color: $dark-background-color;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 60px;
+  align-items: center;
+
+  .socials {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    h5 {
+      font-weight: bolder;
+      font-size: large;
+      text-transform: uppercase;
+    }
+
+    .flex {
+      gap: 20px;
+      align-items: center;
+    }
+  }
+
+  .account-box {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+}
