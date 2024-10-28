@@ -1,23 +1,76 @@
-import React from "react";
+import React, { useState } from "react";
 import Notice from "./notice";
-import { FaceFrownIcon, MusicalNoteIcon } from "@heroicons/react/16/solid";
-import { Bars4Icon, UserCircleIcon } from "@heroicons/react/24/outline";
+import { MusicalNoteIcon } from "@heroicons/react/16/solid";
+import { Bars3Icon, Bars3CenterLeftIcon } from "@heroicons/react/24/solid";
+import { UserCircleIcon } from "@heroicons/react/16/solid";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+  FaSnapchat,
+  FaTiktok,
+  FaYoutube,
+} from "react-icons/fa";
+import Wrapper from "./wrapper";
+import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
   const socials = [
     {
-      icon: <FaceFrownIcon className="h-4 w-4 text-defaultText" />,
+      icon: <FaFacebookF size={13} />,
       link: "#",
     },
     {
-      icon: <FaceFrownIcon className="h-4 w-4 text-defaultText" />,
+      icon: <FaTwitter size={13} />,
       link: "#",
     },
     {
-      icon: <FaceFrownIcon className="h-4 w-4 text-defaultText" />,
+      icon: <FaInstagram size={13} />,
+      link: "#",
+    },
+
+    {
+      icon: <FaSnapchat size={13} />,
+      link: "#",
+    },
+    {
+      icon: <FaTiktok size={13} />,
+      link: "#",
+    },
+    {
+      icon: <FaYoutube size={13} />,
       link: "#",
     },
   ];
+
+  const routes = [
+    {
+      page: "Home",
+      link: "/",
+    },
+    {
+      page: "Artist",
+      link: "",
+    },
+    {
+      page: "Music",
+      link: "",
+    },
+    {
+      page: "Event",
+      link: "",
+    },
+    {
+      page: "Blog",
+      link: "",
+    },
+    {
+      page: "Contact Us",
+      link: "",
+    },
+  ];
+
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   return (
     <div className="w-[100%]">
@@ -31,7 +84,7 @@ export default function Navbar() {
       {/* socials medials */}
       <section className="account-sec">
         <div className="socials">
-          <h5>Follow Us:</h5>
+          <h6>Follow Us:</h6>
 
           <div className="flex">
             {socials.map((social, index) => (
@@ -51,10 +104,39 @@ export default function Navbar() {
         {/* account box */}
 
         <div className="account-box">
-          <MusicalNoteIcon className="h-8 w-8 text-defaultText cursor-pointer" />
-          <UserCircleIcon className="h-8 w-8 text-defaultText cursor-pointer" />
-          <Bars4Icon className="h-8 w-8 text-defaultText cursor-pointer" />
+          <div className="flex gap-5 items-center">
+            <MusicalNoteIcon className="h-8 w-8 text-defaultText cursor-pointer" />
+            <UserCircleIcon className="h-8 w-8 text-defaultText cursor-pointer" />
+          </div>
+
+          <Bars3Icon className="h-8 w-8 text-defaultText cursor-pointer bars" />
         </div>
+      </section>
+
+      <section className="tabs">
+        <Wrapper>
+          <div className="bg-tabsBackground">
+            <nav className="flex tab-container">
+              {routes.map((item, index) => {
+                return (
+                  <div className="relative" key={index}>
+                    <NavLink
+                      onMouseEnter={() => setActiveIndex(index)}
+                      onMouseLeave={() => setActiveIndex(null)}
+                      to={item.link}>
+                      {item.page}
+                    </NavLink>
+
+                    {(activeIndex === index ||
+                      window.location.pathname === item.link) && (
+                      <Bars3CenterLeftIcon className="w-6 h-6 rotate-90 text-primary border-none outline-none absolute top-6 left-[20%]" />
+                    )}
+                  </div>
+                );
+              })}
+            </nav>
+          </div>
+        </Wrapper>
       </section>
     </div>
   );

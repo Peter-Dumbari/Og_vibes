@@ -8,8 +8,9 @@
     color: $default-text-color;
     position: relative;
     padding: 7px;
-    width: 15%;
-    min-width: 15%;
+    width: 50%;
+    min-width: 100px;
+    max-width: 200px;
     text-align: center;
 
     span {
@@ -43,6 +44,7 @@
       align-items: center;
       padding-right: 0; /* No space between the end and start */
       width: 100%; /* Ensures content takes full width */
+      font-weight: 600;
 
       span {
         display: inline-block;
