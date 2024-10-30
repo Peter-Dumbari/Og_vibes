@@ -37,14 +37,26 @@
 
     .tab-container {
       background-color: $tabs-background-color;
-      width: 60%;
       padding: 5px 0;
-      height: 85px;
+      height: 80px;
+      width: 60%;
       align-items: center;
       justify-content: space-between;
+      position: relative;
 
       a {
         font-weight: bold;
+      }
+
+      .dropDown {
+        background-color: $dark-background-color;
+        height: 100px;
+        position: absolute;
+        // bottom: -100%;
+        top: 3.5rem;
+        width: 130px;
+        margin-left: -50px;
+        margin-right: 5px;
       }
     }
   }

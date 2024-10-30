@@ -51,10 +51,41 @@ export default function Navbar() {
     {
       page: "Artist",
       link: "",
+
+      subTabs: [
+        {
+          page: "Gospel Artist",
+          link: "",
+        },
+
+        {
+          page: "Highlife Artist",
+          link: "",
+        },
+        {
+          page: "Circular Artist",
+          link: "",
+        },
+      ],
     },
     {
       page: "Music",
       link: "",
+
+      subTabs: [
+        {
+          page: "Mixtapes",
+          link: "",
+        },
+        {
+          page: "Gospel",
+          link: "",
+        },
+        {
+          page: "Circular",
+          link: "",
+        },
+      ],
     },
     {
       page: "Event",
@@ -63,6 +94,17 @@ export default function Navbar() {
     {
       page: "Blog",
       link: "",
+
+      subTabs: [
+        {
+          page: "All Blogs",
+          link: "",
+        },
+        {
+          page: "Post Blogs",
+          link: "",
+        },
+      ],
     },
     {
       page: "Contact Us",
@@ -116,7 +158,7 @@ export default function Navbar() {
       <section className="tabs">
         <Wrapper>
           <div className="bg-tabsBackground">
-            <nav className="flex tab-container">
+            <nav className="flex tab-container dropdown">
               {routes.map((item, index) => {
                 return (
                   <div className="relative" key={index}>
@@ -130,6 +172,22 @@ export default function Navbar() {
                     {(activeIndex === index ||
                       window.location.pathname === item.link) && (
                       <Bars3CenterLeftIcon className="w-6 h-6 rotate-90 text-primary border-none outline-none absolute top-6 left-[20%]" />
+                    )}
+
+                    {activeIndex === index && routes[activeIndex]?.subTabs && (
+                      <div className="dropdown-content dropDown flex">
+                        <div
+                          tabIndex={0}
+                          role="button"
+                          className="btn btn-ghost btn-circle avatar">
+                          <div className="w-10 rounded-full">
+                            <img
+                              alt="Tailwind CSS Navbar component"
+                              src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+                            />
+                          </div>
+                        </div>
+                      </div>
                     )}
                   </div>
                 );
