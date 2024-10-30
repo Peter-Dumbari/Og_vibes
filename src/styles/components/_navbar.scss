@@ -50,13 +50,26 @@
 
       .dropDown {
         background-color: $dark-background-color;
-        height: 100px;
         position: absolute;
         // bottom: -100%;
         top: 3.5rem;
-        width: 130px;
+        width: 200px;
         margin-left: -50px;
         margin-right: 5px;
+        display: flex;
+        flex-direction: column;
+
+        .item {
+          border-bottom: 0.5px solid $dark-white-color;
+          padding: 10px 15px;
+          width: 100%;
+          transition: 0.5s;
+        }
+
+        .item:hover {
+          background-color: $primary-color;
+          transition: 0.5s;
+        }
       }
     }
   }
