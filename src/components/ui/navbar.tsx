@@ -114,6 +114,14 @@ export default function Navbar() {
 
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
+  const handleMouseEnter = (index: number) => {
+    setActiveIndex(index);
+  };
+
+  const handleMouseLeave = () => {
+    setActiveIndex(null);
+  };
+
   return (
     <div className="w-[100%]">
       <section className="notice w-full">
@@ -161,32 +169,29 @@ export default function Navbar() {
             <nav className="flex tab-container dropdown">
               {routes.map((item, index) => {
                 return (
-                  <div className="relative" key={index}>
-                    <NavLink
-                      onMouseEnter={() => setActiveIndex(index)}
-                      onMouseLeave={() => setActiveIndex(null)}
-                      to={item.link}>
-                      {item.page}
-                    </NavLink>
+                  <div
+                    className="relative"
+                    key={index}
+                    onMouseEnter={() => handleMouseEnter(index)}>
+                    <NavLink to={item.link}>{item.page}</NavLink>
 
                     {(activeIndex === index ||
                       window.location.pathname === item.link) && (
                       <Bars3CenterLeftIcon className="w-6 h-6 rotate-90 text-primary border-none outline-none absolute top-6 left-[20%]" />
                     )}
 
-                    {activeIndex === index && routes[activeIndex]?.subTabs && (
-                      <div className="dropdown-content dropDown flex">
-                        <div
-                          tabIndex={0}
-                          role="button"
-                          className="btn btn-ghost btn-circle avatar">
-                          <div className="w-10 rounded-full">
-                            <img
-                              alt="Tailwind CSS Navbar component"
-                              src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-                            />
+                    {activeIndex === index && item.subTabs && (
+                      <div className=" dropdown-content dropDown">
+                        {item.subTabs.map((subTab, subIndex) => (
+                          <div className="item">
+                            <NavLink
+                              key={subIndex}
+                              to={subTab.link}
+                              onMouseEnter={() => handleMouseEnter(index)}>
+                              {subTab.page}
+                            </NavLink>
                           </div>
-                        </div>
+                        ))}
                       </div>
                     )}
                   </div>
