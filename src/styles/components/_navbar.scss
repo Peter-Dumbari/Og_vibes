@@ -51,13 +51,13 @@
       .dropDown {
         background-color: $dark-background-color;
         position: absolute;
-        // bottom: -100%;
-        top: 3.5rem;
+        top: 100%;
         width: 200px;
         margin-left: -50px;
         margin-right: 5px;
         display: flex;
         flex-direction: column;
+        margin-top: 26px;
 
         .item {
           border-bottom: 0.5px solid $dark-white-color;
@@ -73,6 +73,10 @@
       }
     }
   }
+}
+
+.mobile-tab {
+  display: none;
 }
 
 @media screen and (max-width: 768px) {
@@ -95,6 +99,40 @@
           background-color: $primary-color;
           transition: 0.5s;
         }
+      }
+    }
+  }
+
+  .tabs {
+    display: none;
+  }
+
+  .mobile-tab {
+    background-color: $default-text-color;
+    position: absolute;
+    top: 32%;
+    right: 4.5%;
+    display: block;
+    width: 50%;
+
+    .links {
+      border-bottom: 0.5px solid $default-background-color;
+      padding: 5px;
+      justify-content: space-between;
+      cursor: pointer;
+      transition: 0.5;
+    }
+
+    .links:hover {
+      background-color: $primary-color;
+      transition: 0.5s;
+
+      a {
+        color: $default-text-color;
+      }
+
+      svg {
+        color: $default-text-color;
       }
     }
   }
