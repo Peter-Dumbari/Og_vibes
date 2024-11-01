@@ -114,6 +114,15 @@
     right: 4.5%;
     display: block;
     width: 50%;
+    transition: transform 0.3s ease-in-out;
+
+    &.slide-in {
+      animation: slideIn 0.3s forwards;
+    }
+
+    &.slide-out {
+      animation: slideOut 0.3s forwards;
+    }
 
     .links {
       border-bottom: 0.5px solid $default-background-color;
