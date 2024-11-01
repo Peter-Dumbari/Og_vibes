@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import Notice from "./notice";
-import { MusicalNoteIcon } from "@heroicons/react/16/solid";
+import {
+  ChevronRightIcon,
+  ChevronUpIcon,
+  MusicalNoteIcon,
+} from "@heroicons/react/16/solid";
 import { Bars3Icon, Bars3CenterLeftIcon } from "@heroicons/react/24/solid";
 import { UserCircleIcon } from "@heroicons/react/16/solid";
 import {
@@ -55,16 +59,16 @@ export default function Navbar() {
       subTabs: [
         {
           page: "Gospel Artist",
-          link: "",
+          link: "#gospel-artist",
         },
 
         {
           page: "Highlife Artist",
-          link: "",
+          link: "#highlife-artist",
         },
         {
           page: "Circular Artist",
-          link: "",
+          link: "#circular-artist",
         },
       ],
     },
@@ -75,21 +79,40 @@ export default function Navbar() {
       subTabs: [
         {
           page: "Mixtapes",
-          link: "",
+          link: "#mixtapes",
         },
         {
           page: "Gospel",
-          link: "",
+          link: "#gospel",
         },
         {
           page: "Circular",
-          link: "",
+          link: "#circular",
+        },
+        {
+          page: "Traditinal",
+          link: "#",
         },
       ],
     },
     {
       page: "Event",
-      link: "",
+      link: "#event",
+
+      subTabs: [
+        {
+          page: "Gospel Event",
+          link: "#",
+        },
+        {
+          page: "Music Concert",
+          link: "#",
+        },
+        {
+          page: "Free Ticket Events",
+          link: "#",
+        },
+      ],
     },
     {
       page: "Blog",
@@ -98,17 +121,17 @@ export default function Navbar() {
       subTabs: [
         {
           page: "All Blogs",
-          link: "",
+          link: "#all-blogs",
         },
         {
           page: "Post Blogs",
-          link: "",
+          link: "#post-blogs",
         },
       ],
     },
     {
       page: "Contact Us",
-      link: "",
+      link: "#contact-us",
     },
   ];
 
@@ -170,9 +193,10 @@ export default function Navbar() {
               {routes.map((item, index) => {
                 return (
                   <div
-                    className="relative"
+                    className="relative "
                     key={index}
-                    onMouseEnter={() => handleMouseEnter(index)}>
+                    onMouseEnter={() => handleMouseEnter(index)}
+                    onMouseLeave={() => handleMouseLeave()}>
                     <NavLink to={item.link}>{item.page}</NavLink>
 
                     {(activeIndex === index ||
@@ -181,11 +205,10 @@ export default function Navbar() {
                     )}
 
                     {activeIndex === index && item.subTabs && (
-                      <div className=" dropdown-content dropDown">
+                      <div className="dropDown">
                         {item.subTabs.map((subTab, subIndex) => (
-                          <div className="item">
+                          <div className="item" key={subIndex}>
                             <NavLink
-                              key={subIndex}
                               to={subTab.link}
                               onMouseEnter={() => handleMouseEnter(index)}>
                               {subTab.page}
@@ -200,6 +223,21 @@ export default function Navbar() {
             </nav>
           </div>
         </Wrapper>
+      </section>
+
+      <section className="mobile-tab">
+        {routes.map((item) => {
+          return (
+            <div className="flex flex-col gap-2">
+              <div className="flex links">
+                <NavLink className="text-defaultBackground" to={item.link}>
+                  {item.page}
+                </NavLink>
+                <ChevronUpIcon className="w-6 h-6 text-defaultBackground rotate-90" />
+              </div>
+            </div>
+          );
+        })}
       </section>
     </div>
   );
