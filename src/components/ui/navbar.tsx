@@ -139,6 +139,7 @@ export default function Navbar() {
   const [mobileSubTabIndex, setMobileSubTabIndex] = useState<number | null>(
     null
   );
+  const [showMobileTab, setShowMobileTab] = useState<boolean>(false);
 
   const handleMouseEnter = (index: number) => {
     setActiveIndex(index);
@@ -193,7 +194,10 @@ export default function Navbar() {
             <UserCircleIcon className="h-8 w-8 text-defaultText cursor-pointer" />
           </div>
 
-          <Bars3Icon className="h-8 w-8 text-defaultText cursor-pointer bars" />
+          <Bars3Icon
+            className=" h-8 w-8 text-defaultText cursor-pointer bars "
+            onClick={() => setShowMobileTab(!showMobileTab)}
+          />
         </div>
       </section>
 
@@ -236,39 +240,43 @@ export default function Navbar() {
         </Wrapper>
       </section>
 
-      <section className="mobile-tab">
-        {mobileSubTabIndex === null ? (
-          routes.map((item, index) => (
-            <div
-              key={index}
-              className="flex flex-col gap-2 relative overflow-hidden">
+      {showMobileTab && (
+        <section className="mobile-tab">
+          {mobileSubTabIndex === null ? (
+            routes.map((item, index) => (
               <div
-                className="flex links"
-                onClick={() => handleMobileTabClick(index)}>
-                <NavLink className="text-defaultBackground" to={item.link}>
-                  {item.page}
-                </NavLink>
-                {item.subTabs && (
-                  <ChevronUpIcon className="w-6 h-6 text-defaultBackground rotate-90" />
-                )}
+                key={index}
+                className="flex flex-col gap-2 relative overflow-hidden">
+                <div
+                  className="flex links"
+                  onClick={() => handleMobileTabClick(index)}>
+                  <NavLink className="text-defaultBackground" to={item.link}>
+                    {item.page}
+                  </NavLink>
+                  {item.subTabs && (
+                    <ChevronUpIcon className="w-6 h-6 text-defaultBackground rotate-90" />
+                  )}
+                </div>
+              </div>
+            ))
+          ) : (
+            <div className="flex flex-col relative overflow-hidden">
+              {routes[mobileSubTabIndex].subTabs?.map((subTab, subIndex) => (
+                <div key={subIndex} className="flex links">
+                  <NavLink
+                    className="text-defaultBackground"
+                    to={subTab.link || routes[mobileSubTabIndex].link}>
+                    {subTab.page}
+                  </NavLink>
+                </div>
+              ))}
+              <div className="flex links" onClick={handleBackClick}>
+                <span className="text-defaultBackground">Back</span>
               </div>
             </div>
-          ))
-        ) : (
-          <div className="flex flex-col relative overflow-hidden">
-            {routes[mobileSubTabIndex].subTabs?.map((subTab, subIndex) => (
-              <div key={subIndex} className="flex links">
-                <NavLink className="text-defaultBackground" to={subTab.link}>
-                  {subTab.page}
-                </NavLink>
-              </div>
-            ))}
-            <div className="flex links" onClick={handleBackClick}>
-              <span className="text-defaultBackground">Back</span>
-            </div>
-          </div>
-        )}
-      </section>
+          )}
+        </section>
+      )}
     </div>
   );
 }
