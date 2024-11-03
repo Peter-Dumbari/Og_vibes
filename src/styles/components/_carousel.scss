@@ -73,11 +73,14 @@
       width: 20%;
       display: flex;
       justify-content: space-between;
+      // opacity: 100% !important;
 
       button {
-        border: 2px solid $dark-white-color;
+        border: 4px solid $dark-white-color;
         padding: 5px;
         width: 100%;
+        font-weight: bold;
+        border-radius: 50px;
       }
     }
   }
