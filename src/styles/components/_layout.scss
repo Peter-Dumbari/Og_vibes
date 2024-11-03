@@ -1,0 +1,11 @@
+.layout_cont {
+  .nav {
+    z-index: 99;
+  }
+
+  .outlet {
+    width: 100%;
+    z-index: 1;
+    top: 138px;
+  }
+}

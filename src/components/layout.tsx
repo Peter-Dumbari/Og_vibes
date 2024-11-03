@@ -4,11 +4,11 @@ import Navbar from "./ui/navbar";
 
 export default function Layout() {
   return (
-    <div className="flex flex-col">
-      <div>
+    <div className="layout_cont flex flex-col relative">
+      <div className="nav">
         <Navbar />
       </div>
-      <div className="w-3/4 p-4">
+      <div className="outlet w-3/4 absolute">
         <Outlet />
       </div>
     </div>
