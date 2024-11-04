@@ -63,7 +63,10 @@ export const Carousel: React.FC<CarouselProps> = ({ item }) => {
         ))}
 
         <div className="carousel_body">
-          <div className={`text ${isShaking ? "animate-shake" : ""}`}>
+          <div
+            className={`text ${
+              isShaking ? "animate-bounce delay-150 duration-300" : ""
+            }`}>
             <h2 className="text-black text-2xl font-bold">
               {item[currentIndex].title}
             </h2>
@@ -73,7 +76,9 @@ export const Carousel: React.FC<CarouselProps> = ({ item }) => {
           </div>
           <div
             className={`btns flex space-x-4 ${
-              isShaking ? "animate-shake" : ""
+              isShaking
+                ? "animate-shake animate-in zoom-in-50 delay-350 duration-300"
+                : ""
             }`}>
             <button className="">Explore</button>
             <button className="">Continue</button>
