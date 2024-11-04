@@ -50,7 +50,7 @@ export const Carousel: React.FC<CarouselProps> = ({ item }) => {
         {item.map((slide, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-opacity duration-[10000ms] ease-in-out ${
+            className={`absolute inset-0 transition-opacity duration-[100ms] ease-in-out ${
               index === currentIndex ? "opacity-100" : "opacity-0"
             }`}>
             <img
@@ -58,14 +58,14 @@ export const Carousel: React.FC<CarouselProps> = ({ item }) => {
               src={slide.image}
               alt={slide.alt}
             />
-            <div className="overlay absolute inset-0 bg-black bg-opacity-30"></div>
+            <div className="overlay absolute"></div>
           </div>
         ))}
 
         <div className="carousel_body">
           <div
             className={`text ${
-              isShaking ? "animate-bounce delay-150 duration-300" : ""
+              isShaking ? "animate-flip-up delay-150 duration-500" : ""
             }`}>
             <h2 className="text-black text-2xl font-bold">
               {item[currentIndex].title}
@@ -76,12 +76,10 @@ export const Carousel: React.FC<CarouselProps> = ({ item }) => {
           </div>
           <div
             className={`btns flex space-x-4 ${
-              isShaking
-                ? "animate-shake animate-in zoom-in-50 delay-350 duration-300"
-                : ""
+              isShaking && "animate-rotate-x  delay-150 duration-500"
             }`}>
-            <button className="">Explore</button>
             <button className="">Continue</button>
+            <button className="">Explore</button>
           </div>
         </div>
       </div>

@@ -19,12 +19,17 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.1); /* Faint overall background color */
+      background-color: rgba(
+        0,
+        0,
+        0,
+        0.657
+      ); /* Faint overall background color */
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      z-index: 1000;
+      // z-index: 1000;
       background-image: linear-gradient(
           90deg,
           rgba(10, 1, 1, 0.159) 1px,
@@ -45,6 +50,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    opacity: 99 !important;
 
     .text {
       display: flex;
@@ -52,8 +58,8 @@
       align-items: center;
       h2 {
         color: white;
-        font-size: 3rem;
-        font-weight: bold;
+        font-size: 3.1rem;
+        font-weight: 500;
         text-align: center;
         margin-bottom: 20px;
       }
@@ -73,15 +79,35 @@
       width: 20%;
       display: flex;
       justify-content: space-between;
-      // opacity: 100% !important;
+      opacity: 100% !important;
 
       button {
-        border: 4px solid $dark-white-color;
-        padding: 5px;
+        border: 2px solid $default-text-color;
+        padding: 5px 20px;
         width: 100%;
         font-weight: bold;
         border-radius: 50px;
+        transition: 0.5s;
+        font-size: medium;
+        text-transform: uppercase;
+
+        &:hover {
+          background-color: $primary-color;
+          color: $default-text-color;
+          border-color: $default-text-color;
+          transition: 0.5s;
+        }
       }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .carousel_cont {
+    height: 50vh;
+
+    .carousel_body {
+      display: none;
     }
   }
 }
