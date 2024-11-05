@@ -111,13 +111,13 @@
   .carousel_inner {
     display: flex;
     width: 100%;
-    justify-content: space-between;
-    gap: 2%;
+    min-width: 300px;
+    // justify-content: space-between;
 
     // transition: 0.5s;
 
     .carousel-item {
-      flex: 0 0 calc(95% / 3); /* Each item takes up one-third of the container */
+      flex: 0 0 calc(100% / 3); /* Each item takes up one-third of the container */
     }
   }
 
