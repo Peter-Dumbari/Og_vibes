@@ -77,7 +77,7 @@ const home = () => {
                     track: 21,
                     artist: "BurnaBoy",
                     album: "Twice As Tall",
-                    title: "Album 1",
+                    title: "Twice As Tall",
                     description:
                       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione excepturi accusantium, aperiam praesentium minus voluptatibus doloremque sequi consectetur! Libero, eaque?",
                   },
@@ -88,7 +88,7 @@ const home = () => {
                     artist: "BurnaBoy",
                     track: 21,
                     album: "Twice As Tall",
-                    title: "Album 1",
+                    title: "A Better Time",
                     description:
                       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione excepturi accusantium, aperiam praesentium minus voluptatibus doloremque sequi consectetur! Libero, eaque?",
                   },
@@ -99,7 +99,7 @@ const home = () => {
                     artist: "BurnaBoy",
                     track: 21,
                     album: "Twice As Tall",
-                    title: "Album 1",
+                    title: "The Way Too Big",
                     description:
                       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione excepturi accusantium, aperiam praesentium minus voluptatibus doloremque sequi consectetur! Libero, eaque?",
                   },
