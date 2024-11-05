@@ -1,0 +1,105 @@
+.updates {
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.musics {
+  padding: 30px 80px;
+
+  .flex {
+    gap: 20px;
+    .album {
+      width: 68%;
+
+      .head {
+        padding: 17px;
+        .title {
+          font-size: 1.5rem;
+          position: relative;
+          width: 100%;
+          font-family: "Exo", sans-serif;
+
+          &::after {
+            content: "";
+            position: absolute;
+            width: 40%;
+            height: 3px;
+            background-color: $default-text-color;
+            margin-top: 5px;
+            right: 18%;
+            align-items: center;
+            top: 50%;
+          }
+        }
+      }
+    }
+    .artist {
+      width: 32%;
+
+      .head {
+        padding: 17px;
+        .title {
+          font-size: 1.5rem;
+          position: relative;
+          width: 100%;
+          font-family: "Exo", sans-serif;
+
+          &::after {
+            content: "";
+            position: absolute;
+            width: 40%;
+            height: 3px;
+            background-color: $default-text-color;
+            margin-top: 5px;
+            right: 5%;
+            align-items: center;
+            top: 50%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .updates {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .musics {
+    .flex {
+      flex-direction: column;
+      gap: 20px;
+      .album {
+        width: 100%;
+
+        .head {
+          .title {
+            &::after {
+              display: none;
+            }
+          }
+        }
+      }
+      .artist {
+        width: 100%;
+
+        .head {
+          .title {
+            &::after {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
