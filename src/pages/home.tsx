@@ -1,5 +1,5 @@
 import React from "react";
-import { Carousel } from "../components/ui/carousel";
+import { AlbumCarousel, Carousel } from "../components/ui/carousel";
 import { UpdateCard } from "../components/ui/card";
 import { MusicalNoteIcon } from "@heroicons/react/16/solid";
 import { ListBulletIcon } from "@heroicons/react/24/outline";
@@ -36,7 +36,7 @@ const home = () => {
         ]}
       />
 
-      <div className="updates ">
+      <section className="updates ">
         <UpdateCard
           title="The Top 50"
           description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam temporibus aliquam, deleniti inventore ducimus placeat perspiciatis officiis suscipit quidem assumenda?"
@@ -58,7 +58,73 @@ const home = () => {
           type="Traditional Music"
           image="https://img.freepik.com/premium-photo/african-drummer-plays-djembe-traditional-musical-instrument_152520-1228.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid"
         />
-      </div>
+      </section>
+
+      <section className="musics">
+        <div className="flex">
+          <div className="col album">
+            <div className="head bg-tabsBackground">
+              <h4 className="title">Newly Release Albums</h4>
+            </div>
+
+            <div className="albums">
+              <AlbumCarousel
+                item={[
+                  {
+                    image:
+                      "https://img.freepik.com/free-photo/smiley-boy-playing-drum_23-2148852743.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+                    likes: 10,
+                    track: 21,
+                    artist: "BurnaBoy",
+                    album: "Twice As Tall",
+                    title: "Album 1",
+                    description:
+                      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione excepturi accusantium, aperiam praesentium minus voluptatibus doloremque sequi consectetur! Libero, eaque?",
+                  },
+                  {
+                    image:
+                      "https://img.freepik.com/free-photo/smiley-boy-playing-drum_23-2148852743.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+                    likes: 10,
+                    artist: "BurnaBoy",
+                    track: 21,
+                    album: "Twice As Tall",
+                    title: "Album 1",
+                    description:
+                      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione excepturi accusantium, aperiam praesentium minus voluptatibus doloremque sequi consectetur! Libero, eaque?",
+                  },
+                  {
+                    image:
+                      "https://img.freepik.com/free-photo/smiley-boy-playing-drum_23-2148852743.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+                    likes: 10,
+                    artist: "BurnaBoy",
+                    track: 21,
+                    album: "Twice As Tall",
+                    title: "Album 1",
+                    description:
+                      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione excepturi accusantium, aperiam praesentium minus voluptatibus doloremque sequi consectetur! Libero, eaque?",
+                  },
+                  {
+                    image:
+                      "https://img.freepik.com/free-photo/smiley-boy-playing-drum_23-2148852743.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+                    likes: 10,
+                    artist: "BurnaBoy",
+                    track: 21,
+                    album: "Twice As Tall",
+                    title: "Album 1",
+                    description:
+                      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione excepturi accusantium, aperiam praesentium minus voluptatibus doloremque sequi consectetur! Libero, eaque?",
+                  },
+                ]}
+              />
+            </div>
+          </div>
+          <div className="col artist">
+            <div className="head bg-tabsBackground">
+              <h4 className="title">Top 10 Artists </h4>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

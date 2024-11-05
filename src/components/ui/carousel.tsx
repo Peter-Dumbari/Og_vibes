@@ -1,7 +1,17 @@
+import { ChevronLeftIcon } from "@heroicons/react/16/solid";
 import React, { useEffect, useRef, useState } from "react";
+import { AlbumCard } from "./card";
 
 interface CarouselProps {
-  item: { image: string; alt: string; title: string; description: string }[];
+  item: {
+    image: string;
+    album: string;
+    likes: number;
+    track: number;
+    artist: string;
+    title: string;
+    description: string;
+  }[];
 }
 
 export const Carousel: React.FC<CarouselProps> = ({ item }) => {
@@ -83,6 +93,61 @@ export const Carousel: React.FC<CarouselProps> = ({ item }) => {
           </div>
         </div>
       </div>
+    </div>
+  );
+};
+
+//Album Carousel
+
+export const AlbumCarousel: React.FC<CarouselProps> = ({ item }) => {
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
+
+  // Function to navigate to the next slide
+  const goToNextSlide = () => {
+    setCurrentIndex(
+      (prevIndex) => (prevIndex + 1) % Math.ceil(item.length / 3)
+    );
+  };
+
+  // Function to navigate to the previous slide
+  const goToPrevSlide = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? item.length - 1 : prevIndex - 1
+    );
+  };
+
+  return (
+    <div className="album-carousel">
+      <div
+        className="carousel_inner transition-transform duration-500"
+        style={{ transform: `translateX(-${currentIndex * (100 / 3)}%)` }}>
+        {item.map((item, index) => (
+          <div key={index} className="carousel-item">
+            <AlbumCard
+              title={item.title}
+              description={item.description}
+              artist={item.artist}
+              image={item.image}
+              likes={item.likes}
+              tracks={item.track}
+              album={item.album}
+            />
+          </div>
+        ))}
+      </div>
+      <div className="carousel-footer">
+        <div className="line"></div>
+        <div className="btns">
+          <button onClick={() => goToPrevSlide()}>
+            <ChevronLeftIcon className="h-6 w-6 " />
+          </button>
+          <button onClick={() => goToNextSlide()}>
+            <ChevronLeftIcon className="h-6 w-6 rotate-180" />
+          </button>
+        </div>
+      </div>
+
+      {/* Navigation Buttons */}
     </div>
   );
 };
