@@ -16,24 +16,33 @@ const home = () => {
           {
             image:
               "https://img.freepik.com/premium-photo/marn-grook-player-traditional-aboriginal-attire_419341-185661.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
-            alt: "Image 1",
             title: "OUR LATEST EVENT  IS READY NOW!",
+            album: "Twice As Tall",
+            likes: 0,
+            track: 0,
+            artist: "BurnaBoy",
             description:
               "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione excepturi accusantium, aperiam praesentium minus voluptatibus doloremque sequi consectetur! Libero, eaque?",
           },
           {
             image:
               "https://img.freepik.com/free-photo/photorealistic-portrait-african-rastafarian-woman-with-dreads_23-2151516463.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
-            alt: "Image 2",
             title: "OUR LATEST MUSICS  IS READY NOW!",
+            artist: "BurnaBoy",
+            likes: 4,
+            track: 21,
+            album: "Twice As Tall",
             description:
               "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione excepturi accusantium, aperiam praesentium minus voluptatibus doloremque sequi consectetur! Libero, eaque?",
           },
           {
             image:
               "https://img.freepik.com/free-photo/man-playing-instrument-international-jazz-day_23-2148927519.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
-            alt: "Image 3",
             title: "OUR LATEST VIDEOS  IS READY NOW!",
+            artist: "BurnaBoy",
+            likes: 7,
+            track: 21,
+            album: "Twice As Tall",
             description:
               "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione excepturi accusantium, aperiam praesentium minus voluptatibus doloremque sequi consectetur! Libero, eaque?",
           },
