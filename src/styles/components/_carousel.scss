@@ -163,4 +163,15 @@
       display: none;
     }
   }
+
+  .album-carousel {
+    .carousel_inner {
+      width: 100%;
+      // flex-direction: column;
+
+      .carousel-item {
+        flex: 0 0 calc(100% / 1); /* Each item takes up one-third of the container */
+      }
+    }
+  }
 }

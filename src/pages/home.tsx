@@ -72,36 +72,36 @@ const home = () => {
                 item={[
                   {
                     image:
-                      "https://img.freepik.com/free-photo/smiley-boy-playing-drum_23-2148852743.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+                      "https://img.freepik.com/premium-photo/portrait-man-playing-guitar_1048944-8784999.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
                     likes: 10,
                     track: 21,
                     artist: "BurnaBoy",
                     album: "Twice As Tall",
                     title: "Twice As Tall",
                     description:
-                      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione excepturi accusantium, aperiam praesentium minus voluptatibus doloremque sequi consectetur! Libero, eaque?",
+                      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione excepturi",
                   },
                   {
                     image:
-                      "https://img.freepik.com/free-photo/smiley-boy-playing-drum_23-2148852743.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+                      "https://img.freepik.com/premium-photo/renaissance-faire_555695-7984.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
                     likes: 10,
                     artist: "BurnaBoy",
                     track: 21,
                     album: "Twice As Tall",
                     title: "A Better Time",
                     description:
-                      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione excepturi accusantium, aperiam praesentium minus voluptatibus doloremque sequi consectetur! Libero, eaque?",
+                      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione excepturi",
                   },
                   {
                     image:
-                      "https://img.freepik.com/free-photo/smiley-boy-playing-drum_23-2148852743.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+                      "https://img.freepik.com/free-photo/woman-playing-guitar-local-event_23-2149188079.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
                     likes: 10,
                     artist: "BurnaBoy",
                     track: 21,
                     album: "Twice As Tall",
                     title: "The Way Too Big",
                     description:
-                      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione excepturi accusantium, aperiam praesentium minus voluptatibus doloremque sequi consectetur! Libero, eaque?",
+                      "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
                   },
                   {
                     image:
@@ -112,12 +112,41 @@ const home = () => {
                     album: "Twice As Tall",
                     title: "Album 1",
                     description:
-                      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione excepturi accusantium, aperiam praesentium minus voluptatibus doloremque sequi consectetur! Libero, eaque?",
+                      "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                  },
+
+                  {
+                    image:
+                      "https://img.freepik.com/free-photo/woman-playing-guitar-local-event_23-2149188079.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+                    likes: 10,
+                    artist: "BurnaBoy",
+                    track: 21,
+                    album: "Twice As Tall",
+                    title: "The Way Too Big",
+                    description:
+                      "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                  },
+
+                  {
+                    image:
+                      "https://img.freepik.com/free-photo/woman-playing-guitar-local-event_23-2149188079.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+                    likes: 10,
+                    artist: "BurnaBoy",
+                    track: 21,
+                    album: "Twice As Tall",
+                    title: "The Way Too Big",
+                    description:
+                      "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
                   },
                 ]}
               />
             </div>
+
+            <div className="head bg-tabsBackground">
+              <h4 className="title">Upcoming Events</h4>
+            </div>
           </div>
+
           <div className="col artist">
             <div className="head bg-tabsBackground">
               <h4 className="title">Top 10 Artists </h4>

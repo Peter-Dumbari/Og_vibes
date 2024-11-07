@@ -1,5 +1,6 @@
 import { MusicalNoteIcon } from "@heroicons/react/16/solid";
-import { HeartIcon, PlayIcon } from "@heroicons/react/24/outline";
+import { HeartIcon, PlayIcon } from "@heroicons/react/24/solid";
+
 import React from "react";
 
 interface CardProps {
@@ -72,23 +73,26 @@ export const AlbumCard: React.FC<AlbumCardProps> = ({
       </div>
 
       <div className="hover-content">
-        <PlayIcon width={24} height={24} />
-        <h3>{title}</h3>
-        <p>{artist}</p>
-        <p>{description}</p>
+        <div className="text p-5 flex items-center flex-col">
+          <PlayIcon className="playicon" />
 
-        <div className="flex ">
+          <h3>{title}</h3>
+          <p>{artist}</p>
+          <p className="description">{description}</p>
+        </div>
+
+        <div className="icons_foot px-4">
           <div className="tracks flex">
-            <MusicalNoteIcon width={16} height={16} />
+            <MusicalNoteIcon className="icon" />
             <p>{tracks} Tracks</p>
           </div>
-          <div className="tracks flex">
-            <PlayIcon width={16} height={16} />
-            <p>{album} Tracks</p>
+          <div className="album flex">
+            <PlayIcon className="icon" />
+            <p>509</p>
           </div>
-          <div className="tracks flex">
-            <HeartIcon width={16} height={16} />
-            <p>{likes} Tracks</p>
+          <div className="likes flex">
+            <HeartIcon className="icon" />
+            <p>{likes}</p>
           </div>
         </div>
 
