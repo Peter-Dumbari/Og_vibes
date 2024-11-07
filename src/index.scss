@@ -22,6 +22,40 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.title {
+  font-size: 1.5rem;
+  position: relative;
+  width: 100%;
+  font-family: "Exo", sans-serif;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 40%;
+    height: 3px;
+    background-color: $default-text-color;
+    margin-top: 5px;
+    right: 18%;
+    align-items: center;
+    top: 50%;
+  }
+
+  @media screen and (max-width: 1200px) {
+    .title {
+      &::after {
+        width: 50%;
+        right: 10%;
+      }
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    &::after {
+      display: none;
+    }
+  }
+}
+
 /*
 a {
   font-weight: 500;

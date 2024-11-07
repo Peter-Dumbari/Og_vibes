@@ -102,10 +102,37 @@ export const Carousel: React.FC<CarouselProps> = ({ item }) => {
 export const AlbumCarousel: React.FC<CarouselProps> = ({ item }) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
+  // Calculate number of visible cards based on screen size
+  const [visibleItems, setVisibleItems] = useState(3); // Default for desktop
+
+  // Update visible items based on screen width
+  const updateVisibleItems = () => {
+    const width = window.innerWidth;
+    if (width < 640) {
+      setVisibleItems(1); // Mobile view
+    } else if (width < 1024) {
+      setVisibleItems(2); // Tablet view
+    } else {
+      setVisibleItems(3); // Desktop view
+    }
+  };
+
+  useEffect(() => {
+    updateVisibleItems();
+    window.addEventListener("resize", updateVisibleItems);
+    return () => window.removeEventListener("resize", updateVisibleItems);
+  }, []);
+
+  const transformValue = -(currentIndex * (100 / visibleItems));
+
+  // Update the number of visible items based on screen width
+
   // Function to navigate to the next slide
   const goToNextSlide = () => {
     setCurrentIndex(
-      (prevIndex) => (prevIndex + 1) % Math.ceil(item.length / 3)
+      // (prevIndex) => (prevIndex + 1) % Math.ceil(item.length / visibleItems)
+      (prevIndex) =>
+        prevIndex === item.length - visibleItems ? 0 : prevIndex + 1
     );
   };
 
@@ -120,9 +147,12 @@ export const AlbumCarousel: React.FC<CarouselProps> = ({ item }) => {
     <div className="album-carousel">
       <div
         className="carousel_inner transition-transform duration-500"
-        style={{ transform: `translateX(-${currentIndex * (100 / 3)}%)` }}>
+        style={{ transform: `translateX(${transformValue}%)` }}>
         {item.map((item, index) => (
-          <div key={index} className="carousel-item">
+          <div
+            key={index}
+            className="carousel-item flex-none"
+            style={{ flex: `0 0 ${100 / visibleItems}%` }}>
             <AlbumCard
               title={item.title}
               description={item.description}

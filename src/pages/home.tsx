@@ -114,10 +114,39 @@ const home = () => {
                     description:
                       "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
                   },
+
+                  {
+                    image:
+                      "https://img.freepik.com/free-photo/woman-playing-guitar-local-event_23-2149188079.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+                    likes: 10,
+                    artist: "BurnaBoy",
+                    track: 21,
+                    album: "Twice As Tall",
+                    title: "The Way Too Big",
+                    description:
+                      "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                  },
+
+                  {
+                    image:
+                      "https://img.freepik.com/free-photo/woman-playing-guitar-local-event_23-2149188079.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+                    likes: 10,
+                    artist: "BurnaBoy",
+                    track: 21,
+                    album: "Twice As Tall",
+                    title: "The Way Too Big",
+                    description:
+                      "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                  },
                 ]}
               />
             </div>
+
+            <div className="head bg-tabsBackground">
+              <h4 className="title">Upcoming Events</h4>
+            </div>
           </div>
+
           <div className="col artist">
             <div className="head bg-tabsBackground">
               <h4 className="title">Top 10 Artists </h4>

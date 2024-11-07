@@ -11,9 +11,12 @@
   padding: 30px 80px;
 
   .flex {
-    gap: 20px;
+    gap: 2%;
+    width: 100%;
+
     .album {
       width: 68%;
+      // min-width: 100%;
 
       .head {
         padding: 17px;
@@ -41,6 +44,7 @@
     }
     .artist {
       width: 32%;
+      // min-width: 100%;
 
       .head {
         padding: 17px;
@@ -68,6 +72,10 @@
   }
 }
 
+.albums {
+  margin-bottom: 40px;
+}
+
 @media screen and (max-width: 768px) {
   .updates {
     display: flex;
@@ -76,18 +84,24 @@
     gap: 20px;
     align-items: center;
   }
+}
 
+@media screen and (max-width: 1200px) {
   .musics {
+    padding: 30px;
+
     .flex {
       flex-direction: column;
       gap: 20px;
       .album {
         width: 100%;
+        min-width: 200px;
 
         .head {
           .title {
             &::after {
-              display: none;
+              width: 50%;
+              right: 10%;
             }
           }
         }
@@ -98,11 +112,20 @@
         .head {
           .title {
             &::after {
-              display: none;
+              // display: none;
+              width: 60%;
             }
           }
         }
       }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .title {
+    &::after {
+      display: none;
     }
   }
 }
