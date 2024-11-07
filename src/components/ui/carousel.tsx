@@ -1,6 +1,6 @@
 import { ChevronLeftIcon } from "@heroicons/react/16/solid";
 import React, { useEffect, useRef, useState } from "react";
-import { AlbumCard } from "./card";
+import { AlbumCard, EventCard } from "./card";
 
 interface CarouselProps {
   item: {
@@ -11,6 +11,18 @@ interface CarouselProps {
     artist: string;
     title: string;
     description: string;
+  }[];
+}
+
+//Carousel
+
+interface EventCarouselProps {
+  item: {
+    event: string;
+    eventPoster: string;
+    eventTime: string;
+    evenDate: string;
+    address: string;
   }[];
 }
 
@@ -66,7 +78,7 @@ export const Carousel: React.FC<CarouselProps> = ({ item }) => {
             <img
               className="w-full h-full object-cover"
               src={slide.image}
-              alt={slide.alt}
+              alt={slide.title}
             />
             <div className="overlay absolute"></div>
           </div>
@@ -161,6 +173,85 @@ export const AlbumCarousel: React.FC<CarouselProps> = ({ item }) => {
               likes={item.likes}
               tracks={item.track}
               album={item.album}
+            />
+          </div>
+        ))}
+      </div>
+      <div className="carousel-footer">
+        <div className="line"></div>
+        <div className="btns">
+          <button onClick={() => goToPrevSlide()}>
+            <ChevronLeftIcon className="h-6 w-6 " />
+          </button>
+          <button onClick={() => goToNextSlide()}>
+            <ChevronLeftIcon className="h-6 w-6 rotate-180" />
+          </button>
+        </div>
+      </div>
+
+      {/* Navigation Buttons */}
+    </div>
+  );
+};
+
+//Event Carousel
+export const EventCarousel: React.FC<EventCarouselProps> = ({ item }) => {
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
+
+  // Calculate number of visible cards based on screen size
+  const [visibleItems, setVisibleItems] = useState(3); // Default for desktop
+
+  // Update visible items based on screen width
+  const updateVisibleItems = () => {
+    const width = window.innerWidth;
+    if (width < 640) {
+      setVisibleItems(1); // Mobile view
+    } else if (width < 1024) {
+      setVisibleItems(2); // Tablet view
+    } else {
+      setVisibleItems(3); // Desktop view
+    }
+  };
+
+  useEffect(() => {
+    updateVisibleItems();
+    window.addEventListener("resize", updateVisibleItems);
+    return () => window.removeEventListener("resize", updateVisibleItems);
+  }, []);
+
+  const transformValue = -(currentIndex * 100);
+
+  // Update the number of visible items based on screen width
+
+  // Function to navigate to the next slide
+  const goToNextSlide = () => {
+    setCurrentIndex(
+      // (prevIndex) => (prevIndex + 1) % Math.ceil(item.length / visibleItems)
+      (prevIndex) =>
+        prevIndex === item.length - visibleItems ? 0 : prevIndex + 1
+    );
+  };
+
+  // Function to navigate to the previous slide
+  const goToPrevSlide = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? item.length - 1 : prevIndex - 1
+    );
+  };
+
+  return (
+    <div className="album-carousel">
+      <div
+        className="carousel_inner transition-transform duration-500"
+        style={{ transform: `translateY(${transformValue}%)` }}>
+        {item.map((item, index) => (
+          <div key={index} className="carousel-item flex-none">
+            <EventCard
+              name={item.event}
+              eventDate={item.evenDate}
+              eventPoster={item.eventPoster}
+              eventTime={item.eventTime}
+              address={item.address}
             />
           </div>
         ))}

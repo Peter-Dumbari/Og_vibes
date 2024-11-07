@@ -21,6 +21,14 @@ interface AlbumCardProps {
   tracks: number;
 }
 
+interface EventCardProps {
+  name: string;
+  address: string;
+  eventDate: string;
+  eventTime: string;
+  eventPoster: string;
+}
+
 export const UpdateCard: React.FC<CardProps> = ({
   title,
   description,
@@ -99,6 +107,34 @@ export const AlbumCard: React.FC<AlbumCardProps> = ({
         <div className="ratings">
           <span>7.3</span>
         </div>
+      </div>
+    </div>
+  );
+};
+
+// Event Card
+
+export const EventCard: React.FC<EventCardProps> = ({
+  name,
+  address,
+  eventDate,
+  eventPoster,
+  eventTime,
+}) => {
+  return (
+    <div className="event_card">
+      <img className="img" src={eventPoster} alt={name} />
+      <div className="event_location">
+        <h3>{name}</h3>
+        <p>{address}</p>
+      </div>
+      <div className="time">
+        <p>{eventDate}</p>
+        <p>{eventTime}</p>
+      </div>
+
+      <div className="btn_cont">
+        <button className="btn">Buy Tickets</button>
       </div>
     </div>
   );

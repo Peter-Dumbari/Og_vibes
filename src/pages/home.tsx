@@ -1,5 +1,9 @@
 import React from "react";
-import { AlbumCarousel, Carousel } from "../components/ui/carousel";
+import {
+  AlbumCarousel,
+  Carousel,
+  EventCarousel,
+} from "../components/ui/carousel";
 import { UpdateCard } from "../components/ui/card";
 import { MusicalNoteIcon } from "@heroicons/react/16/solid";
 import { ListBulletIcon } from "@heroicons/react/24/outline";
@@ -111,32 +115,7 @@ const home = () => {
                     track: 21,
                     album: "Twice As Tall",
                     title: "Album 1",
-                    description:
-                      "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                  },
-
-                  {
-                    image:
-                      "https://img.freepik.com/free-photo/woman-playing-guitar-local-event_23-2149188079.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
-                    likes: 10,
-                    artist: "BurnaBoy",
-                    track: 21,
-                    album: "Twice As Tall",
-                    title: "The Way Too Big",
-                    description:
-                      "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                  },
-
-                  {
-                    image:
-                      "https://img.freepik.com/free-photo/woman-playing-guitar-local-event_23-2149188079.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
-                    likes: 10,
-                    artist: "BurnaBoy",
-                    track: 21,
-                    album: "Twice As Tall",
-                    title: "The Way Too Big",
-                    description:
-                      "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                    description: "Lorem ipsum",
                   },
                 ]}
               />
@@ -144,6 +123,34 @@ const home = () => {
 
             <div className="head bg-tabsBackground">
               <h4 className="title">Upcoming Events</h4>
+            </div>
+
+            <div className="events_cont">
+              <EventCarousel
+                item={[
+                  {
+                    event: "Event 1",
+                    eventPoster: "https://img.freepik",
+                    eventTime: "12:00 PM",
+                    evenDate: "12/12/2021",
+                    address: "Lagos, Nigeria",
+                  },
+                  {
+                    event: "Event 1",
+                    eventPoster: "https://img.freepik",
+                    eventTime: "12:00 PM",
+                    evenDate: "12/12/2021",
+                    address: "Lagos, Nigeria",
+                  },
+                  {
+                    event: "Event 1",
+                    eventPoster: "https://img.freepik",
+                    eventTime: "12:00 PM",
+                    evenDate: "12/12/2021",
+                    address: "Lagos, Nigeria",
+                  },
+                ]}
+              />
             </div>
           </div>
 
