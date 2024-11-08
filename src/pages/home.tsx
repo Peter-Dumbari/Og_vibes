@@ -1,5 +1,9 @@
 import React from "react";
-import { AlbumCarousel, Carousel } from "../components/ui/carousel";
+import {
+  AlbumCarousel,
+  Carousel,
+  EventCarousel,
+} from "../components/ui/carousel";
 import { UpdateCard } from "../components/ui/card";
 import { MusicalNoteIcon } from "@heroicons/react/16/solid";
 import { ListBulletIcon } from "@heroicons/react/24/outline";
@@ -12,24 +16,33 @@ const home = () => {
           {
             image:
               "https://img.freepik.com/premium-photo/marn-grook-player-traditional-aboriginal-attire_419341-185661.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
-            alt: "Image 1",
             title: "OUR LATEST EVENT  IS READY NOW!",
+            album: "Twice As Tall",
+            likes: 0,
+            track: 0,
+            artist: "BurnaBoy",
             description:
               "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione excepturi accusantium, aperiam praesentium minus voluptatibus doloremque sequi consectetur! Libero, eaque?",
           },
           {
             image:
               "https://img.freepik.com/free-photo/photorealistic-portrait-african-rastafarian-woman-with-dreads_23-2151516463.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
-            alt: "Image 2",
             title: "OUR LATEST MUSICS  IS READY NOW!",
+            artist: "BurnaBoy",
+            likes: 4,
+            track: 21,
+            album: "Twice As Tall",
             description:
               "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione excepturi accusantium, aperiam praesentium minus voluptatibus doloremque sequi consectetur! Libero, eaque?",
           },
           {
             image:
               "https://img.freepik.com/free-photo/man-playing-instrument-international-jazz-day_23-2148927519.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
-            alt: "Image 3",
             title: "OUR LATEST VIDEOS  IS READY NOW!",
+            artist: "BurnaBoy",
+            likes: 7,
+            track: 21,
+            album: "Twice As Tall",
             description:
               "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione excepturi accusantium, aperiam praesentium minus voluptatibus doloremque sequi consectetur! Libero, eaque?",
           },
@@ -111,32 +124,7 @@ const home = () => {
                     track: 21,
                     album: "Twice As Tall",
                     title: "Album 1",
-                    description:
-                      "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                  },
-
-                  {
-                    image:
-                      "https://img.freepik.com/free-photo/woman-playing-guitar-local-event_23-2149188079.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
-                    likes: 10,
-                    artist: "BurnaBoy",
-                    track: 21,
-                    album: "Twice As Tall",
-                    title: "The Way Too Big",
-                    description:
-                      "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                  },
-
-                  {
-                    image:
-                      "https://img.freepik.com/free-photo/woman-playing-guitar-local-event_23-2149188079.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
-                    likes: 10,
-                    artist: "BurnaBoy",
-                    track: 21,
-                    album: "Twice As Tall",
-                    title: "The Way Too Big",
-                    description:
-                      "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                    description: "Lorem ipsum",
                   },
                 ]}
               />
@@ -144,6 +132,34 @@ const home = () => {
 
             <div className="head bg-tabsBackground">
               <h4 className="title">Upcoming Events</h4>
+            </div>
+
+            <div className="events_cont">
+              <EventCarousel
+                item={[
+                  {
+                    event: "Event 1",
+                    eventPoster: "https://img.freepik",
+                    eventTime: "12:00 PM",
+                    evenDate: "12/12/2021",
+                    address: "Lagos, Nigeria",
+                  },
+                  {
+                    event: "Event 1",
+                    eventPoster: "https://img.freepik",
+                    eventTime: "12:00 PM",
+                    evenDate: "12/12/2021",
+                    address: "Lagos, Nigeria",
+                  },
+                  {
+                    event: "Event 1",
+                    eventPoster: "https://img.freepik",
+                    eventTime: "12:00 PM",
+                    evenDate: "12/12/2021",
+                    address: "Lagos, Nigeria",
+                  },
+                ]}
+              />
             </div>
           </div>
 
