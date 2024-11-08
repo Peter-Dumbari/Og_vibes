@@ -198,37 +198,13 @@ export const AlbumCarousel: React.FC<CarouselProps> = ({ item }) => {
 export const EventCarousel: React.FC<EventCarouselProps> = ({ item }) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
-  // Calculate number of visible cards based on screen size
-  const [visibleItems, setVisibleItems] = useState(3); // Default for desktop
-
-  // Update visible items based on screen width
-  const updateVisibleItems = () => {
-    const width = window.innerWidth;
-    if (width < 640) {
-      setVisibleItems(1); // Mobile view
-    } else if (width < 1024) {
-      setVisibleItems(2); // Tablet view
-    } else {
-      setVisibleItems(3); // Desktop view
-    }
-  };
-
-  useEffect(() => {
-    updateVisibleItems();
-    window.addEventListener("resize", updateVisibleItems);
-    return () => window.removeEventListener("resize", updateVisibleItems);
-  }, []);
-
-  const transformValue = -(currentIndex * 100);
-
-  // Update the number of visible items based on screen width
+  const transformValue = -((currentIndex * 100) / 3);
 
   // Function to navigate to the next slide
   const goToNextSlide = () => {
     setCurrentIndex(
       // (prevIndex) => (prevIndex + 1) % Math.ceil(item.length / visibleItems)
-      (prevIndex) =>
-        prevIndex === item.length - visibleItems ? 0 : prevIndex + 1
+      (prevIndex) => (prevIndex === item.length - 1 ? 0 : prevIndex + 1)
     );
   };
 
@@ -240,23 +216,27 @@ export const EventCarousel: React.FC<EventCarouselProps> = ({ item }) => {
   };
 
   return (
-    <div className="album-carousel">
-      <div
-        className="carousel_inner transition-transform duration-500"
-        style={{ transform: `translateY(${transformValue}%)` }}>
-        {item.map((item, index) => (
-          <div key={index} className="carousel-item flex-none">
-            <EventCard
-              name={item.event}
-              eventDate={item.evenDate}
-              eventPoster={item.eventPoster}
-              eventTime={item.eventTime}
-              address={item.address}
-            />
+    <div className="event-carousel">
+      <div className="event_car_cont">
+        <div
+          className="event_carousel_inner transition-transform duration-500"
+          style={{ transform: `translateY(${transformValue}%)` }}>
+          <div className="event_carousel-item">
+            {item.map((item, index) => (
+              <EventCard
+                key={index}
+                name={item.event}
+                eventDate={item.evenDate}
+                eventPoster={item.eventPoster}
+                eventTime={item.eventTime}
+                address={item.address}
+              />
+            ))}
           </div>
-        ))}
+        </div>
       </div>
-      <div className="carousel-footer">
+
+      <div className="event_carousel-footer">
         <div className="line"></div>
         <div className="btns">
           <button onClick={() => goToPrevSlide()}>
