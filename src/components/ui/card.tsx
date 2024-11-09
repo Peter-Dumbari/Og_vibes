@@ -29,6 +29,20 @@ interface EventCardProps {
   eventPoster: string;
 }
 
+interface BlogCardProps {
+  title: string;
+  image: string;
+  blog_date: string;
+}
+
+interface PopCardProps {
+  album: string;
+  artist: string;
+  cover: string;
+  posted: string;
+  songs: string[];
+}
+
 export const UpdateCard: React.FC<CardProps> = ({
   title,
   description,
@@ -140,6 +154,48 @@ export const EventCard: React.FC<EventCardProps> = ({
 
         <div className="btn_cont">
           <button className="event_btn">Buy Tickets</button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export const BlogCard: React.FC<BlogCardProps> = ({
+  title,
+  image,
+  blog_date,
+}) => {
+  return (
+    <div className="blog_card">
+      <div className="img-cont">
+        <img className="img" src={image} alt={title} />
+        <div className="overlay"></div>
+      </div>
+      <div className="blog_card_content">
+        <h3>{title}</h3>
+        <p>{blog_date}</p>
+      </div>
+    </div>
+  );
+};
+
+export const PopTopCard: React.FC<PopCardProps> = ({
+  album,
+  artist,
+  cover,
+  posted,
+  songs,
+}) => {
+  return (
+    <div className="pop_card">
+      <div className="card_head">
+        <div className="img-cont">
+          <img className="img" src={cover} alt={album} />
+        </div>
+        <div className="pop_card_content">
+          <h3>{album}</h3>
+          <p>{artist}</p>
+          <p>{posted}</p>
         </div>
       </div>
     </div>

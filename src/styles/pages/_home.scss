@@ -77,7 +77,26 @@
 }
 
 .events_cont {
-  margin-top: 10px;
+  margin: 10px 0;
+}
+
+.blog_posts {
+  margin-top: 60px;
+
+  .blogs {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 20px;
+  }
+}
+
+.top-musics {
+  margin-top: 20px;
+
+  .top-music-datas {
+    margin-top: 20px;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -87,6 +106,15 @@
     flex-wrap: wrap;
     gap: 20px;
     align-items: center;
+  }
+
+  .blog_posts {
+    margin-top: 60px;
+
+    .blogs {
+      margin-top: 20px;
+      flex-direction: column;
+    }
   }
 }
 
@@ -122,6 +150,15 @@
           }
         }
       }
+    }
+  }
+
+  .blog_posts {
+    margin-top: 60px;
+
+    .blogs {
+      margin-top: 20px;
+      flex-direction: column;
     }
   }
 }
