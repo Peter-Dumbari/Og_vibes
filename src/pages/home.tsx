@@ -139,21 +139,56 @@ const home = () => {
                 item={[
                   {
                     event: "Event 1",
-                    eventPoster: "https://img.freepik",
+                    eventPoster:
+                      "https://img.freepik.com/premium-photo/realty-free-images_1023251-235857.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
                     eventTime: "12:00 PM",
                     evenDate: "12/12/2021",
                     address: "Lagos, Nigeria",
                   },
                   {
                     event: "Event 1",
-                    eventPoster: "https://img.freepik",
+                    eventPoster:
+                      "https://img.freepik.com/free-photo/group-colombian-male-friends-spending-time-together-having-fun_23-2151356532.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
                     eventTime: "12:00 PM",
                     evenDate: "12/12/2021",
                     address: "Lagos, Nigeria",
                   },
                   {
                     event: "Event 1",
-                    eventPoster: "https://img.freepik",
+                    eventPoster:
+                      "https://img.freepik.com/premium-photo/realty-free-images_1023251-235857.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+                    eventTime: "12:00 PM",
+                    evenDate: "12/12/2021",
+                    address: "Lagos, Nigeria",
+                  },
+                  {
+                    event: "Event 1",
+                    eventPoster:
+                      "https://img.freepik.com/premium-photo/realty-free-images_1023251-235857.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+                    eventTime: "12:00 PM",
+                    evenDate: "12/12/2021",
+                    address: "Lagos, Nigeria",
+                  },
+                  {
+                    event: "Event 1",
+                    eventPoster:
+                      "https://img.freepik.com/premium-photo/realty-free-images_1023251-235857.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+                    eventTime: "12:00 PM",
+                    evenDate: "12/12/2021",
+                    address: "Lagos, Nigeria",
+                  },
+                  {
+                    event: "Event 1",
+                    eventPoster:
+                      "https://img.freepik.com/premium-photo/realty-free-images_1023251-235857.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+                    eventTime: "12:00 PM",
+                    evenDate: "12/12/2021",
+                    address: "Lagos, Nigeria",
+                  },
+                  {
+                    event: "Event 1",
+                    eventPoster:
+                      "https://img.freepik.com/premium-photo/realty-free-images_1023251-235857.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
                     eventTime: "12:00 PM",
                     evenDate: "12/12/2021",
                     address: "Lagos, Nigeria",

@@ -123,18 +123,24 @@ export const EventCard: React.FC<EventCardProps> = ({
 }) => {
   return (
     <div className="event_card">
-      <img className="img" src={eventPoster} alt={name} />
-      <div className="event_location">
-        <h3>{name}</h3>
-        <p>{address}</p>
+      <div className="img-cont">
+        <img className="img" src={eventPoster} alt={name} />
       </div>
-      <div className="time">
-        <p>{eventDate}</p>
-        <p>{eventTime}</p>
-      </div>
+      <div className="content">
+        <div className="overlay"></div>
 
-      <div className="btn_cont">
-        <button className="btn">Buy Tickets</button>
+        <div className="event_location">
+          <h3>{name}</h3>
+          <p>{address}</p>
+        </div>
+        <div className="time">
+          <p>{eventDate}</p>
+          <p>{eventTime}</p>
+        </div>
+
+        <div className="btn_cont">
+          <button className="event_btn">Buy Tickets</button>
+        </div>
       </div>
     </div>
   );
