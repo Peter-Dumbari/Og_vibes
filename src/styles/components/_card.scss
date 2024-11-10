@@ -497,6 +497,7 @@
     padding: 20px;
     background-color: $dark-background-color;
     gap: 20px;
+    border-bottom: 0.5px solid $dark-white-color;
 
     .img-cont {
       width: 90px;
@@ -507,6 +508,79 @@
         height: 100%;
         object-fit: cover;
         // transition: 0.5s;
+      }
+    }
+
+    .pop_card_content {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+
+      .info {
+        h3 {
+          font-size: 1.4rem;
+          font-weight: bold;
+        }
+        p {
+          font-weight: bold;
+        }
+      }
+
+      .details {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 50%;
+
+        p {
+          font-weight: bold;
+          font-size: 1rem;
+        }
+
+        .icon {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .songs {
+    background-color: $dark-background-color;
+    width: 100%;
+    padding-top: 15px;
+
+    .songs_content {
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+      width: 100%;
+      justify-content: space-between;
+
+      .song_title {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+
+        .playIcon {
+          width: 35px;
+        }
+
+        .name {
+          font-size: 1.2rem;
+          font-weight: bold;
+        }
+      }
+
+      .functions {
+        display: flex;
+        gap: 10px;
+
+        .icon {
+          width: 30px;
+          cursor: pointer;
+        }
       }
     }
   }

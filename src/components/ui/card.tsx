@@ -1,7 +1,12 @@
-import { MusicalNoteIcon } from "@heroicons/react/16/solid";
+import { MusicalNoteIcon, PlusIcon } from "@heroicons/react/16/solid";
+import {
+  ArrowDownCircleIcon,
+  PlayCircleIcon,
+} from "@heroicons/react/24/outline";
 import { HeartIcon, PlayIcon } from "@heroicons/react/24/solid";
 
 import React from "react";
+import { BsThreeDotsVertical } from "react-icons/bs";
 
 interface CardProps {
   title: string;
@@ -40,6 +45,7 @@ interface PopCardProps {
   artist: string;
   cover: string;
   posted: string;
+  tops: number;
   songs: string[];
 }
 
@@ -184,6 +190,7 @@ export const PopTopCard: React.FC<PopCardProps> = ({
   artist,
   cover,
   posted,
+  tops,
   songs,
 }) => {
   return (
@@ -193,10 +200,31 @@ export const PopTopCard: React.FC<PopCardProps> = ({
           <img className="img" src={cover} alt={album} />
         </div>
         <div className="pop_card_content">
-          <h3>{album}</h3>
-          <p>{artist}</p>
-          <p>{posted}</p>
+          <div className="info">
+            <h3>{album}</h3>
+            <p>{artist}</p>
+          </div>
+          <div className="details">
+            <p>Top {tops}</p>
+            <p>{posted}</p>
+            <BsThreeDotsVertical size={40} className="icon rotate-90" />
+          </div>
         </div>
+      </div>
+      <div className="songs">
+        {songs.map((item, index) => (
+          <div className="songs_content" key={index}>
+            <div className="song_title">
+              <PlayCircleIcon className="playIcon" />
+              <h3 className="name">{item}</h3>
+            </div>
+
+            <div className="functions">
+              <PlusIcon className="icon" />
+              <ArrowDownCircleIcon className="icon" />
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
