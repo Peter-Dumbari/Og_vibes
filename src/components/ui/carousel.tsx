@@ -197,8 +197,9 @@ export const AlbumCarousel: React.FC<CarouselProps> = ({ item }) => {
 //Event Carousel
 export const EventCarousel: React.FC<EventCarouselProps> = ({ item }) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const [visibleItems, setVisibleItems] = useState(3); // Default for desktop
 
-  const transformValue = -((currentIndex * 100) / 3);
+  const transformValue = -((currentIndex * 100) / visibleItems);
 
   // Function to navigate to the next slide
   const goToNextSlide = () => {
@@ -214,6 +215,24 @@ export const EventCarousel: React.FC<EventCarouselProps> = ({ item }) => {
       prevIndex === 0 ? item.length - 1 : prevIndex - 1
     );
   };
+
+  // Update visible items based on screen width
+  const updateVisibleItems = () => {
+    const width = window.innerWidth;
+    if (width < 640) {
+      setVisibleItems(1); // Mobile view
+    } else if (width < 1024) {
+      setVisibleItems(2); // Tablet view
+    } else {
+      setVisibleItems(3); // Desktop view
+    }
+  };
+
+  useEffect(() => {
+    updateVisibleItems();
+    window.addEventListener("resize", updateVisibleItems);
+    return () => window.removeEventListener("resize", updateVisibleItems);
+  }, []);
 
   return (
     <div className="event-carousel">
@@ -247,8 +266,6 @@ export const EventCarousel: React.FC<EventCarouselProps> = ({ item }) => {
           </button>
         </div>
       </div>
-
-      {/* Navigation Buttons */}
     </div>
   );
 };
