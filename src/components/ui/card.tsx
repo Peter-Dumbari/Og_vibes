@@ -41,12 +41,25 @@ interface BlogCardProps {
 }
 
 interface PopCardProps {
-  album: string;
-  artist: string;
-  cover: string;
-  posted: string;
-  tops: number;
-  songs: string[];
+  item: {
+    album: string;
+    artist: string;
+    cover: string;
+    posted: string;
+    index: number;
+    tops: number;
+    songs: string[];
+  }[];
+}
+
+interface CollectionCardProps {
+  item: {
+    bannerText: string;
+    bannerImg: string;
+    collectionDate: string;
+    collectionAuthor: string;
+    blogs: object[];
+  }[];
 }
 
 export const UpdateCard: React.FC<CardProps> = ({
@@ -80,6 +93,7 @@ export const AlbumCard: React.FC<AlbumCardProps> = ({
   title,
   description,
   image,
+  index,
   album,
   likes,
   artist,
@@ -184,48 +198,94 @@ export const BlogCard: React.FC<BlogCardProps> = ({
     </div>
   );
 };
+export const PopTopCard: React.FC<PopCardProps> = ({ item }) => {
+  const [activeCard, setActiveCard] = React.useState<number | null>(null);
 
-export const PopTopCard: React.FC<PopCardProps> = ({
-  album,
-  artist,
-  cover,
-  posted,
-  tops,
-  songs,
-}) => {
+  const handleShowSongs = (cardIndex: number) => {
+    setActiveCard(activeCard === cardIndex ? null : cardIndex);
+  };
+
   return (
     <div className="pop_card">
-      <div className="card_head">
-        <div className="img-cont">
-          <img className="img" src={cover} alt={album} />
-        </div>
-        <div className="pop_card_content">
-          <div className="info">
-            <h3>{album}</h3>
-            <p>{artist}</p>
+      {item.map((itm, index) => (
+        <>
+          <div className="card_head">
+            <div className="img-cont">
+              <img className="img" src={itm.cover} alt={itm.album} />
+            </div>
+            <div className="pop_card_content">
+              <div className="info">
+                <h3>{itm.album}</h3>
+                <p>{itm.artist}</p>
+              </div>
+              <div className="details">
+                <p>Top {itm.tops}</p>
+                <p>{itm.posted}</p>
+                <BsThreeDotsVertical
+                  size={40}
+                  className="icon rotate-90"
+                  onClick={() => handleShowSongs(index)}
+                />
+              </div>
+            </div>
           </div>
-          <div className="details">
-            <p>Top {tops}</p>
-            <p>{posted}</p>
-            <BsThreeDotsVertical size={40} className="icon rotate-90" />
+
+          <div
+            className={`songs ${
+              activeCard === index ? "slideInDown" : "slideOutDown"
+            }`}>
+            {itm.songs.map((item, index) => (
+              <div className="songs_content" key={index}>
+                <div className="song_title">
+                  <PlayCircleIcon className="playIcon" />
+                  <h3 className="name">{item}</h3>
+                </div>
+
+                <div className="functions">
+                  <PlusIcon className="icon" />
+                  <ArrowDownCircleIcon className="icon" />
+                </div>
+              </div>
+            ))}
           </div>
-        </div>
-      </div>
-      <div className="songs">
-        {songs.map((item, index) => (
-          <div className="songs_content" key={index}>
-            <div className="song_title">
-              <PlayCircleIcon className="playIcon" />
-              <h3 className="name">{item}</h3>
+        </>
+      ))}
+    </div>
+  );
+};
+
+export const CollectionCard: React.FC<CollectionCardProps> = ({ item }) => {
+  return (
+    <div className="collection_cont">
+      {item.map((itm, indx) => (
+        <>
+          <div className="banner_sec" key={indx}>
+            <div className="img_cont">
+              <img src={itm.bannerImg} alt={itm.collectionAuthor} />
+              <div className="overlay"></div>
             </div>
 
-            <div className="functions">
-              <PlusIcon className="icon" />
-              <ArrowDownCircleIcon className="icon" />
+            <div className="collection_desc">
+              <h3>{itm.bannerText}</h3>
+              <div className="flex dateAuthor">
+                <p className="author">{itm.collectionAuthor}</p>-
+                <p className="date">{itm.collectionDate}</p>
+              </div>
             </div>
           </div>
-        ))}
-      </div>
+
+          <div className="collection_blogs">
+            {itm.blogs.map((blog, indx) => (
+              <BlogCard
+                key={indx}
+                title={blog?.title}
+                image={blog?.img}
+                blog_date={blog?.blog_date}
+              />
+            ))}
+          </div>
+        </>
+      ))}
     </div>
   );
 };
