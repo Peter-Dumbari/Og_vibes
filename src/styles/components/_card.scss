@@ -412,16 +412,19 @@
 
 .blog_card {
   background-color: $dark-background-color;
-  padding: 20px;
+  padding: 15px 20px;
   display: flex;
   height: 100%;
-  width: calc(50% - 10px);
+  width: 100%;
   gap: 20px;
   border-bottom: 0.1px solid $dark-white-color;
   cursor: pointer;
 
   .img-cont {
-    width: 90px;
+    width: 40%;
+    max-width: 100px;
+    min-width: 100px;
+    height: 90px;
     position: relative;
 
     .img {
@@ -497,7 +500,6 @@
     padding: 20px;
     background-color: $dark-background-color;
     gap: 20px;
-    border-bottom: 0.5px solid $dark-white-color;
 
     .img-cont {
       width: 90px;
@@ -541,6 +543,12 @@
 
         .icon {
           cursor: pointer;
+          transition: 0.5s;
+
+          &:hover {
+            color: $primary-color;
+            transition: 0.5s;
+          }
         }
       }
     }
@@ -548,8 +556,12 @@
 
   .songs {
     background-color: $dark-background-color;
+
     width: 100%;
-    padding-top: 15px;
+    overflow: hidden;
+    // height: 100%;
+    transition: max-height 0.5s ease; /* Smooth transition */
+    max-height: 0;
 
     .songs_content {
       display: flex;
@@ -580,6 +592,90 @@
         .icon {
           width: 30px;
           cursor: pointer;
+        }
+      }
+    }
+  }
+
+  /* Slide in (expands height to 100%) */
+  .slideInDown {
+    animation: popSongIn 0.5s forwards;
+    overflow: hidden;
+  }
+
+  /* Slide out (collapses height to 0) */
+  .slideOutDown {
+    animation: popSongOut 0.5s forwards;
+    overflow: hidden;
+  }
+}
+
+.collection_cont {
+  width: 100%;
+  background-color: $dark-background-color;
+
+  .banner_sec {
+    padding: 20px;
+    position: relative;
+
+    .img_cont {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+
+      img {
+        width: 100%;
+        object-fit: cover;
+        height: 100%;
+        transition: 0.5s;
+      }
+
+      .overlay {
+        background-color: #0000007c;
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        transition: 0.5s;
+      }
+    }
+
+    .collection_desc {
+      position: absolute;
+      bottom: 10%;
+      padding: 0 10px;
+      z-index: 2;
+
+      h3 {
+        font-weight: bold;
+        font-size: 1.4rem;
+        line-height: 25px;
+        color: $default-text-color;
+      }
+
+      .dateAuthor {
+        .author {
+          font-weight: bold;
+          color: $default-text-color;
+        }
+
+        .date {
+          font-weight: 500;
+        }
+      }
+    }
+
+    &:hover {
+      .img_cont {
+        img {
+          transform: scale(1.1) rotate(5deg);
+        }
+
+        .overlay {
+          background-color: $transparent_primary-color;
+          transition: 0.5s;
         }
       }
     }

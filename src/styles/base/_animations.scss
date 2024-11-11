@@ -105,3 +105,27 @@
     transform: scale(1);
   }
 }
+
+/* Keyframes for sliding in and out */
+@keyframes popSongIn {
+  from {
+    max-height: 0;
+    opacity: 1;
+  }
+  to {
+    height: 100%;
+    max-height: 900px; /* Adjust to a large enough value */
+    opacity: 1;
+  }
+}
+
+@keyframes popSongOut {
+  from {
+    max-height: 500px; /* Match the slideIn height */
+    opacity: 1;
+  }
+  to {
+    max-height: 0;
+    opacity: 1;
+  }
+}

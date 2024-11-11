@@ -88,6 +88,10 @@
     display: flex;
     flex-wrap: wrap;
     column-gap: 20px;
+
+    .blogs_inner {
+      width: calc(50% - 10px);
+    }
   }
 }
 
@@ -96,6 +100,30 @@
 
   .top-music-datas {
     margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+.media_blogs {
+  margin-top: 30px;
+
+  .blogs_cont {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .media_blog_cont {
+    justify-content: space-between;
+
+    .musics_blogs {
+      width: 50%;
+    }
+
+    .live_concert_blogs {
+      width: 50%;
+    }
   }
 }
 

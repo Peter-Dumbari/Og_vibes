@@ -4,11 +4,45 @@ import {
   Carousel,
   EventCarousel,
 } from "../components/ui/carousel";
-import { BlogCard, PopTopCard, UpdateCard } from "../components/ui/card";
+import {
+  BlogCard,
+  CollectionCard,
+  PopTopCard,
+  UpdateCard,
+} from "../components/ui/card";
 import { MusicalNoteIcon } from "@heroicons/react/16/solid";
 import { ListBulletIcon } from "@heroicons/react/24/outline";
 
 const home = () => {
+  const popCards = [
+    {
+      album: "Twice As Tall",
+      artist: "BurnaBoy",
+      tops: 10,
+      cover:
+        "https://img.freepik.com/premium-photo/outdoors-person-playing-decorated-drum-picture_853163-38235.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+      posted: "20/02/23",
+      songs: ["All my life", "Lonely at the top", "On God"],
+    },
+    {
+      album: "Twice As Tall",
+      artist: "BurnaBoy",
+      tops: 20,
+      cover:
+        "https://img.freepik.com/premium-photo/outdoors-person-playing-decorated-drum-picture_853163-38235.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+      posted: "20/02/23",
+      songs: ["All my life", "Lonely at the top", "On God (remix)"],
+    },
+    {
+      album: "Twice As Tall",
+      artist: "BurnaBoy",
+      tops: 30,
+      cover:
+        "https://img.freepik.com/premium-photo/outdoors-person-playing-decorated-drum-picture_853163-38235.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+      posted: "20/02/23",
+      songs: ["All my life", "Lonely at the top", "On God"],
+    },
+  ];
   return (
     <div className="home_cont w-full">
       <Carousel
@@ -213,21 +247,28 @@ const home = () => {
               </div>
 
               <div className="blogs">
-                <BlogCard
-                  title="The Adventure of Kuru"
-                  blog_date="31/12/2024"
-                  image="https://img.freepik.com/free-vector/flat-africa-day-celebration-illustration_23-2149371069.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid"
-                />
-                <BlogCard
-                  title="The orign of Man"
-                  blog_date="12/12/2021"
-                  image="https://img.freepik.com/free-vector/flat-africa-day-celebration-illustration_23-2149371069.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid"
-                />
-                <BlogCard
-                  title="The orign of Man"
-                  blog_date="12/12/2021"
-                  image="https://img.freepik.com/free-vector/flat-africa-day-celebration-illustration_23-2149371069.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid"
-                />
+                <div className="blogs_inner">
+                  <BlogCard
+                    title="The Adventure of Kuru"
+                    blog_date="31/12/2024"
+                    image="https://img.freepik.com/free-vector/flat-africa-day-celebration-illustration_23-2149371069.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid"
+                  />
+                </div>
+
+                <div className="blogs_inner">
+                  <BlogCard
+                    title="The orign of Man"
+                    blog_date="12/12/2021"
+                    image="https://img.freepik.com/free-vector/flat-africa-day-celebration-illustration_23-2149371069.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid"
+                  />
+                </div>
+                <div className="blogs_inner">
+                  <BlogCard
+                    title="The orign of Man"
+                    blog_date="12/12/2021"
+                    image="https://img.freepik.com/free-vector/flat-africa-day-celebration-illustration_23-2149371069.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid"
+                  />
+                </div>
               </div>
             </section>
             <section className="top-musics">
@@ -236,24 +277,89 @@ const home = () => {
               </div>
 
               <div className="top-music-datas">
-                <PopTopCard
-                  album="Twice As Tall"
-                  artist="BurnaBoy"
-                  cover="https://img.freepik.com/premium-photo/outdoors-person-playing-decorated-drum-picture_853163-38235.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid"
-                  posted="12/12/2021"
-                  songs={[
-                    "Song 1",
-                    "Song 2",
-                    "Song 3",
-                    "Song 4",
-                    "Song 5",
-                    "Song 6",
-                    "Song 7",
-                    "Song 8",
-                    "Song 9",
-                    "Song 10",
-                  ]}
-                />
+                {popCards.map((item, index) => (
+                  <PopTopCard
+                    key={index}
+                    item={[
+                      {
+                        album: item.album,
+                        artist: item.artist,
+                        tops: item.tops,
+                        cover: item.cover,
+                        posted: item.posted,
+                        songs: item.songs,
+                        index,
+                      },
+                    ]}
+                  />
+                ))}
+              </div>
+            </section>
+
+            <section className="media_blogs">
+              <div className="flex media_blog_cont">
+                <div className="musics_blogs">
+                  <div className="head">
+                    <h3 className="title">Music Soul</h3>
+                  </div>
+
+                  <div className="blogs_cont">
+                    <CollectionCard
+                      item={[
+                        {
+                          bannerText: "All Red Carpet Look 2018 Music Award",
+                          bannerImg:
+                            "https://img.freepik.com/premium-photo/outdoors-person-playing-decorated-drum-picture_853163-38235.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+                          collectionDate: "11 November, 2024",
+                          collectionAuthor: "Luiz James",
+                          blogs: [
+                            {
+                              title: "Dolly Parton duets with Wizkid",
+                              img: "https://img.freepik.com/free-photo/close-up-traditional-dancers-nigeria_23-2149029512.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+                              blog_date: "11/11/2025",
+                            },
+                            {
+                              title: "Dolly Parton duets with Wizkid",
+                              img: "https://img.freepik.com/free-photo/close-up-traditional-dancers-nigeria_23-2149029512.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+                              blog_date: "11/11/2025",
+                            },
+                          ],
+                        },
+                      ]}
+                    />
+                  </div>
+                </div>
+                <div className="live_concert_blogs">
+                  <div className="head">
+                    <h3 className="title">Live Concert</h3>
+                  </div>
+
+                  <div className="blogs_cont">
+                    <CollectionCard
+                      item={[
+                        {
+                          bannerText: "All Red Carpet Look 2018 Music Award",
+                          bannerImg:
+                            "https://img.freepik.com/premium-photo/outdoors-person-playing-decorated-drum-picture_853163-38235.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+                          collectionDate: "11 November, 2024",
+                          collectionAuthor: "Luiz James",
+                          blogs: [
+                            {
+                              title: "Dolly Parton duets with Wizkid",
+                              img: "https://img.freepik.com/free-photo/close-up-traditional-dancers-nigeria_23-2149029512.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+                              blog_date: "11/11/2025",
+                            },
+                            {
+                              title: "Dolly Parton duets with Wizkid",
+                              img: "https://img.freepik.com/free-photo/close-up-traditional-dancers-nigeria_23-2149029512.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+                              blog_date: "11/11/2025",
+                            },
+                          ],
+                        },
+                      ]}
+                    />
+                  </div>
+                </div>
               </div>
             </section>
           </div>
