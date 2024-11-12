@@ -8,6 +8,7 @@ import {
   BlogCard,
   CollectionCard,
   MusicListCard,
+  PlaylistCard,
   PopTopCard,
   UpdateCard,
 } from "../components/ui/card";
@@ -87,6 +88,51 @@ const home = () => {
         "https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
       artist: "Davido ft Wizkid",
       song: "Crazy Love",
+    },
+  ];
+
+  const recentlyPlayed = [
+    {
+      album:
+        "https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+      artist: "Davido ft Wizkid",
+      song: "FEM (remix)",
+      playing: true,
+    },
+    {
+      album:
+        "https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+      artist: "Davido ft Wizkid",
+      song: "A Better Time",
+      playing: false,
+    },
+    {
+      album:
+        "https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+      artist: "Davido ft Wizkid",
+      song: "FEM",
+      playing: false,
+    },
+    {
+      album:
+        "https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+      artist: "Davido ft Wizkid",
+      song: "FEM",
+      playing: false,
+    },
+    {
+      album:
+        "https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+      artist: "Davido ft Wizkid",
+      song: "FEM",
+      playing: false,
+    },
+    {
+      album:
+        "https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+      artist: "Davido ft Wizkid",
+      song: "Crazy Love",
+      playing: false,
     },
   ];
 
@@ -425,6 +471,12 @@ const home = () => {
 
             <div className="head bg-tabsBackground">
               <div className="title">Top Playlist</div>
+            </div>
+
+            <div className="playlist">
+              {recentlyPlayed.map((item, index) => (
+                <PlaylistCard item={[item]} key={index} />
+              ))}
             </div>
           </section>
         </div>

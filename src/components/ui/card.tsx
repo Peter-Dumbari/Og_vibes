@@ -1,9 +1,14 @@
-import { MusicalNoteIcon, PlusIcon } from "@heroicons/react/16/solid";
+import {
+  ArrowDownIcon,
+  MusicalNoteIcon,
+  PlayPauseIcon,
+  PlusIcon,
+} from "@heroicons/react/16/solid";
 import {
   ArrowDownCircleIcon,
   PlayCircleIcon,
 } from "@heroicons/react/24/outline";
-import { HeartIcon, PlayIcon } from "@heroicons/react/24/solid";
+import { HeartIcon, PauseIcon, PlayIcon } from "@heroicons/react/24/solid";
 
 import React from "react";
 import { BsThreeDotsVertical } from "react-icons/bs";
@@ -67,6 +72,15 @@ interface MusicListProps {
     album: string;
     artist: string;
     song: string;
+  }[];
+}
+
+interface PlaylistCardProps {
+  item: {
+    album: string;
+    artist: string;
+    song: string;
+    playing: boolean;
     sn: number;
   }[];
 }
@@ -312,6 +326,38 @@ export const MusicListCard: React.FC<MusicListProps> = ({ item }) => {
           <div className="text_sec">
             <h3>{itm.song}</h3>
             <p>{itm.artist}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export const PlaylistCard: React.FC<PlaylistCardProps> = ({ item }) => {
+  return (
+    <div className="playlist_card_cont">
+      {item.map((itm) => (
+        <div className={`inner ${itm.playing ? "bg-primary" : null}`}>
+          <div className="content">
+            <div className="img_cont">
+              <img src={itm.album} alt={itm.artist} />
+              <div className="overlay">
+                {itm.playing ? (
+                  <PauseIcon className="icon" />
+                ) : (
+                  <PlayIcon className="icon" />
+                )}
+              </div>
+            </div>
+            <div className="text_sec">
+              <h3>{itm.song}</h3>
+              <p>{itm.artist}</p>
+            </div>
+          </div>
+
+          <div className="actions">
+            <ArrowDownIcon className="icon" />
+            <PlusIcon className="icon rotate-45" />
           </div>
         </div>
       ))}
