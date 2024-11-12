@@ -592,6 +592,12 @@
         .icon {
           width: 30px;
           cursor: pointer;
+          transition: 0.5s;
+
+          &:hover {
+            color: $primary-color;
+            transition: 0.5s;
+          }
         }
       }
     }
