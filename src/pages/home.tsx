@@ -7,6 +7,7 @@ import {
 import {
   BlogCard,
   CollectionCard,
+  MusicListCard,
   PopTopCard,
   UpdateCard,
 } from "../components/ui/card";
@@ -43,6 +44,52 @@ const home = () => {
       songs: ["All my life", "Lonely at the top", "On God"],
     },
   ];
+
+  const topListed = [
+    {
+      sn: 1,
+      album:
+        "https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+      artist: "Davido ft Wizkid",
+      song: "FEM (remix)",
+    },
+    {
+      sn: 2,
+      album:
+        "https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+      artist: "Davido ft Wizkid",
+      song: "A Better Time",
+    },
+    {
+      sn: 3,
+      album:
+        "https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+      artist: "Davido ft Wizkid",
+      song: "FEM",
+    },
+    {
+      sn: 3,
+      album:
+        "https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+      artist: "Davido ft Wizkid",
+      song: "FEM",
+    },
+    {
+      sn: 3,
+      album:
+        "https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+      artist: "Davido ft Wizkid",
+      song: "FEM",
+    },
+    {
+      sn: 4,
+      album:
+        "https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+      artist: "Davido ft Wizkid",
+      song: "Crazy Love",
+    },
+  ];
+
   return (
     <div className="home_cont w-full">
       <Carousel
@@ -364,11 +411,22 @@ const home = () => {
             </section>
           </div>
 
-          <div className="col artist">
+          <section className="col artist">
             <div className="head bg-tabsBackground">
               <h4 className="title">Top 10 Artists </h4>
             </div>
-          </div>
+
+            <div className="music_list">
+              {topListed.map((item, index) => (
+                <MusicListCard item={[item]} key={index} />
+              ))}
+            </div>
+            <div className="divider"></div>
+
+            <div className="head bg-tabsBackground">
+              <div className="title">Top Playlist</div>
+            </div>
+          </section>
         </div>
       </section>
     </div>

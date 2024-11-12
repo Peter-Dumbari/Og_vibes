@@ -62,6 +62,15 @@ interface CollectionCardProps {
   }[];
 }
 
+interface MusicListProps {
+  item: {
+    album: string;
+    artist: string;
+    song: string;
+    sn: number;
+  }[];
+}
+
 export const UpdateCard: React.FC<CardProps> = ({
   title,
   description,
@@ -278,13 +287,33 @@ export const CollectionCard: React.FC<CollectionCardProps> = ({ item }) => {
             {itm.blogs.map((blog, indx) => (
               <BlogCard
                 key={indx}
-                title={blog?.title}
-                image={blog?.img}
-                blog_date={blog?.blog_date}
+                title={blog.title}
+                image={blog.img}
+                blog_date={blog.blog_date}
               />
             ))}
           </div>
         </>
+      ))}
+    </div>
+  );
+};
+
+export const MusicListCard: React.FC<MusicListProps> = ({ item }) => {
+  return (
+    <div className="music_list_card_cont">
+      {item.map((itm) => (
+        <div className="inner">
+          <div className="index">{itm.sn}</div>
+          <div className="img_cont">
+            <img src={itm.album} alt={itm.artist} />
+            <div className="overlay"></div>
+          </div>
+          <div className="text_sec">
+            <h3>{itm.song}</h3>
+            <p>{itm.artist}</p>
+          </div>
+        </div>
       ))}
     </div>
   );
