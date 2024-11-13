@@ -14,6 +14,8 @@ import {
 } from "../components/ui/card";
 import { MusicalNoteIcon } from "@heroicons/react/16/solid";
 import { ListBulletIcon } from "@heroicons/react/24/outline";
+import { FaSliders } from "react-icons/fa6";
+import Player from "../components/ui/player";
 
 const home = () => {
   const popCards = [
@@ -194,7 +196,7 @@ const home = () => {
         <UpdateCard
           title="Naija Current Jams"
           description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam temporibus aliquam, deleniti inventore ducimus placeat perspiciatis officiis suscipit quidem assumenda?"
-          icon={<MusicalNoteIcon width="100" />}
+          icon={<FaSliders size={70} width="100" className="rotate-90" />}
           type="Traditional Music"
           image="https://img.freepik.com/premium-photo/african-drummer-plays-djembe-traditional-musical-instrument_152520-1228.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid"
         />
@@ -477,6 +479,12 @@ const home = () => {
               {recentlyPlayed.map((item, index) => (
                 <PlaylistCard item={[item]} key={index} />
               ))}
+            </div>
+
+            <div className="music_player">
+              <div className="music_player_inner">
+                <Player src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" />
+              </div>
             </div>
           </section>
         </div>

@@ -145,8 +145,24 @@
 
 .playlist {
   display: flex;
+  background-color: $dark-background-color;
+
   flex-direction: column;
   margin-top: 20px;
+  padding-bottom: 12px;
+}
+.music_player {
+  padding: 20px;
+  background-color: $dark-background-color;
+
+  border-top: 1px solid $dark-white-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .music_player_inner {
+    width: 80%;
+  }
 }
 
 .divider {
