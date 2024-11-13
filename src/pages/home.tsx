@@ -7,11 +7,15 @@ import {
 import {
   BlogCard,
   CollectionCard,
+  MusicListCard,
+  PlaylistCard,
   PopTopCard,
   UpdateCard,
 } from "../components/ui/card";
 import { MusicalNoteIcon } from "@heroicons/react/16/solid";
 import { ListBulletIcon } from "@heroicons/react/24/outline";
+import { FaSliders } from "react-icons/fa6";
+import Player from "../components/ui/player";
 
 const home = () => {
   const popCards = [
@@ -43,6 +47,97 @@ const home = () => {
       songs: ["All my life", "Lonely at the top", "On God"],
     },
   ];
+
+  const topListed = [
+    {
+      sn: 1,
+      album:
+        "https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+      artist: "Davido ft Wizkid",
+      song: "FEM (remix)",
+    },
+    {
+      sn: 2,
+      album:
+        "https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+      artist: "Davido ft Wizkid",
+      song: "A Better Time",
+    },
+    {
+      sn: 3,
+      album:
+        "https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+      artist: "Davido ft Wizkid",
+      song: "FEM",
+    },
+    {
+      sn: 3,
+      album:
+        "https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+      artist: "Davido ft Wizkid",
+      song: "FEM",
+    },
+    {
+      sn: 3,
+      album:
+        "https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+      artist: "Davido ft Wizkid",
+      song: "FEM",
+    },
+    {
+      sn: 4,
+      album:
+        "https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+      artist: "Davido ft Wizkid",
+      song: "Crazy Love",
+    },
+  ];
+
+  const recentlyPlayed = [
+    {
+      album:
+        "https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+      artist: "Davido ft Wizkid",
+      song: "FEM (remix)",
+      playing: true,
+    },
+    {
+      album:
+        "https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+      artist: "Davido ft Wizkid",
+      song: "A Better Time",
+      playing: false,
+    },
+    {
+      album:
+        "https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+      artist: "Davido ft Wizkid",
+      song: "FEM",
+      playing: false,
+    },
+    {
+      album:
+        "https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+      artist: "Davido ft Wizkid",
+      song: "FEM",
+      playing: false,
+    },
+    {
+      album:
+        "https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+      artist: "Davido ft Wizkid",
+      song: "FEM",
+      playing: false,
+    },
+    {
+      album:
+        "https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+      artist: "Davido ft Wizkid",
+      song: "Crazy Love",
+      playing: false,
+    },
+  ];
+
   return (
     <div className="home_cont w-full">
       <Carousel
@@ -101,7 +196,7 @@ const home = () => {
         <UpdateCard
           title="Naija Current Jams"
           description="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam temporibus aliquam, deleniti inventore ducimus placeat perspiciatis officiis suscipit quidem assumenda?"
-          icon={<MusicalNoteIcon width="100" />}
+          icon={<FaSliders size={70} width="100" className="rotate-90" />}
           type="Traditional Music"
           image="https://img.freepik.com/premium-photo/african-drummer-plays-djembe-traditional-musical-instrument_152520-1228.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid"
         />
@@ -364,11 +459,34 @@ const home = () => {
             </section>
           </div>
 
-          <div className="col artist">
+          <section className="col artist">
             <div className="head bg-tabsBackground">
               <h4 className="title">Top 10 Artists </h4>
             </div>
-          </div>
+
+            <div className="music_list">
+              {topListed.map((item, index) => (
+                <MusicListCard item={[item]} key={index} />
+              ))}
+            </div>
+            <div className="divider"></div>
+
+            <div className="head bg-tabsBackground">
+              <div className="title">Top Playlist</div>
+            </div>
+
+            <div className="playlist">
+              {recentlyPlayed.map((item, index) => (
+                <PlaylistCard item={[item]} key={index} />
+              ))}
+            </div>
+
+            <div className="music_player">
+              <div className="music_player_inner">
+                <Player src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" />
+              </div>
+            </div>
+          </section>
         </div>
       </section>
     </div>
