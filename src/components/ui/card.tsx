@@ -11,7 +11,7 @@ import {
 import { HeartIcon, PauseIcon, PlayIcon } from "@heroicons/react/24/solid";
 
 import React from "react";
-import { BsThreeDotsVertical } from "react-icons/bs";
+import { BsThreeDotsVertical, BsTwitterX } from "react-icons/bs";
 
 interface CardProps {
   title: string;
@@ -83,6 +83,11 @@ interface PlaylistCardProps {
     playing: boolean;
     sn: number;
   }[];
+}
+
+interface TwitPostProps {
+  post: string;
+  datePosted: string;
 }
 
 export const UpdateCard: React.FC<CardProps> = ({
@@ -361,6 +366,30 @@ export const PlaylistCard: React.FC<PlaylistCardProps> = ({ item }) => {
           </div>
         </div>
       ))}
+    </div>
+  );
+};
+
+export const TwitterPostCard: React.FC<TwitPostProps> = ({
+  post,
+  datePosted,
+}) => {
+  return (
+    <div className="twitcard">
+      <div className="inner">
+        <div className="card_head">
+          <BsTwitterX size={20} className="icon" />
+          <h3>Twitter Feed</h3>
+        </div>
+
+        <div className="body">
+          <p>{post}</p>
+        </div>
+
+        <div className="date">
+          <p>4 Mins ago</p>
+        </div>
+      </div>
     </div>
   );
 };

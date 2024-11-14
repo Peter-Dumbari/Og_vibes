@@ -11,36 +11,12 @@
   padding: 30px 80px;
 
   .flex {
-    gap: 2%;
+    gap: 3%;
     width: 100%;
 
     .album {
       width: 68%;
       // min-width: 100%;
-
-      .head {
-        padding: 17px;
-        background-color: $tabs-background-color;
-
-        .title {
-          font-size: 1.5rem;
-          position: relative;
-          width: 100%;
-          font-family: "Exo", sans-serif;
-
-          &::after {
-            content: "";
-            position: absolute;
-            width: 40%;
-            height: 3px;
-            background-color: $default-text-color;
-            margin-top: 5px;
-            right: 18%;
-            align-items: center;
-            top: 50%;
-          }
-        }
-      }
     }
     .artist {
       width: 32%;
@@ -94,7 +70,7 @@
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1200px) {
     .blogs {
       .blogs_inner {
         width: 100%;
@@ -115,7 +91,8 @@
 }
 
 .media_blogs {
-  margin-top: 30px;
+  padding: 30px 80px;
+  width: 100%;
 
   .blogs_cont {
     width: 100%;
@@ -125,13 +102,21 @@
   .media_blog_cont {
     justify-content: space-between;
     gap: 30px;
+    width: 100%;
 
     .musics_blogs {
-      width: 50%;
+      width: 100%;
     }
 
     .live_concert_blogs {
       width: 50%;
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    padding: 10%;
+    .media_blog_cont {
+      flex-direction: column;
     }
   }
 }
@@ -165,11 +150,78 @@
   }
 }
 
+.connect {
+  margin-top: 20px;
+  width: 100%;
+
+  .link {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 20px;
+
+    .icon {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid $dark-white-color;
+      transition: 0.5s;
+
+      a {
+        color: $default-text-color;
+      }
+
+      &:hover {
+        background-color: $primary-color;
+        transition: 0.5s;
+        a {
+          color: $default-text-color;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    justify-content: center;
+
+    .link {
+      padding: 0 19%;
+      gap: 5px;
+    }
+  }
+}
+
 .divider {
   width: 100%;
   height: 1px;
   background-color: $default-text-color;
   margin: 30px 0;
+}
+
+.head {
+  padding: 17px;
+  background-color: $tabs-background-color;
+
+  .title {
+    font-size: 1.5rem;
+    position: relative;
+    width: 100%;
+    font-family: "Exo", sans-serif;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 40%;
+      height: 3px;
+      background-color: $default-text-color;
+      margin-top: 5px;
+      right: 13%;
+      align-items: center;
+      top: 50%;
+    }
+  }
 }
 @media screen and (max-width: 768px) {
   .updates {
