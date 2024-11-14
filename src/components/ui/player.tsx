@@ -1,4 +1,12 @@
+import {
+  ChevronDoubleLeftIcon,
+  ChevronDoubleRightIcon,
+  PauseIcon,
+  PlayIcon,
+} from "@heroicons/react/16/solid";
 import React from "react";
+import { BiVolume, BiVolumeMute } from "react-icons/bi";
+import { FaSliders } from "react-icons/fa6";
 
 interface PlayerProps {
   src: string;
@@ -67,7 +75,6 @@ export const Player: React.FC<PlayerProps> = ({ src }) => {
   };
 
   const nextTrack = () => {
-    // Next track logic
     setCurrentTrackNextIndex((prevIndex) => (prevIndex + 1) % demoList.length);
     setCurrentTime(0);
   };
@@ -81,12 +88,40 @@ export const Player: React.FC<PlayerProps> = ({ src }) => {
 
   return (
     <div className="player_cont">
-      <div className="title">
+      <div className="music_name">
         <h3>Davido</h3>
         <span>-</span>
         <p>FEM</p>
       </div>
       <audio ref={audioRef} src={src}></audio>
+      <div className="music_inner">
+        <div className="time">
+          <span>{formatTime(currentTime)}</span>/
+          <span>{formatTime(duration)}</span>
+        </div>
+        <div className="controls">
+          <ChevronDoubleLeftIcon onClick={prevTrack} className="icon" />
+          {isPlaying ? (
+            <PauseIcon className="icon" onClick={togglePlayPause} />
+          ) : (
+            <PlayIcon className="icon" onClick={togglePlayPause} />
+          )}
+          <ChevronDoubleRightIcon onClick={nextTrack} className="icon" />
+        </div>
+
+        <div className="mute_shuffle">
+          {isMuted ? (
+            <BiVolumeMute
+              size={25}
+              onClick={toggleMute}
+              className="icon text-primary"
+            />
+          ) : (
+            <BiVolume size={25} onClick={toggleMute} className="icon" />
+          )}
+          <FaSliders size={25} className="icon rotate-90" />
+        </div>
+      </div>
     </div>
   );
 };
