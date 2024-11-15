@@ -10,12 +10,21 @@ import {
   MusicListCard,
   PlaylistCard,
   PopTopCard,
+  TwitterPostCard,
   UpdateCard,
 } from "../components/ui/card";
 import { MusicalNoteIcon } from "@heroicons/react/16/solid";
 import { ListBulletIcon } from "@heroicons/react/24/outline";
 import { FaSliders } from "react-icons/fa6";
 import Player from "../components/ui/player";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaSnapchat,
+  FaTiktok,
+  FaYoutube,
+} from "react-icons/fa";
+import { BsTwitterX } from "react-icons/bs";
 
 const home = () => {
   const popCards = [
@@ -138,6 +147,39 @@ const home = () => {
     },
   ];
 
+  const socials = [
+    {
+      icon: <FaFacebookF size={17} />,
+      link: "#",
+      color: "bg-blue-500",
+    },
+    {
+      icon: <BsTwitterX size={17} />,
+      link: "#",
+      color: "bg-black",
+    },
+    {
+      icon: <FaInstagram size={17} />,
+      link: "#",
+      color: "bg-pink-500",
+    },
+
+    {
+      icon: <FaSnapchat size={17} />,
+      link: "#",
+      color: "bg-yellow-500",
+    },
+    {
+      icon: <FaTiktok size={17} />,
+      link: "#",
+      color: "bg-black",
+    },
+    {
+      icon: <FaYoutube size={17} />,
+      link: "#",
+      color: "bg-red-500",
+    },
+  ];
   return (
     <div className="home_cont w-full">
       <Carousel
@@ -390,103 +432,154 @@ const home = () => {
                 ))}
               </div>
             </section>
-
-            <section className="media_blogs">
-              <div className="flex media_blog_cont">
-                <div className="musics_blogs">
-                  <div className="head">
-                    <h3 className="title">Music Soul</h3>
-                  </div>
-
-                  <div className="blogs_cont">
-                    <CollectionCard
-                      item={[
-                        {
-                          bannerText: "All Red Carpet Look 2018 Music Award",
-                          bannerImg:
-                            "https://img.freepik.com/premium-photo/outdoors-person-playing-decorated-drum-picture_853163-38235.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
-                          collectionDate: "11 November, 2024",
-                          collectionAuthor: "Luiz James",
-                          blogs: [
-                            {
-                              title: "Dolly Parton duets with Wizkid",
-                              img: "https://img.freepik.com/free-photo/close-up-traditional-dancers-nigeria_23-2149029512.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
-                              blog_date: "11/11/2025",
-                            },
-                            {
-                              title: "Dolly Parton duets with Wizkid",
-                              img: "https://img.freepik.com/free-photo/close-up-traditional-dancers-nigeria_23-2149029512.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
-                              blog_date: "11/11/2025",
-                            },
-                          ],
-                        },
-                      ]}
-                    />
-                  </div>
-                </div>
-                <div className="live_concert_blogs">
-                  <div className="head">
-                    <h3 className="title">Live Concert</h3>
-                  </div>
-
-                  <div className="blogs_cont">
-                    <CollectionCard
-                      item={[
-                        {
-                          bannerText: "All Red Carpet Look 2018 Music Award",
-                          bannerImg:
-                            "https://img.freepik.com/premium-photo/outdoors-person-playing-decorated-drum-picture_853163-38235.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
-                          collectionDate: "11 November, 2024",
-                          collectionAuthor: "Luiz James",
-                          blogs: [
-                            {
-                              title: "Dolly Parton duets with Wizkid",
-                              img: "https://img.freepik.com/free-photo/close-up-traditional-dancers-nigeria_23-2149029512.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
-                              blog_date: "11/11/2025",
-                            },
-                            {
-                              title: "Dolly Parton duets with Wizkid",
-                              img: "https://img.freepik.com/free-photo/close-up-traditional-dancers-nigeria_23-2149029512.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
-                              blog_date: "11/11/2025",
-                            },
-                          ],
-                        },
-                      ]}
-                    />
-                  </div>
-                </div>
-              </div>
-            </section>
           </div>
 
-          <section className="col artist">
+          <div className="col artist">
             <div className="head bg-tabsBackground">
               <h4 className="title">Top 10 Artists </h4>
             </div>
-
             <div className="music_list">
               {topListed.map((item, index) => (
                 <MusicListCard item={[item]} key={index} />
               ))}
             </div>
             <div className="divider"></div>
-
             <div className="head bg-tabsBackground">
               <div className="title">Top Playlist</div>
             </div>
-
             <div className="playlist">
               {recentlyPlayed.map((item, index) => (
                 <PlaylistCard item={[item]} key={index} />
               ))}
             </div>
-
             <div className="music_player">
               <div className="music_player_inner">
                 <Player src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" />
               </div>
             </div>
-          </section>
+
+            <section className="connect">
+              <div className="head bg-tabsBackground">
+                <h4 className="title">Get Connected</h4>
+              </div>
+
+              <div className="link">
+                {socials.map((social, index) => (
+                  <div key={index} className={`icon ${social.color}`}>
+                    <a href={social.link}>{social.icon}</a>
+                  </div>
+                ))}
+              </div>
+
+              <div className="divider"></div>
+
+              <div className="section_twit">
+                <TwitterPostCard
+                  post="                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus minima, omnis cumque deserunt ipsa fugit similique cupiditate quidem? Consequatur debitis suscipit impedit velit reiciendis tenetur.
+"
+                  datePosted="2024"
+                />
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <section className="media_blogs">
+        <div className="flex media_blog_cont">
+          <div className="musics_blogs">
+            <div className="head">
+              <h3 className="title">Music Soul</h3>
+            </div>
+
+            <div className="blogs_cont">
+              <CollectionCard
+                item={[
+                  {
+                    bannerText: "All Red Carpet Look 2018 Music Award",
+                    bannerImg:
+                      "https://img.freepik.com/premium-photo/outdoors-person-playing-decorated-drum-picture_853163-38235.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+                    collectionDate: "11 November, 2024",
+                    collectionAuthor: "Luiz James",
+                    blogs: [
+                      {
+                        title: "Dolly Parton duets with Wizkid",
+                        img: "https://img.freepik.com/free-photo/close-up-traditional-dancers-nigeria_23-2149029512.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+                        blog_date: "11/11/2025",
+                      },
+                      {
+                        title: "Dolly Parton duets with Wizkid",
+                        img: "https://img.freepik.com/free-photo/close-up-traditional-dancers-nigeria_23-2149029512.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+                        blog_date: "11/11/2025",
+                      },
+                    ],
+                  },
+                ]}
+              />
+            </div>
+          </div>
+          <div className="musics_blogs">
+            <div className="head">
+              <h3 className="title">Live Concert</h3>
+            </div>
+
+            <div className="blogs_cont">
+              <CollectionCard
+                item={[
+                  {
+                    bannerText: "All Red Carpet Look 2018 Music Award",
+                    bannerImg:
+                      "https://img.freepik.com/premium-photo/outdoors-person-playing-decorated-drum-picture_853163-38235.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+                    collectionDate: "11 November, 2024",
+                    collectionAuthor: "Luiz James",
+                    blogs: [
+                      {
+                        title: "Dolly Parton duets with Wizkid",
+                        img: "https://img.freepik.com/free-photo/close-up-traditional-dancers-nigeria_23-2149029512.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+                        blog_date: "11/11/2025",
+                      },
+                      {
+                        title: "Dolly Parton duets with Wizkid",
+                        img: "https://img.freepik.com/free-photo/close-up-traditional-dancers-nigeria_23-2149029512.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+                        blog_date: "11/11/2025",
+                      },
+                    ],
+                  },
+                ]}
+              />
+            </div>
+          </div>
+          <div className="musics_blogs">
+            <div className="head">
+              <h3 className="title">New Albums</h3>
+            </div>
+
+            <div className="blogs_cont">
+              <CollectionCard
+                item={[
+                  {
+                    bannerText: "All Red Carpet Look 2018 Music Award",
+                    bannerImg:
+                      "https://img.freepik.com/premium-photo/outdoors-person-playing-decorated-drum-picture_853163-38235.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+                    collectionDate: "11 November, 2024",
+                    collectionAuthor: "Luiz James",
+                    blogs: [
+                      {
+                        title: "Dolly Parton duets with Wizkid",
+                        img: "https://img.freepik.com/free-photo/close-up-traditional-dancers-nigeria_23-2149029512.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+                        blog_date: "11/11/2025",
+                      },
+                      {
+                        title: "Dolly Parton duets with Wizkid",
+                        img: "https://img.freepik.com/free-photo/close-up-traditional-dancers-nigeria_23-2149029512.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+                        blog_date: "11/11/2025",
+                      },
+                    ],
+                  },
+                ]}
+              />
+            </div>
+          </div>
         </div>
       </section>
     </div>
