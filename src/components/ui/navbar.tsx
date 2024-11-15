@@ -17,6 +17,9 @@ import {
 } from "react-icons/fa";
 import Wrapper from "./wrapper";
 import { NavLink } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { openModal } from "../../redux/features/modal/modalSlice";
+import Validation from "./validation";
 
 export default function Navbar() {
   const socials = [
@@ -157,6 +160,8 @@ export default function Navbar() {
     setMobileSubTabIndex(null);
   };
 
+  const dispatch = useDispatch();
+
   return (
     <div className="w-[100%]">
       <section className="notice w-full">
@@ -191,7 +196,17 @@ export default function Navbar() {
         <div className="account-box">
           <div className="flex gap-5 items-center">
             <MusicalNoteIcon className="h-8 w-8 text-defaultText cursor-pointer" />
-            <UserCircleIcon className="h-8 w-8 text-defaultText cursor-pointer" />
+            <UserCircleIcon
+              onClick={() =>
+                dispatch(
+                  openModal({
+                    title: "Modal Title",
+                    content: <Validation />,
+                  })
+                )
+              }
+              className="h-8 w-8 text-defaultText cursor-pointer"
+            />
           </div>
 
           <Bars3Icon
