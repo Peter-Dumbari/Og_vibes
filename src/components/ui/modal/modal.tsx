@@ -10,8 +10,10 @@ interface ModalProps {
 const Modal: React.FC<ModalProps> = ({ children, onClose }) => {
   const { isOpen } = useSelector((state: RootState) => state.modal);
 
+  if (!isOpen) return null;
+
   return (
-    <div className={`modal_cont ${!isOpen && ""}`}>
+    <div className={"modal_cont"}>
       <div className={`modal_datas ${!isOpen ? "slideInDown" : "slideOutUp"}`}>
         <div className="modal_head">
           <div className="icon_cont">
