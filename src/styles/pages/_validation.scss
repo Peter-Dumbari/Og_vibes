@@ -1,0 +1,42 @@
+.validation {
+  display: flex;
+  width: 100%;
+  position: relative;
+
+  .register {
+    width: 50%;
+    background-color: $dark-background-color;
+
+    height: 100%;
+    min-height: 700px;
+    padding: 10px;
+  }
+
+  .login {
+    width: 50%;
+    height: 100%;
+    min-height: 700px;
+    background-color: $tabs-background-color;
+
+    padding: 10px;
+  }
+
+  .or_cont {
+    position: absolute;
+    bottom: 60%;
+    left: 47%;
+    background-color: $default-text-color;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border-radius: 50%;
+
+    p {
+      color: $tabs-background-color;
+      font-weight: bold;
+    }
+  }
+}
