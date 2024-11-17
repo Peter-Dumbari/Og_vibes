@@ -8,7 +8,7 @@ const ModalManager: React.FC = () => {
   const dispatch = useDispatch();
   const { isOpen, children } = useSelector((state: RootState) => state.modal);
 
-  if (!isOpen) return null;
+  // if (!isOpen) return;
 
   return <Modal onClose={() => dispatch(closeModal())}>{children}</Modal>;
 };
