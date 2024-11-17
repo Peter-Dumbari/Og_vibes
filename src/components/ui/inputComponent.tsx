@@ -32,7 +32,7 @@ const InputFieldComponent: React.FC<InputProps> = ({
         name={name}
         id={id}
       />
-      <span>{error}</span>
+      <span className="error">{error}</span>
     </div>
   );
 };
