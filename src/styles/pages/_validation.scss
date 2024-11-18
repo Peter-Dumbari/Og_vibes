@@ -162,4 +162,20 @@
       font-weight: bold;
     }
   }
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    height: 100%;
+
+    .login,
+    .register {
+      width: 100%;
+      padding: 60px 25px;
+    }
+
+    .or_cont {
+      bottom: 47%;
+      left: 45%;
+    }
+  }
 }

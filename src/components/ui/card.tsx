@@ -90,6 +90,22 @@ interface TwitPostProps {
   datePosted: string;
 }
 
+interface ArtistCardProps {
+  artist: {
+    artist: string;
+    artistImg: string;
+    location: string;
+    genres: string;
+    bio: string;
+    contacts: {
+      linkedIn: string;
+      twitter: string;
+      facebook: string;
+      instagram: string;
+    }[];
+  };
+}
+
 export const UpdateCard: React.FC<CardProps> = ({
   title,
   description,
@@ -390,6 +406,26 @@ export const TwitterPostCard: React.FC<TwitPostProps> = ({
           <p>4 Mins ago</p>
         </div>
       </div>
+    </div>
+  );
+};
+
+export const ArtistCard: React.FC<ArtistCardProps> = ({ artist }) => {
+  return (
+    <div className="artist_card">
+      <div className="img_cont">
+        <img src={artist.artistImg} alt={artist.artist} />
+      </div>
+      <div className="content">
+        <h3>{artist.artist}</h3>
+        <p>{artist.location}</p>
+      </div>
+      <div className="hover_items">
+        <h4>{artist.artist}</h4>
+        <h6>{artist.location}</h6>
+        <p>{artist.bio}</p>
+      </div>
+      <div className="bar_loader"></div>
     </div>
   );
 };

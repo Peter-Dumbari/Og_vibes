@@ -57,7 +57,7 @@ export default function Navbar() {
     },
     {
       page: "Artist",
-      link: "",
+      link: "/artist",
 
       subTabs: [
         {
