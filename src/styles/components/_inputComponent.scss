@@ -26,9 +26,12 @@
     }
   }
 
-  input:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 50px $default-text-color inset; /* Change the color to your own background color */
-    -webkit-text-stroke: 3px;
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0px 1000px $default-text-color inset !important;
+    -webkit-text-fill-color: $dark-background-color !important; /* Set the text color */
   }
 
   .error {
