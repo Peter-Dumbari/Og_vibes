@@ -97,12 +97,7 @@ interface ArtistCardProps {
     location: string;
     genres: string;
     bio: string;
-    contacts: {
-      linkedIn: string;
-      twitter: string;
-      facebook: string;
-      instagram: string;
-    }[];
+    contacts: object[];
   };
 }
 
@@ -424,6 +419,14 @@ export const ArtistCard: React.FC<ArtistCardProps> = ({ artist }) => {
         <h4>{artist.artist}</h4>
         <h6>{artist.location}</h6>
         <p>{artist.bio}</p>
+
+        <div className="contact">
+          {artist.contacts.map((contact) => (
+            <div className="icon">
+              <a href={contact.link}>{contact.icon}</a>
+            </div>
+          ))}
+        </div>
       </div>
       <div className="bar_loader"></div>
     </div>

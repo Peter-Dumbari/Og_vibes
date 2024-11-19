@@ -21,4 +21,14 @@
       font-size: 14px;
     }
   }
+
+  .artist_list {
+    margin: 20px 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 50px;
+    padding: 20px;
+  }
 }
