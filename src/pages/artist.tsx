@@ -93,7 +93,7 @@ const Artist = () => {
   return (
     <div className="artist_container">
       <div className="banner">
-        <h3>Popular Music Artist and Contacts</h3>
+        <h3>Popular Music Artist and their Infos</h3>
         <p>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae
           itaque obcaecati labore aut. Illo consequuntur quia eius suscipit,
