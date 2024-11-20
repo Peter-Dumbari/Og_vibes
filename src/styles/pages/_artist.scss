@@ -21,4 +21,37 @@
       font-size: 14px;
     }
   }
+
+  .artist_list {
+    margin: 20px 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 50px;
+    padding: 20px;
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .banner {
+      height: 400px;
+      h3 {
+        font-size: 1.8rem;
+        padding-top: 20px;
+        width: 80%;
+      }
+      P {
+        font-size: 14px;
+        width: 90%;
+      }
+    }
+  }
 }

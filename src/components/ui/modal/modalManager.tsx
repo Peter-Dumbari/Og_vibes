@@ -6,9 +6,7 @@ import { closeModal } from "../../../redux/features/modal/modalSlice";
 
 const ModalManager: React.FC = () => {
   const dispatch = useDispatch();
-  const { isOpen, children } = useSelector((state: RootState) => state.modal);
-
-  // if (!isOpen) return;
+  const { children } = useSelector((state: RootState) => state.modal);
 
   return <Modal onClose={() => dispatch(closeModal())}>{children}</Modal>;
 };

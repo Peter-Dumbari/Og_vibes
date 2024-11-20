@@ -77,7 +77,7 @@ export default function Navbar() {
     },
     {
       page: "Music",
-      link: "",
+      link: "/music",
 
       subTabs: [
         {
