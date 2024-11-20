@@ -1,6 +1,7 @@
 import React from "react";
 import Wrapper from "../components/ui/wrapper";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
+import TableComponent from "../components/ui/table";
 
 const Music = () => {
   let alpabets = [
@@ -31,6 +32,66 @@ const Music = () => {
     "Y",
     "Z",
   ];
+
+  const data = [
+    {
+      title: "Lonely at the top",
+      musicCover:
+        "https://trendybeatz.com/images/Asake-Work-Of-Art-AlbumArtwork1.jpg",
+      artist: "Asake",
+      label: "YBNL",
+      genre: "Afrobeat",
+      released: "2021",
+    },
+    {
+      title: "Lonely at the top",
+      musicCover:
+        "https://trendybeatz.com/images/Asake-Work-Of-Art-AlbumArtwork1.jpg",
+      artist: "Asake",
+      label: "YBNL",
+      genre: "Afrobeat",
+      released: "2021",
+    },
+    {
+      title: "Lonely at the top",
+      musicCover:
+        "https://trendybeatz.com/images/Asake-Work-Of-Art-AlbumArtwork1.jpg",
+      artist: "Asake",
+      label: "YBNL",
+      genre: "Afrobeat",
+      released: "2021",
+    },
+    {
+      title: "Lonely at the top",
+      musicCover:
+        "https://trendybeatz.com/images/Asake-Work-Of-Art-AlbumArtwork1.jpg",
+      artist: "Asake",
+      label: "YBNL",
+      genre: "Afrobeat",
+      released: "2021",
+    },
+    {
+      title: "Lonely at the top",
+      musicCover:
+        "https://trendybeatz.com/images/Asake-Work-Of-Art-AlbumArtwork1.jpg",
+      artist: "Asake",
+      label: "YBNL",
+      genre: "Afrobeat",
+      released: "2021",
+    },
+  ];
+
+  const columns = [
+    { header: "Title", accessor: "title" },
+    {
+      accessor: "musicCover",
+    },
+    { header: "Artist", accessor: "artist" },
+    { header: "Label", accessor: "label" },
+    { header: "Genre", accessor: "genre" },
+    { header: "Released", accessor: "released" },
+  ];
+
   return (
     <div className="music_container">
       <div className="banner">
@@ -72,7 +133,9 @@ const Music = () => {
           </div>
         </div>
 
-        <div className="music_list">.</div>
+        <div className="music_list">
+          <TableComponent data={data} columns={columns} rowsPerPage={3} />
+        </div>
       </Wrapper>
     </div>
   );
