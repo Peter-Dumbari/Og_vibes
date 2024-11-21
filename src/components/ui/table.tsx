@@ -1,11 +1,14 @@
 import React from "react";
 
+interface TableColumn {
+  header: string;
+  accessor?: string; // For direct data mapping
+  render?: (row: any) => React.ReactNode; // For custom rendering
+}
+
 interface TableProps {
   data: any[];
-  columns: {
-    header: string;
-    accessor: string;
-  }[];
+  columns: TableColumn[];
   rowsPerPage?: number;
 }
 const TableComponent: React.FC<TableProps> = ({
@@ -18,11 +21,11 @@ const TableComponent: React.FC<TableProps> = ({
   const startIndex = (currentPage - 1) * rowsPerPage;
   const currentData = data.slice(startIndex, startIndex + rowsPerPage);
 
-  // const handlePageChange = (page: number) => {
-  //   if (page >= 1 && page <= totalPage) {
-  //     setCurrentPage(page);
-  //   }
-  // };
+  const handlePageChange = (page: number) => {
+    if (page >= 1 && page <= totalPage) {
+      setCurrentPage(page);
+    }
+  };
 
   return (
     <div className="table_container">
@@ -35,10 +38,16 @@ const TableComponent: React.FC<TableProps> = ({
           </tr>
         </thead>
         <tbody>
-          {currentData.map((row, index) => (
-            <tr key={index}>
-              {columns.map((column, index) => (
-                <td key={index}>{row[column.accessor]}</td>
+          {currentData.map((row, rowIndex) => (
+            <tr key={rowIndex}>
+              {columns.map((column, colIndex) => (
+                <td key={colIndex}>
+                  {column.render
+                    ? column.render(row) // Use custom render if provided
+                    : column.accessor
+                    ? row[column.accessor] // Otherwise, use direct accessor
+                    : null}
+                </td>
               ))}
             </tr>
           ))}

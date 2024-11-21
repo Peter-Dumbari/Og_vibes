@@ -35,59 +35,45 @@ const Music = () => {
 
   const data = [
     {
-      title: "Lonely at the top",
-      musicCover:
-        "https://trendybeatz.com/images/Asake-Work-Of-Art-AlbumArtwork1.jpg",
-      artist: "Asake",
-      label: "YBNL",
-      genre: "Afrobeat",
-      released: "2021",
+      title: "All my Life",
+      artist: "K-Ci & JoJo",
+      img: "https://trendybeatz.com/images/Asake-Work-Of-Art-AlbumArtwork1.jpg",
+      genre: "R&B",
+      released: "1997",
     },
     {
-      title: "Lonely at the top",
-      musicCover:
-        "https://trendybeatz.com/images/Asake-Work-Of-Art-AlbumArtwork1.jpg",
-      artist: "Asake",
-      label: "YBNL",
-      genre: "Afrobeat",
-      released: "2021",
+      title: "All Night Long",
+      artist: "Lionel Richie",
+      img: "https://trendybeatz.com/images/Asake-Work-Of-Art-AlbumArtwork1.jpg",
+      genre: "R&B",
+      released: "1983",
     },
     {
-      title: "Lonely at the top",
-      musicCover:
-        "https://trendybeatz.com/images/Asake-Work-Of-Art-AlbumArtwork1.jpg",
-      artist: "Asake",
-      label: "YBNL",
-      genre: "Afrobeat",
-      released: "2021",
-    },
-    {
-      title: "Lonely at the top",
-      musicCover:
-        "https://trendybeatz.com/images/Asake-Work-Of-Art-AlbumArtwork1.jpg",
-      artist: "Asake",
-      label: "YBNL",
-      genre: "Afrobeat",
-      released: "2021",
-    },
-    {
-      title: "Lonely at the top",
-      musicCover:
-        "https://trendybeatz.com/images/Asake-Work-Of-Art-AlbumArtwork1.jpg",
-      artist: "Asake",
-      label: "YBNL",
-      genre: "Afrobeat",
-      released: "2021",
+      title: "All of Me",
+      img: "https://trendybeatz.com/images/Asake-Work-Of-Art-AlbumArtwork1.jpg",
+      artist: "John Legend",
+      genre: "R&B",
+      released: "2013",
     },
   ];
 
   const columns = [
-    { header: "Title", accessor: "title" },
     {
-      accessor: "musicCover",
+      header: "Music",
+      render: (row) => (
+        <div className="music_img">
+          <div className="img_cont">
+            <img src={row.img} alt={row.title} />
+            <div className="overlay"></div>
+          </div>
+
+          <div>
+            <h6>{row.title}</h6>
+          </div>
+        </div>
+      ),
     },
     { header: "Artist", accessor: "artist" },
-    { header: "Label", accessor: "label" },
     { header: "Genre", accessor: "genre" },
     { header: "Released", accessor: "released" },
   ];
