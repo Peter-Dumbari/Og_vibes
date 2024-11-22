@@ -55,6 +55,27 @@ const Music = () => {
       genre: "R&B",
       released: "2013",
     },
+    {
+      title: "All my Life",
+      artist: "K-Ci & JoJo",
+      img: "https://trendybeatz.com/images/Asake-Work-Of-Art-AlbumArtwork1.jpg",
+      genre: "R&B",
+      released: "1997",
+    },
+    {
+      title: "All Night Long",
+      artist: "Lionel Richie",
+      img: "https://trendybeatz.com/images/Asake-Work-Of-Art-AlbumArtwork1.jpg",
+      genre: "R&B",
+      released: "1983",
+    },
+    {
+      title: "All of Me",
+      img: "https://trendybeatz.com/images/Asake-Work-Of-Art-AlbumArtwork1.jpg",
+      artist: "John Legend",
+      genre: "R&B",
+      released: "2013",
+    },
   ];
 
   const columns = [
@@ -72,10 +93,11 @@ const Music = () => {
           </div>
         </div>
       ),
+      hideOnSmall: false,
     },
-    { header: "Artist", accessor: "artist" },
-    { header: "Genre", accessor: "genre" },
-    { header: "Released", accessor: "released" },
+    { header: "Artist", accessor: "artist", hideOnSmall: false },
+    { header: "Genre", accessor: "genre", hideOnSmall: true },
+    { header: "Released", accessor: "released", hideOnSmall: true },
   ];
 
   return (
