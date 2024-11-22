@@ -1,16 +1,18 @@
 .pagination_cont {
   display: flex;
   justify-content: center;
+  flex-direction: row;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 
   button {
     font-weight: bold;
     font-family: "Roboto", sans-serif;
     color: $default-text-color;
     background-color: $dark-background-color;
-    padding: 8px 14px;
+    padding: 4px 12px;
     transition: 0.5s;
+    z-index: 5;
     cursor: pointer;
 
     &:hover {
@@ -19,10 +21,22 @@
       transition: 0.5s;
     }
 
-    .active {
+    &:disabled {
       color: $default-text-color;
-      background-color: $primary-color !important;
-      transition: 0.5s;
+      background-color: $tabs-background-color;
+      cursor: not-allowed;
+      color: $dark-white-color;
     }
+  }
+  .active {
+    color: $default-text-color;
+    background-color: $primary-color !important;
+    transition: 0.5s;
+  }
+
+  .disabled {
+    color: $default-text-color;
+    background-color: #858484;
+    cursor: not-allowed;
   }
 }

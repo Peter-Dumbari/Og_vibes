@@ -1,6 +1,5 @@
 import React from "react";
 import Wrapper from "../components/ui/wrapper";
-import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import TableComponent from "../components/ui/table";
 
 const Music = () => {
@@ -35,7 +34,7 @@ const Music = () => {
 
   const data = [
     {
-      title: "All my Life",
+      title: "All my Game",
       artist: "K-Ci & JoJo",
       img: "https://trendybeatz.com/images/Asake-Work-Of-Art-AlbumArtwork1.jpg",
       genre: "R&B",

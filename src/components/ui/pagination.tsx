@@ -1,3 +1,4 @@
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import React from "react";
 
 interface PaginationProps {
@@ -17,7 +18,10 @@ const PaginationComponent: React.FC<PaginationProps> = ({
       <button
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}>
-        Previous
+        <div className="flex gap-2">
+          <ChevronLeftIcon className="w-4" />
+          <span>Previous</span>
+        </div>
       </button>
       {pageNumbers.map((page) => (
         <button
@@ -30,7 +34,10 @@ const PaginationComponent: React.FC<PaginationProps> = ({
       <button
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}>
-        Next
+        <div className="flex items-center gap-2">
+          <span>Next</span>
+          <ChevronRightIcon className="w-4" />
+        </div>
       </button>
     </div>
   );
