@@ -17,7 +17,7 @@ interface TableProps {
 const TableComponent: React.FC<TableProps> = ({
   data,
   columns,
-  rowsPerPage = 20,
+  rowsPerPage = 5,
 }) => {
   const [currentPage, setCurrentPage] = React.useState<number>(1);
   const totalPage = Math.ceil(data.length / rowsPerPage);

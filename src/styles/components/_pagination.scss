@@ -10,7 +10,7 @@
     font-family: "Roboto", sans-serif;
     color: $default-text-color;
     background-color: $dark-background-color;
-    padding: 4px 12px;
+    padding: 6px 14px;
     transition: 0.5s;
     z-index: 5;
     cursor: pointer;
@@ -24,19 +24,13 @@
     &:disabled {
       color: $default-text-color;
       background-color: $tabs-background-color;
-      cursor: not-allowed;
       color: $dark-white-color;
+      cursor: auto;
     }
   }
   .active {
     color: $default-text-color;
     background-color: $primary-color !important;
     transition: 0.5s;
-  }
-
-  .disabled {
-    color: $default-text-color;
-    background-color: #858484;
-    cursor: not-allowed;
   }
 }
