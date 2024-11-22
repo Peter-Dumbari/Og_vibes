@@ -141,7 +141,7 @@ const Music = () => {
         </div>
 
         <div className="music_list">
-          <TableComponent data={data} columns={columns} rowsPerPage={3} />
+          <TableComponent data={data} columns={columns} />
         </div>
       </Wrapper>
     </div>
