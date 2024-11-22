@@ -1,6 +1,5 @@
 import React from "react";
 import Wrapper from "../components/ui/wrapper";
-import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import TableComponent from "../components/ui/table";
 
 const Music = () => {
@@ -34,6 +33,27 @@ const Music = () => {
   ];
 
   const data = [
+    {
+      title: "All my Game",
+      artist: "K-Ci & JoJo",
+      img: "https://trendybeatz.com/images/Asake-Work-Of-Art-AlbumArtwork1.jpg",
+      genre: "R&B",
+      released: "1997",
+    },
+    {
+      title: "All Night Long",
+      artist: "Lionel Richie",
+      img: "https://trendybeatz.com/images/Asake-Work-Of-Art-AlbumArtwork1.jpg",
+      genre: "R&B",
+      released: "1983",
+    },
+    {
+      title: "All of Me",
+      img: "https://trendybeatz.com/images/Asake-Work-Of-Art-AlbumArtwork1.jpg",
+      artist: "John Legend",
+      genre: "R&B",
+      released: "2013",
+    },
     {
       title: "All my Life",
       artist: "K-Ci & JoJo",
@@ -72,10 +92,11 @@ const Music = () => {
           </div>
         </div>
       ),
+      hideOnSmall: false,
     },
-    { header: "Artist", accessor: "artist" },
-    { header: "Genre", accessor: "genre" },
-    { header: "Released", accessor: "released" },
+    { header: "Artist", accessor: "artist", hideOnSmall: false },
+    { header: "Genre", accessor: "genre", hideOnSmall: true },
+    { header: "Released", accessor: "released", hideOnSmall: true },
   ];
 
   return (
@@ -120,7 +141,7 @@ const Music = () => {
         </div>
 
         <div className="music_list">
-          <TableComponent data={data} columns={columns} rowsPerPage={3} />
+          <TableComponent data={data} columns={columns} />
         </div>
       </Wrapper>
     </div>

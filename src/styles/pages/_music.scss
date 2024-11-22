@@ -11,8 +11,8 @@
 
     h3 {
       font-size: 2.9rem;
-      font-weight: bold;
-      font-family: "Exo" sans-serif;
+      font-weight: 600;
+      font-family: "Exo", Regular;
       word-spacing: 5px;
     }
 
@@ -128,6 +128,21 @@
           color: $primary-color;
           transition: 0.5s;
         }
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .banner {
+      height: 400px;
+      h3 {
+        font-size: 1.8rem;
+        padding-top: 20px;
+        width: 80%;
+      }
+      P {
+        font-size: 14px;
+        width: 90%;
       }
     }
   }

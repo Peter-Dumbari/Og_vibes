@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router";
-import { Home, Artist, Music } from "./pages/index.tsx";
+import { Home, Artist, Music, Event } from "./pages/index.tsx";
 import Layout from "./components/layout";
 
 function App() {
@@ -10,6 +10,7 @@ function App() {
         <Route index element={<Home />} />
         <Route path="/artist" element={<Artist />} />
         <Route path="/music" element={<Music />} />
+        <Route path="/event" element={<Event />} />
       </Route>
     </Routes>
   );

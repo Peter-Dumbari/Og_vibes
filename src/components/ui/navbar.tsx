@@ -96,11 +96,20 @@ export default function Navbar() {
           page: "Traditinal",
           link: "#",
         },
+        {
+          page: "Videos",
+          link: "#",
+        },
+
+        {
+          page: "Live Shows",
+          link: "#shows",
+        },
       ],
     },
     {
       page: "Event",
-      link: "#event",
+      link: "/event",
 
       subTabs: [
         {
