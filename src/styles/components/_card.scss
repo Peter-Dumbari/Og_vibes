@@ -1056,6 +1056,111 @@
   }
 }
 
+.event_main_card {
+  display: flex;
+  width: 100%;
+  background-color: $dark-background-color;
+  border-radius: 40px;
+  overflow: hidden;
+  height: 130px;
+  position: relative;
+
+  .img_container {
+    width: 180px;
+    border-right: 5px solid $primary-color;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .overlay {
+      background-color: $transparent_primary-color;
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  .details {
+    padding: 30px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    position: relative;
+
+    .items {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      h3 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        font-family: "roboto", sans-serif;
+      }
+
+      p {
+        color: $dark-white-color;
+        span {
+          font-weight: bold;
+          margin-right: 10px;
+          color: $default-text-color;
+        }
+      }
+
+      .date_time {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+    }
+
+    .btn_cont {
+      z-index: 2;
+
+      button {
+        padding: 8px 25px;
+        background: $primary-color;
+        font-weight: bold;
+        color: $default-text-color;
+        transition: 0.5s;
+
+        &:hover {
+          background-color: $dark-background-color;
+          transition: 0.5s;
+        }
+      }
+    }
+
+    .overlay {
+      position: absolute;
+      left: 0;
+      right: 0;
+      background-color: #654343a3;
+      top: 0;
+      bottom: 0;
+    }
+  }
+
+  .square_bg {
+    width: 120px;
+    height: 200px;
+    padding: 30px;
+    background-color: $tabs-background-color;
+    position: absolute;
+    right: 0;
+    top: -10px;
+    z-index: 1;
+    transform: rotate(25deg);
+  }
+}
 @media screen and (max-width: 768px) {
   .event_card {
     .content {

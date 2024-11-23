@@ -22,4 +22,12 @@
       font-size: 14px;
     }
   }
+
+  .events_cont {
+    margin: 20px 0;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 }
