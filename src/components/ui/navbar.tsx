@@ -128,7 +128,7 @@ export default function Navbar() {
     },
     {
       page: "Blog",
-      link: "",
+      link: "/blogs",
 
       subTabs: [
         {
