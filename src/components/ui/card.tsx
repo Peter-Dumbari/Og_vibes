@@ -445,32 +445,35 @@ export const EventMainCard: React.FC<EventCardProps> = ({
       <img src={eventPoster} alt={name} />
       <div className="overlay"></div>
     </div>
-
-    <div className="details">
-      <div className="items">
-        <h3>{name}</h3>
-        <p>
-          <span>Location:</span>
-          {address}
-        </p>
-
-        <div className="date_time">
+    <div className="main_card_body">
+      <div className="details">
+        <div className="items">
+          <h3>{name}</h3>
           <p>
-            <span>Date:</span>
-            {eventDate}
+            <span>Location:</span>
+            {address}
           </p>
-          <p>
-            <span>Time:</span>
-            {eventTime}
-          </p>
+
+          <div className="date_time">
+            <p>
+              <span>Date:</span>
+              {eventDate}
+            </p>
+            <p>
+              <span>Time:</span>
+              {eventTime}
+            </p>
+          </div>
         </div>
-      </div>
 
-      <div className="btn_cont">
-        <button className="event_btn">Buy Tickets</button>
+        <div className="btn_cont">
+          <button className="event_btn">Buy Tickets</button>
+        </div>
+        {/* <div className="overlay"></div> */}
       </div>
+      <div className="square_bg"></div>
+
       <div className="overlay"></div>
     </div>
-    <div className="square_bg"></div>
   </div>
 );
