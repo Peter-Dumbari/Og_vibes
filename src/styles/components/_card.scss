@@ -1056,6 +1056,165 @@
   }
 }
 
+.event_main_card {
+  display: flex;
+  width: 100%;
+  background-color: $dark-background-color;
+  border-radius: 40px;
+  overflow: hidden;
+  height: 120px;
+  position: relative;
+  transition: 0.5s;
+
+  .img_container {
+    width: 250px;
+    border-right: 5px solid $primary-color;
+    position: relative;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .overlay {
+      background-color: $transparent_primary-color;
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1;
+      animation: slideOutLeft 0.5s forwards;
+    }
+  }
+
+  .main_card_body {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+
+    .details {
+      padding: 30px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+
+      .items {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        h3 {
+          font-size: 1.5rem;
+          font-weight: bold;
+          font-family: "roboto", sans-serif;
+        }
+
+        p {
+          color: $dark-white-color;
+          span {
+            font-weight: bold;
+            margin-right: 10px;
+            color: $default-text-color;
+          }
+        }
+
+        .date_time {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+      }
+
+      .btn_cont {
+        z-index: 10;
+
+        button {
+          padding: 8px 25px;
+          background: $primary-color;
+          font-weight: bold;
+          color: $default-text-color;
+          transition: 0.5s;
+
+          &:hover {
+            background-color: $dark-background-color;
+            transition: 0.5s;
+          }
+        }
+      }
+
+      .overlay {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        width: 100%;
+        bottom: 0;
+        animation: slideOutDown 0.7s forwards;
+        z-index: 1;
+      }
+    }
+
+    .square_bg {
+      width: 120px;
+      height: 200px;
+      padding: 30px;
+      background-color: $tabs-background-color;
+      position: absolute;
+      right: 0;
+      top: -10px;
+      transform: rotate(25deg);
+      display: none;
+      transform: 0.6s;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: #a3a3a33d;
+      bottom: 0;
+      animation: slideOutDown 0.5s forwards;
+    }
+  }
+
+  &:hover {
+    .img_container {
+      overflow: hidden;
+      .overlay {
+        animation: slideInRight 0.5s forwards;
+        z-index: 1;
+      }
+    }
+
+    .main_card_body {
+      .details {
+        .overlay {
+          background-color: $transparent_primary-color;
+          animation: slideInTop 0.5s forwards;
+        }
+      }
+
+      .square_bg {
+        display: block;
+        transition: 0.6s;
+      }
+
+      .overlay {
+        animation: slideInDown 0.5s forwards;
+      }
+    }
+  }
+}
 @media screen and (max-width: 768px) {
   .event_card {
     .content {

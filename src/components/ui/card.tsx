@@ -432,3 +432,48 @@ export const ArtistCard: React.FC<ArtistCardProps> = ({ artist }) => {
     </div>
   );
 };
+
+export const EventMainCard: React.FC<EventCardProps> = ({
+  name,
+  address,
+  eventDate,
+  eventPoster,
+  eventTime,
+}) => (
+  <div className="event_main_card">
+    <div className="img_container">
+      <img src={eventPoster} alt={name} />
+      <div className="overlay"></div>
+    </div>
+    <div className="main_card_body">
+      <div className="details">
+        <div className="items">
+          <h3>{name}</h3>
+          <p>
+            <span>Location:</span>
+            {address}
+          </p>
+
+          <div className="date_time">
+            <p>
+              <span>Date:</span>
+              {eventDate}
+            </p>
+            <p>
+              <span>Time:</span>
+              {eventTime}
+            </p>
+          </div>
+        </div>
+
+        <div className="btn_cont">
+          <button className="event_btn">Buy Tickets</button>
+        </div>
+        {/* <div className="overlay"></div> */}
+      </div>
+      <div className="square_bg"></div>
+
+      <div className="overlay"></div>
+    </div>
+  </div>
+);
