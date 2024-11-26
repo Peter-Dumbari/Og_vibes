@@ -101,6 +101,13 @@ interface ArtistCardProps {
   };
 }
 
+interface MainBlogProps {
+  title: string;
+  image: string;
+  description: string;
+  author_data: object[];
+}
+
 export const UpdateCard: React.FC<CardProps> = ({
   title,
   description,
@@ -474,6 +481,34 @@ export const EventMainCard: React.FC<EventCardProps> = ({
       <div className="square_bg"></div>
 
       <div className="overlay"></div>
+    </div>
+  </div>
+);
+
+export const BlogMainCard: React.FC<MainBlogProps> = ({
+  title,
+  image,
+  description,
+  author_data,
+}) => (
+  <div className="main_blog_card">
+    <div className="inner">
+      <div className="img_cont">
+        <img src={image} alt="blog_image" />
+      </div>
+      <h3>{title}</h3>
+      <p>{description}</p>
+      <div className="card_footer">
+        <button>Read More</button>
+
+        <div className="author_info">
+          <div className="profile">
+            <img src={author_data?.profile} alt={author_data?.name} />
+          </div>
+
+          <h3>{author_data?.name}</h3>
+        </div>
+      </div>
     </div>
   </div>
 );
