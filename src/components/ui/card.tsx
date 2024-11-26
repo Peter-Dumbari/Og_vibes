@@ -496,17 +496,19 @@ export const BlogMainCard: React.FC<MainBlogProps> = ({
       <div className="img_cont">
         <img src={image} alt="blog_image" />
       </div>
-      <h3>{title}</h3>
-      <p>{description}</p>
-      <div className="card_footer">
-        <button>Read More</button>
+      <div className="text_cont">
+        <h3>{title}</h3>
+        <p>{description}</p>
+        <div className="card_footer">
+          <button>Read More</button>
 
-        <div className="author_info">
-          <div className="profile">
-            <img src={author_data?.profile} alt={author_data?.name} />
+          <div className="author_info">
+            <div className="profile">
+              <img src={author_data?.profile} alt={author_data?.name} />
+            </div>
+
+            <h3>{author_data?.name}</h3>
           </div>
-
-          <h3>{author_data?.name}</h3>
         </div>
       </div>
     </div>
