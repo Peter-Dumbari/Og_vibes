@@ -504,10 +504,12 @@ export const BlogMainCard: React.FC<MainBlogProps> = ({
 
           <div className="author_info">
             <div className="profile">
-              <img src={author_data?.profile} alt={author_data?.name} />
+              <div className="img_cont">
+                <img src={author_data?.profile} alt={author_data?.name} />
+              </div>
             </div>
 
-            <h3>{author_data?.name}</h3>
+            <h5>{author_data?.name}</h5>
           </div>
         </div>
       </div>
