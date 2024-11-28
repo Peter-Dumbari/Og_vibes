@@ -1,0 +1,25 @@
+.blog_detail_container {
+  .banner {
+    height: 350px;
+    background-color: $primary-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    color: $default-text-color;
+
+    h3 {
+      font-size: 2.9rem;
+      font-weight: 600;
+      font-family: "Exo", Regular;
+      word-spacing: 5px;
+    }
+
+    p {
+      width: 50%;
+      font-family: "roboto", sans-serif;
+      font-size: 14px;
+    }
+  }
+}
