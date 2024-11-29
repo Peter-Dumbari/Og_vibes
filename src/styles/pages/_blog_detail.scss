@@ -172,7 +172,7 @@
         margin: 40px 0;
 
         .list {
-          margin: 20px 0;
+          margin: 20px 0 40px 0;
           gap: 20px;
           display: flex;
           flex-wrap: wrap;
@@ -197,6 +197,10 @@
         .divider {
           background-color: $dark-white-color;
         }
+      }
+
+      .comment_sec {
+        padding-bottom: 20px;
       }
     }
   }

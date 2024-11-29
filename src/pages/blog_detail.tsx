@@ -113,6 +113,12 @@ const BlogDetail = () => {
 
               <div className="divider"></div>
             </div>
+
+            <div className="comment_sec">
+              <div className="blog_detail_page_header">
+                <span>There are 03 comment For this Article</span>
+              </div>
+            </div>
           </div>
           <div className="aob"></div>
         </div>
