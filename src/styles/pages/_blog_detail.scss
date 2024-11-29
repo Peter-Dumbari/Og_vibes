@@ -92,6 +92,74 @@
           h3 {
             font-weight: bold;
             font-size: 1.2rem;
+            font-family: "Exo", sans-serif;
+          }
+
+          .reactions {
+            display: flex;
+            gap: 20px;
+            padding: 20px 0;
+
+            .inner {
+              position: relative;
+              display: flex;
+              gap: 5px;
+              align-items: center;
+              cursor: pointer;
+
+              &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                padding: 1px;
+                background-color: $dark-white-color;
+                right: -10px;
+              }
+
+              span,
+              h5 {
+                font-weight: bold;
+                color: $default-text-color;
+              }
+            }
+          }
+
+          .blog {
+            p {
+              color: rgba(255, 255, 255, 0.325);
+            }
+
+            .seperator {
+              padding: 20px 0;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-direction: column;
+              padding: 10px;
+
+              .icon {
+                border: 1px solid $dark-white-color;
+                padding: 10px;
+                border-radius: 50%;
+                margin-bottom: 20px;
+                color: $dark-white-color;
+              }
+
+              p {
+                color: $default-text-color;
+                text-align: center;
+                font-size: 1.1rem;
+              }
+
+              .divider_cont {
+                width: 200px;
+
+                .divider {
+                  background-color: $dark-white-color;
+                }
+              }
+            }
           }
         }
       }

@@ -1,6 +1,7 @@
 import React from "react";
 import Wrapper from "../components/ui/wrapper";
-import { FaQuoteRight } from "react-icons/fa6";
+import { FaQuoteRight, FaThumbsUp } from "react-icons/fa6";
+import { BiMessageAlt } from "react-icons/bi";
 
 const BlogDetail = () => {
   return (
@@ -35,35 +36,46 @@ const BlogDetail = () => {
                 </h3>
 
                 <div className="reactions">
-                  <div className="comment">
+                  <div className="inner">
+                    <FaThumbsUp size={20} />
                     <span>3</span>
-                    <div className="h5">Comments</div>
+                    <h5>Likes</h5>
                   </div>
-                  <div className="link">
+                  <div className="inner">
+                    <BiMessageAlt size={20} />
                     <span>3</span>
-                    <div className="h5">Comments</div>
+                    <h5>Comments</h5>
                   </div>
-                  <div className="blog">
+                </div>
+                <div className="blog">
+                  <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Laborum, cumque temporibus corrupti autem in nulla quidem
+                    possimus iste, laudantium doloremque necessitatibus eius?
+                    Quo ex esse ducimus soluta aliquam? Libero repellendus eum
+                    minima fuga numquam, similique quasi placeat iure atque.
+                    Fugiat quod ipsum reprehenderit dicta quisquam cumque
+                    repellendus nam recusandae cum.
+                  </p>
+
+                  <div className="seperator">
+                    <FaQuoteRight size={60} className="w-50 h-50 icon" />
                     <p>
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                      Laborum, cumque temporibus corrupti autem in nulla quidem
-                      possimus iste, laudantium doloremque necessitatibus eius?
-                      Quo ex esse ducimus soluta aliquam? Libero repellendus eum
-                      minima fuga numquam, similique quasi placeat iure atque.
-                      Fugiat quod ipsum reprehenderit dicta quisquam cumque
-                      repellendus nam recusandae cum.
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Error doloremque quas totam illo non officiis quia vero
+                      sequi consequuntur corrupti laboriosam quasi odio sunt
+                      sapiente temporibus eaque.
                     </p>
 
-                    <div className="seperator">
-                      <FaQuoteRight size={30} className="w-50 h-50" />
-                      <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Tenetur, harum.
-                      </p>
-
+                    <div className="divider_cont">
                       <div className="divider"></div>
                     </div>
                   </div>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Nemo maiores voluptatem exercitationem at earum repellat,
+                    consectetur labore ex! Sapiente, eveniet!
+                  </p>
                 </div>
               </div>
             </div>
