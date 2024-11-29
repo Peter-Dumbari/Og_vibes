@@ -116,6 +116,12 @@ interface BlogPosterProps {
   tag: string;
 }
 
+interface RelatedBlogProps {
+  title: string;
+  author: string;
+  blogDate: string;
+  image: string;
+}
 export const UpdateCard: React.FC<CardProps> = ({
   title,
   description,
@@ -344,6 +350,31 @@ export const CollectionCard: React.FC<CollectionCardProps> = ({ item }) => {
   );
 };
 
+export const MiniCollection: React.FC<RelatedBlogProps> = ({
+  title,
+  author,
+  blogDate,
+  image,
+}) => {
+  return (
+    <div className="collection_cont">
+      <div className="banner_sec">
+        <div className="img_cont">
+          <img src={image} alt={author} />
+          <div className="overlay"></div>
+        </div>
+
+        <div className="collection_desc">
+          <h3>{title}</h3>
+          <div className="flex dateAuthor">
+            <p className="author">{author}</p>-
+            <p className="date">{blogDate}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 export const MusicListCard: React.FC<MusicListProps> = ({ item }) => {
   return (
     <div className="music_list_card_cont">

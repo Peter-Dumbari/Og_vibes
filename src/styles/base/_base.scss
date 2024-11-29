@@ -1,0 +1,26 @@
+.blog_detail_page_header {
+  position: relative;
+  text-transform: capitalize;
+  font-family: "Exo", sans-serif;
+  padding-left: 40px;
+  z-index: 99;
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 10px;
+    z-index: -1;
+    padding: 1px;
+    background-color: $default-text-color;
+  }
+
+  span {
+    z-index: 99;
+    background-color: $default-background-color;
+    padding: 0 20px;
+    font-size: 1.5rem;
+    color: $default-text-color;
+  }
+}

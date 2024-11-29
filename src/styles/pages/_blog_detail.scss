@@ -167,6 +167,37 @@
       .poster_cont {
         margin: 20px 0;
       }
+
+      .related_art {
+        margin: 40px 0;
+
+        .list {
+          margin: 20px 0;
+          gap: 20px;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 20px;
+
+          .collection_cont {
+            width: calc(50% - 10px);
+
+            .banner_sec {
+              padding: 0;
+              height: 220px;
+
+              .collection_desc {
+                h3 {
+                  cursor: pointer;
+                }
+              }
+            }
+          }
+        }
+
+        .divider {
+          background-color: $dark-white-color;
+        }
+      }
     }
   }
 }

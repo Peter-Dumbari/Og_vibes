@@ -2,7 +2,7 @@ import React from "react";
 import Wrapper from "../components/ui/wrapper";
 import { FaQuoteRight, FaThumbsUp } from "react-icons/fa6";
 import { BiMessageAlt } from "react-icons/bi";
-import { BlogPosterCard } from "../components/ui/card";
+import { BlogPosterCard, MiniCollection } from "../components/ui/card";
 
 const BlogDetail = () => {
   return (
@@ -89,6 +89,29 @@ const BlogDetail = () => {
                 bio="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, accusamus, adipisicing elit. Quas, accusamus."
                 profile="https://img.freepik.com/free-photo/man-blows-cheeks-has-discontent-expression-being-dissatisfied-with-something_273609-17085.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid"
               />
+            </div>
+
+            <div className="related_art">
+              <div className="blog_detail_page_header">
+                <span>Related Article</span>
+              </div>
+
+              <div className="list">
+                <MiniCollection
+                  image="https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid"
+                  title="Tradition is Gradually Erasing"
+                  author="Nelson Mandella"
+                  blogDate="29 Nov 2024"
+                />
+                <MiniCollection
+                  image="https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid"
+                  title="Tradition is Gradually Erasing"
+                  author="Nelson Mandella"
+                  blogDate="29 Nov 2024"
+                />
+              </div>
+
+              <div className="divider"></div>
             </div>
           </div>
           <div className="aob"></div>
