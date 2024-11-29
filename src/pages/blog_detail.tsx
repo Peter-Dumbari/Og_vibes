@@ -23,12 +23,15 @@ const BlogDetail = () => {
                   src="https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid"
                   alt="blog image"
                 />
-                <div className="date">Feb 14</div>
+                <div className="date">
+                  <h5 className="month">Feb</h5>
+                  <span className="day">14</span>
+                </div>
               </div>
               <div className="text_sec">
                 <h3>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Culpa, unde.
+                  This year concerts conference create a window for concerts
+                  groups
                 </h3>
 
                 <div className="reactions">
