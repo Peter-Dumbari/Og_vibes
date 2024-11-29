@@ -1376,6 +1376,11 @@
     }
   }
 }
+
+.poster_card_cont {
+  display: flex;
+  background-color: $dark-background-color;
+}
 @media screen and (max-width: 768px) {
   .event_card {
     .content {

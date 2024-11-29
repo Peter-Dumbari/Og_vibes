@@ -108,6 +108,14 @@ interface MainBlogProps {
   author_data: object[];
 }
 
+interface BlogPosterProps {
+  name: string;
+  profile: string;
+  bio: string;
+  role: string;
+  tag: string;
+}
+
 export const UpdateCard: React.FC<CardProps> = ({
   title,
   description,
@@ -511,6 +519,35 @@ export const BlogMainCard: React.FC<MainBlogProps> = ({
 
             <h5>{author_data?.name}</h5>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+export const BlogPosterCard: React.FC<BlogPosterProps> = ({
+  name,
+  bio,
+  tag,
+  profile,
+  role,
+}) => (
+  <div className="poster_card_cont">
+    <div className="inner">
+      <div className="image_cont">
+        <img src={profile} alt={name} />
+      </div>
+
+      <div className="text">
+        <div className="name_role">
+          <h3>{name}</h3>
+          <h6>
+            {role},{tag}
+          </h6>
+        </div>
+
+        <div className="bio">
+          <p>{bio}</p>
         </div>
       </div>
     </div>

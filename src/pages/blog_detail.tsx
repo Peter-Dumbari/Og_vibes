@@ -2,6 +2,7 @@ import React from "react";
 import Wrapper from "../components/ui/wrapper";
 import { FaQuoteRight, FaThumbsUp } from "react-icons/fa6";
 import { BiMessageAlt } from "react-icons/bi";
+import { BlogPosterCard } from "../components/ui/card";
 
 const BlogDetail = () => {
   return (
@@ -78,6 +79,16 @@ const BlogDetail = () => {
                   </p>
                 </div>
               </div>
+            </div>
+
+            <div className="poster_cont">
+              <BlogPosterCard
+                name="James Lio"
+                role="Admin"
+                tag="Master Developer"
+                bio="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, accusamus, adipisicing elit. Quas, accusamus."
+                profile="https://img.freepik.com/free-photo/man-blows-cheeks-has-discontent-expression-being-dissatisfied-with-something_273609-17085.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid"
+              />
             </div>
           </div>
           <div className="aob"></div>
