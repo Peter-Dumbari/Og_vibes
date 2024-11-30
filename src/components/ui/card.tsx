@@ -122,6 +122,14 @@ interface RelatedBlogProps {
   blogDate: string;
   image: string;
 }
+
+interface CommentProps {
+  author: object[];
+  comment: string;
+  commentDate: string;
+  reply: object[];
+}
+
 export const UpdateCard: React.FC<CardProps> = ({
   title,
   description,
@@ -579,6 +587,51 @@ export const BlogPosterCard: React.FC<BlogPosterProps> = ({
 
         <div className="bio">
           <p>{bio}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+export const CommentCard: React.FC<CommentProps> = ({
+  author,
+  comment,
+  commentDate,
+  reply,
+}) => (
+  <div className="comment_box">
+    <div className="image_cont">
+      <img src={author?.profile} alt={author?.name} />
+    </div>
+
+    <div className="text">
+      <h3>{author?.name}</h3>
+      <h6>{commentDate}</h6>
+      <div className="comment">
+        <p>{comment}</p>
+      </div>
+      <div className="reply_sec">
+        <button>Reply</button>
+
+        <div className="reply">
+          {reply.map((item, idx) => (
+            <div className="reply_box" key={idx}>
+              <div className="image_cont">
+                <img src={item.author?.profile} alt={item.author?.name} />
+              </div>
+
+              <div className="text">
+                <h3>{item.author?.name}</h3>
+                <h6>{item.commentDate}</h6>
+                <div className="comment">
+                  <p>{item.comment}</p>
+                </div>
+                <div className="reply_sec">
+                  <button>Reply</button>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>

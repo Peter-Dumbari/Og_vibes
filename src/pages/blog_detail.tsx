@@ -2,9 +2,39 @@ import React from "react";
 import Wrapper from "../components/ui/wrapper";
 import { FaQuoteRight, FaThumbsUp } from "react-icons/fa6";
 import { BiMessageAlt } from "react-icons/bi";
-import { BlogPosterCard, MiniCollection } from "../components/ui/card";
+import {
+  BlogPosterCard,
+  CommentCard,
+  MiniCollection,
+} from "../components/ui/card";
 
 const BlogDetail = () => {
+  const dummyComments = [
+    {
+      author: {
+        profile:
+          "https://img.freepik.com/free-photo/man-blows-cheeks-has-discontent-expression-being-dissatisfied-with-something_273609-17085.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+        name: "Joe Lio",
+      },
+      comment:
+        "This is extremely cool, but i think you have to be careful with your words",
+      commendDate: "30-11-2024",
+
+      reply: [
+        {
+          author: {
+            profile:
+              "https://img.freepik.com/free-photo/man-blows-cheeks-has-discontent-expression-being-dissatisfied-with-something_273609-17085.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+            name: "Brain Deo",
+          },
+          comment: "Baba mind your business, wetin him talk no dey run",
+          commentDate: "30-11-2024",
+
+          reply: [],
+        },
+      ],
+    },
+  ];
   return (
     <div className="blog_detail_container">
       <div className="banner">
@@ -93,7 +123,7 @@ const BlogDetail = () => {
 
             <div className="related_art">
               <div className="blog_detail_page_header">
-                <span>Related Article</span>
+                <span>Related Blogs</span>
               </div>
 
               <div className="list">
@@ -116,7 +146,18 @@ const BlogDetail = () => {
 
             <div className="comment_sec">
               <div className="blog_detail_page_header">
-                <span>There are 03 comment For this Article</span>
+                <span>There are 02 comment For this Blog</span>
+              </div>
+
+              <div className="lists">
+                {dummyComments.map((comment, idx) => (
+                  <CommentCard
+                    author={comment.author}
+                    commentDate={comment.commendDate}
+                    comment={comment.comment}
+                    reply={comment.reply}
+                  />
+                ))}
               </div>
             </div>
           </div>
