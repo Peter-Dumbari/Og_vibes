@@ -2,8 +2,39 @@ import React from "react";
 import Wrapper from "../components/ui/wrapper";
 import { FaQuoteRight, FaThumbsUp } from "react-icons/fa6";
 import { BiMessageAlt } from "react-icons/bi";
+import {
+  BlogPosterCard,
+  CommentCard,
+  MiniCollection,
+} from "../components/ui/card";
 
 const BlogDetail = () => {
+  const dummyComments = [
+    {
+      author: {
+        profile:
+          "https://img.freepik.com/free-photo/man-blows-cheeks-has-discontent-expression-being-dissatisfied-with-something_273609-17085.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+        name: "Joe Lio",
+      },
+      comment:
+        "This is extremely cool, but i think you have to be careful with your words",
+      commendDate: "30-11-2024",
+
+      reply: [
+        {
+          author: {
+            profile:
+              "https://img.freepik.com/free-photo/man-blows-cheeks-has-discontent-expression-being-dissatisfied-with-something_273609-17085.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+            name: "Brain Deo",
+          },
+          comment: "Baba mind your business, wetin him talk no dey run",
+          commentDate: "30-11-2024",
+
+          reply: [],
+        },
+      ],
+    },
+  ];
   return (
     <div className="blog_detail_container">
       <div className="banner">
@@ -77,6 +108,56 @@ const BlogDetail = () => {
                     consectetur labore ex! Sapiente, eveniet!
                   </p>
                 </div>
+              </div>
+            </div>
+
+            <div className="poster_cont">
+              <BlogPosterCard
+                name="James Lio"
+                role="Admin"
+                tag="Master Developer"
+                bio="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, accusamus, adipisicing elit. Quas, accusamus."
+                profile="https://img.freepik.com/free-photo/man-blows-cheeks-has-discontent-expression-being-dissatisfied-with-something_273609-17085.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid"
+              />
+            </div>
+
+            <div className="related_art">
+              <div className="blog_detail_page_header">
+                <span>Related Blogs</span>
+              </div>
+
+              <div className="list">
+                <MiniCollection
+                  image="https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid"
+                  title="Tradition is Gradually Erasing"
+                  author="Nelson Mandella"
+                  blogDate="29 Nov 2024"
+                />
+                <MiniCollection
+                  image="https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid"
+                  title="Tradition is Gradually Erasing"
+                  author="Nelson Mandella"
+                  blogDate="29 Nov 2024"
+                />
+              </div>
+
+              <div className="divider"></div>
+            </div>
+
+            <div className="comment_sec">
+              <div className="blog_detail_page_header">
+                <span>There are 02 comment For this Blog</span>
+              </div>
+
+              <div className="lists">
+                {dummyComments.map((comment, idx) => (
+                  <CommentCard
+                    author={comment.author}
+                    commentDate={comment.commendDate}
+                    comment={comment.comment}
+                    reply={comment.reply}
+                  />
+                ))}
               </div>
             </div>
           </div>

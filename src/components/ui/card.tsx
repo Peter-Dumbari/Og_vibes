@@ -108,6 +108,28 @@ interface MainBlogProps {
   author_data: object[];
 }
 
+interface BlogPosterProps {
+  name: string;
+  profile: string;
+  bio: string;
+  role: string;
+  tag: string;
+}
+
+interface RelatedBlogProps {
+  title: string;
+  author: string;
+  blogDate: string;
+  image: string;
+}
+
+interface CommentProps {
+  author: object[];
+  comment: string;
+  commentDate: string;
+  reply: object[];
+}
+
 export const UpdateCard: React.FC<CardProps> = ({
   title,
   description,
@@ -336,6 +358,31 @@ export const CollectionCard: React.FC<CollectionCardProps> = ({ item }) => {
   );
 };
 
+export const MiniCollection: React.FC<RelatedBlogProps> = ({
+  title,
+  author,
+  blogDate,
+  image,
+}) => {
+  return (
+    <div className="collection_cont">
+      <div className="banner_sec">
+        <div className="img_cont">
+          <img src={image} alt={author} />
+          <div className="overlay"></div>
+        </div>
+
+        <div className="collection_desc">
+          <h3>{title}</h3>
+          <div className="flex dateAuthor">
+            <p className="author">{author}</p>-
+            <p className="date">{blogDate}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 export const MusicListCard: React.FC<MusicListProps> = ({ item }) => {
   return (
     <div className="music_list_card_cont">
@@ -511,6 +558,80 @@ export const BlogMainCard: React.FC<MainBlogProps> = ({
 
             <h5>{author_data?.name}</h5>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+export const BlogPosterCard: React.FC<BlogPosterProps> = ({
+  name,
+  bio,
+  tag,
+  profile,
+  role,
+}) => (
+  <div className="poster_card_cont">
+    <div className="inner">
+      <div className="image_cont">
+        <img src={profile} alt={name} />
+      </div>
+
+      <div className="text">
+        <div className="name_role">
+          <h3>{name}</h3>
+          <h6>
+            {role},{tag}
+          </h6>
+        </div>
+
+        <div className="bio">
+          <p>{bio}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+export const CommentCard: React.FC<CommentProps> = ({
+  author,
+  comment,
+  commentDate,
+  reply,
+}) => (
+  <div className="comment_box">
+    <div className="image_cont">
+      <img src={author?.profile} alt={author?.name} />
+    </div>
+
+    <div className="text">
+      <h3>{author?.name}</h3>
+      <h6>{commentDate}</h6>
+      <div className="comment">
+        <p>{comment}</p>
+      </div>
+      <div className="reply_sec">
+        <button>Reply</button>
+
+        <div className="reply">
+          {reply.map((item, idx) => (
+            <div className="reply_box" key={idx}>
+              <div className="image_cont">
+                <img src={item.author?.profile} alt={item.author?.name} />
+              </div>
+
+              <div className="text">
+                <h3>{item.author?.name}</h3>
+                <h6>{item.commentDate}</h6>
+                <div className="comment">
+                  <p>{item.comment}</p>
+                </div>
+                <div className="reply_sec">
+                  <button>Reply</button>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
