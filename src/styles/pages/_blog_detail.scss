@@ -205,6 +205,12 @@
         .lists {
           padding: 20px 0;
         }
+
+        .divider_cont {
+          .divider {
+            background-color: $dark-white-color;
+          }
+        }
       }
     }
   }

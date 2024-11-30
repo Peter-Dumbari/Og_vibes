@@ -111,7 +111,7 @@ const BlogDetail = () => {
               </div>
             </div>
 
-            <div className="poster_cont">
+            <section className="poster_cont">
               <BlogPosterCard
                 name="James Lio"
                 role="Admin"
@@ -119,9 +119,9 @@ const BlogDetail = () => {
                 bio="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, accusamus, adipisicing elit. Quas, accusamus."
                 profile="https://img.freepik.com/free-photo/man-blows-cheeks-has-discontent-expression-being-dissatisfied-with-something_273609-17085.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid"
               />
-            </div>
+            </section>
 
-            <div className="related_art">
+            <section className="related_art">
               <div className="blog_detail_page_header">
                 <span>Related Blogs</span>
               </div>
@@ -142,9 +142,9 @@ const BlogDetail = () => {
               </div>
 
               <div className="divider"></div>
-            </div>
+            </section>
 
-            <div className="comment_sec">
+            <section className="comment_sec">
               <div className="blog_detail_page_header">
                 <span>There are 02 comment For this Blog</span>
               </div>
@@ -159,7 +159,19 @@ const BlogDetail = () => {
                   />
                 ))}
               </div>
-            </div>
+
+              <div className="divider_cont">
+                <div className="divider"></div>
+              </div>
+            </section>
+
+            <section className="commentform">
+              <div className="blog_detail_page_header">
+                <span>Add Your Comments</span>
+              </div>
+
+              <form action="" className="comment_form"></form>
+            </section>
           </div>
           <div className="aob"></div>
         </div>

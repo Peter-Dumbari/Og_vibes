@@ -1,5 +1,5 @@
 import React from "react";
-import InputFieldComponent from "./inputComponent";
+import { InputFieldComponent } from "./inputComponent";
 import { CheckIcon } from "@heroicons/react/16/solid";
 
 const Validation = () => {

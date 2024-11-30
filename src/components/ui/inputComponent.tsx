@@ -10,7 +10,7 @@ interface InputProps {
   label: string;
   error: string;
 }
-const InputFieldComponent: React.FC<InputProps> = ({
+export const InputFieldComponent: React.FC<InputProps> = ({
   type,
   placeholder,
   value,
@@ -37,4 +37,27 @@ const InputFieldComponent: React.FC<InputProps> = ({
   );
 };
 
-export default InputFieldComponent;
+export const CommentInputField: React.FC<InputProps> = ({
+  type,
+  placeholder,
+  value,
+  onChange,
+  name,
+  id,
+  error,
+}) => {
+  return (
+    <div className="comment_input">
+      <input
+        type={type}
+        placeholder={placeholder}
+        name={name}
+        value={value}
+        id={id}
+        onChange={onChange}
+      />
+
+      {error && <span className="error">{error}</span>}
+    </div>
+  );
+};
