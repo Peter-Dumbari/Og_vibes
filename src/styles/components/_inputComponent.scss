@@ -40,3 +40,20 @@
     font-style: italic;
   }
 }
+
+.comment_input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  input {
+    width: 100%;
+    padding: 10px 20px;
+    background-color: $default-background-color;
+  }
+
+  textarea {
+    background-color: $default-background-color;
+    padding: 10px 20px;
+  }
+}

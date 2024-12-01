@@ -48,14 +48,18 @@ export const CommentInputField: React.FC<InputProps> = ({
 }) => {
   return (
     <div className="comment_input">
-      <input
-        type={type}
-        placeholder={placeholder}
-        name={name}
-        value={value}
-        id={id}
-        onChange={onChange}
-      />
+      {type === "textarea" ? (
+        <textarea placeholder={placeholder}></textarea>
+      ) : (
+        <input
+          type={type}
+          placeholder={placeholder}
+          name={name}
+          value={value}
+          id={id}
+          onChange={onChange}
+        />
+      )}
 
       {error && <span className="error">{error}</span>}
     </div>
