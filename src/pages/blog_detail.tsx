@@ -176,6 +176,7 @@ const BlogDetail = () => {
                   <CommentInputField
                     placeholder="Full Name"
                     type="text"
+                    required
                     name="full_name"
                   />
                 </div>
@@ -192,6 +193,7 @@ const BlogDetail = () => {
                     placeholder="Email Address"
                     type="email"
                     name="email_address"
+                    required
                   />
                 </div>
                 <div className="field">
@@ -207,8 +209,10 @@ const BlogDetail = () => {
                     placeholder="Type your comment"
                     type="textarea"
                     name="comment"
+                    required
                   />
                 </div>
+                <button className="comment_btn">Send Now</button>
               </form>
             </section>
           </div>

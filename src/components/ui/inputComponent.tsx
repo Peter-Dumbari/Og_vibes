@@ -9,6 +9,7 @@ interface InputProps {
   id: string;
   label: string;
   error: string;
+  required: boolean;
 }
 export const InputFieldComponent: React.FC<InputProps> = ({
   type,
@@ -43,18 +44,22 @@ export const CommentInputField: React.FC<InputProps> = ({
   value,
   onChange,
   name,
+  required,
   id,
   error,
 }) => {
   return (
     <div className="comment_input">
       {type === "textarea" ? (
-        <textarea placeholder={placeholder}></textarea>
+        <textarea
+          required={required}
+          placeholder={`${placeholder} ${required ? "*" : ""}`}></textarea>
       ) : (
         <input
           type={type}
-          placeholder={placeholder}
+          placeholder={`${placeholder} ${required ? "*" : ""}`}
           name={name}
+          required={required}
           value={value}
           id={id}
           onChange={onChange}
