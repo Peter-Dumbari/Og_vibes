@@ -15,6 +15,7 @@ import {
   BlogPosterCard,
   CommentCard,
   MiniCollection,
+  TwitterPostCard,
 } from "../components/ui/card";
 import { CommentInputField } from "../components/ui/inputComponent";
 
@@ -48,29 +49,34 @@ const BlogDetail = () => {
 
   const Links = [
     {
-      icon: <FaFacebookF size={13} />,
+      icon: <FaFacebookF size={15} />,
       link: "#",
+      color: "#3b5998", // Facebook blue
     },
     {
-      icon: <FaTwitter size={13} />,
+      icon: <FaTwitter size={15} />,
       link: "#",
+      color: "#1DA1F2", // Twitter blue
     },
     {
-      icon: <FaInstagram size={13} />,
+      icon: <FaInstagram size={15} />,
       link: "#",
-    },
-
-    {
-      icon: <FaSnapchat size={13} />,
-      link: "#",
+      color: "#E1306C", // Instagram gradient pink
     },
     {
-      icon: <FaTiktok size={13} />,
+      icon: <FaSnapchat size={15} />,
       link: "#",
+      color: "#000000", // Snapchat yellow
     },
     {
-      icon: <FaYoutube size={13} />,
+      icon: <FaTiktok size={15} />,
       link: "#",
+      color: "#010101", // TikTok black
+    },
+    {
+      icon: <FaYoutube size={15} />,
+      link: "#",
+      color: "#FF0000", // YouTube red
     },
   ];
   return (
@@ -256,19 +262,32 @@ const BlogDetail = () => {
           <div className="aob">
             <section className="socials">
               <div className="inner">
-                <h3>connect with Me</h3>
-
-                <div className="divider"></div>
+                <div className="connect_head">
+                  <h3>connect with Me</h3>
+                </div>
 
                 <div className="links">
                   {Links.map((link, idx) => (
-                    <a href={link.link} key={idx}>
+                    <a
+                      href={link.link}
+                      key={idx}
+                      className="icon"
+                      style={{
+                        backgroundColor: link.color,
+                      }}>
                       {link.icon}
                     </a>
                   ))}
                 </div>
               </div>
             </section>
+            <div className="twitter">
+              <TwitterPostCard
+                className="black"
+                post="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa laudantium veritatis blanditiis aliquid officia ratione est earum nihil consequatur ad!"
+                datePosted="10 mins"
+              />
+            </div>
           </div>
         </div>
       </Wrapper>

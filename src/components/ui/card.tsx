@@ -88,6 +88,7 @@ interface PlaylistCardProps {
 interface TwitPostProps {
   post: string;
   datePosted: string;
+  className: string;
 }
 
 interface ArtistCardProps {
@@ -438,9 +439,10 @@ export const PlaylistCard: React.FC<PlaylistCardProps> = ({ item }) => {
 export const TwitterPostCard: React.FC<TwitPostProps> = ({
   post,
   datePosted,
+  className,
 }) => {
   return (
-    <div className="twitcard">
+    <div className={`twitcard bg-${className || `primary`}`}>
       <div className="inner">
         <div className="card_head">
           <BsTwitterX size={20} className="icon" />
@@ -452,7 +454,7 @@ export const TwitterPostCard: React.FC<TwitPostProps> = ({
         </div>
 
         <div className="date">
-          <p>4 Mins ago</p>
+          <p>{datePosted}</p>
         </div>
       </div>
     </div>

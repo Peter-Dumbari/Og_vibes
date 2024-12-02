@@ -477,7 +477,7 @@ const home = () => {
                 <TwitterPostCard
                   post="                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus minima, omnis cumque deserunt ipsa fugit similique cupiditate quidem? Consequatur debitis suscipit impedit velit reiciendis tenetur.
 "
-                  datePosted="2024"
+                  datePosted="4 mins "
                 />
               </div>
             </section>
