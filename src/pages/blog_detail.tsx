@@ -1,6 +1,15 @@
 import React from "react";
 import Wrapper from "../components/ui/wrapper";
-import { FaQuoteRight, FaThumbsUp } from "react-icons/fa6";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaQuoteRight,
+  FaSnapchat,
+  FaThumbsUp,
+  FaTiktok,
+  FaTwitter,
+  FaYoutube,
+} from "react-icons/fa6";
 import { BiMessageAlt } from "react-icons/bi";
 import {
   BlogPosterCard,
@@ -28,12 +37,40 @@ const BlogDetail = () => {
               "https://img.freepik.com/free-photo/man-blows-cheeks-has-discontent-expression-being-dissatisfied-with-something_273609-17085.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
             name: "Brain Deo",
           },
-          comment: "Baba mind your business, wetin him talk no dey run",
+          comment: "Baba mind your business, wetin him talk no dey wrong",
           commentDate: "30-11-2024",
 
           reply: [],
         },
       ],
+    },
+  ];
+
+  const Links = [
+    {
+      icon: <FaFacebookF size={13} />,
+      link: "#",
+    },
+    {
+      icon: <FaTwitter size={13} />,
+      link: "#",
+    },
+    {
+      icon: <FaInstagram size={13} />,
+      link: "#",
+    },
+
+    {
+      icon: <FaSnapchat size={13} />,
+      link: "#",
+    },
+    {
+      icon: <FaTiktok size={13} />,
+      link: "#",
+    },
+    {
+      icon: <FaYoutube size={13} />,
+      link: "#",
     },
   ];
   return (
@@ -216,7 +253,23 @@ const BlogDetail = () => {
               </form>
             </section>
           </div>
-          <div className="aob"></div>
+          <div className="aob">
+            <section className="socials">
+              <div className="inner">
+                <h3>connect with Me</h3>
+
+                <div className="divider"></div>
+
+                <div className="links">
+                  {Links.map((link, idx) => (
+                    <a href={link.link} key={idx}>
+                      {link.icon}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </section>
+          </div>
         </div>
       </Wrapper>
     </div>
