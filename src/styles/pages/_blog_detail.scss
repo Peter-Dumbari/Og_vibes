@@ -212,6 +212,28 @@
           }
         }
       }
+
+      .comment_form {
+        padding: 20px 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+
+        .field {
+          width: calc(50% - 10px);
+        }
+        .area {
+          width: 100%;
+        }
+        .comment_btn {
+          width: 100%;
+          background-color: $dark-white-color;
+          padding: 10px 30px;
+          font-size: large;
+          font-weight: bold;
+          color: $default-text-color;
+        }
+      }
     }
   }
 }

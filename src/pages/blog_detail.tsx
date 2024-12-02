@@ -7,6 +7,7 @@ import {
   CommentCard,
   MiniCollection,
 } from "../components/ui/card";
+import { CommentInputField } from "../components/ui/inputComponent";
 
 const BlogDetail = () => {
   const dummyComments = [
@@ -170,7 +171,49 @@ const BlogDetail = () => {
                 <span>Add Your Comments</span>
               </div>
 
-              <form action="" className="comment_form"></form>
+              <form action="" className="comment_form">
+                <div className="field">
+                  <CommentInputField
+                    placeholder="Full Name"
+                    type="text"
+                    required
+                    name="full_name"
+                  />
+                </div>
+
+                <div className="field">
+                  <CommentInputField
+                    placeholder="Phone Number"
+                    type="number"
+                    name="phone_number"
+                  />
+                </div>
+                <div className="field">
+                  <CommentInputField
+                    placeholder="Email Address"
+                    type="email"
+                    name="email_address"
+                    required
+                  />
+                </div>
+                <div className="field">
+                  <CommentInputField
+                    placeholder="Website"
+                    type="text"
+                    name="website"
+                  />
+                </div>
+
+                <div className="area">
+                  <CommentInputField
+                    placeholder="Type your comment"
+                    type="textarea"
+                    name="comment"
+                    required
+                  />
+                </div>
+                <button className="comment_btn">Send Now</button>
+              </form>
             </section>
           </div>
           <div className="aob"></div>

@@ -40,3 +40,48 @@
     font-style: italic;
   }
 }
+
+.comment_input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  input {
+    width: 100%;
+    padding: 15px 30px;
+    background-color: $tabs-background-color;
+
+    &::placeholder {
+      color: $dark-white-color;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+
+  textarea {
+    background-color: $tabs-background-color;
+    padding: 15px 30px;
+    width: 100%;
+    height: 200px;
+    resize: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0px 1000px $default-text-color inset !important;
+    -webkit-text-fill-color: $dark-background-color !important; /* Set the text color */
+  }
+
+  .error {
+    color: $primary-color;
+    font-size: small;
+    font-style: italic;
+  }
+}
