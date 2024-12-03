@@ -1527,6 +1527,58 @@
     }
   }
 }
+
+.follow_card_cont {
+  background-color: $dark-background-color;
+  padding: 20px;
+  border-bottom: 1px solid $default-border-color;
+  .inner {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+
+    .icon_sec {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+
+      .icon {
+        background-color: #3b5998;
+        padding: 14px;
+        border-radius: 6px;
+      }
+    }
+
+    .statics {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+
+      h6 {
+        line-height: 10px;
+        font-weight: bold;
+        color: $default-text-color;
+        font-family: "Roboto", sans-serif;
+      }
+
+      span {
+        text-transform: uppercase;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: small;
+      }
+    }
+    .btn_cont {
+      button {
+        background-color: #3b5998;
+        color: $default-text-color;
+        padding: 5px 20px;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
 @media screen and (max-width: 768px) {
   .event_card {
     .content {

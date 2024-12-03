@@ -14,6 +14,7 @@ import { BiMessageAlt } from "react-icons/bi";
 import {
   BlogPosterCard,
   CommentCard,
+  FollowCard,
   MiniCollection,
   TwitterPostCard,
 } from "../components/ui/card";
@@ -289,7 +290,10 @@ const BlogDetail = () => {
               />
             </section>
 
-            <section className="follow"></section>
+            <section className="follow">
+              <FollowCard />
+              <FollowCard />
+            </section>
           </div>
         </div>
       </Wrapper>

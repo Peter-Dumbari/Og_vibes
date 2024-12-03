@@ -12,6 +12,7 @@ import { HeartIcon, PauseIcon, PlayIcon } from "@heroicons/react/24/solid";
 
 import React from "react";
 import { BsThreeDotsVertical, BsTwitterX } from "react-icons/bs";
+import { FaFacebook, FaFacebookF } from "react-icons/fa6";
 
 interface CardProps {
   title: string;
@@ -129,6 +130,11 @@ interface CommentProps {
   comment: string;
   commentDate: string;
   reply: object[];
+}
+
+interface FollowCardProps {
+  socialMedia: string;
+  link: string;
 }
 
 export const UpdateCard: React.FC<CardProps> = ({
@@ -635,6 +641,30 @@ export const CommentCard: React.FC<CommentProps> = ({
             </div>
           ))}
         </div>
+      </div>
+    </div>
+  </div>
+);
+
+export const FollowCard: React.FC<FollowCardProps> = ({
+  socialMedia,
+  link,
+}) => (
+  <div className="follow_card_cont">
+    <div className="inner">
+      <div className="icon_sec">
+        <div className="icon">
+          <FaFacebookF size={15} />
+        </div>
+
+        <div className="statics">
+          <h6>3541+</h6>
+          <span>Fans</span>
+        </div>
+      </div>
+
+      <div className="btn_cont">
+        <button>Like Page</button>
       </div>
     </div>
   </div>
