@@ -187,7 +187,7 @@ const home = () => {
           {
             image:
               "https://img.freepik.com/premium-photo/marn-grook-player-traditional-aboriginal-attire_419341-185661.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
-            title: "OUR LATEST EVENT  IS READY NOW!",
+            title: "BOOK, SCHEDULE EVENT HERE!",
             album: "Twice As Tall",
             likes: 0,
             track: 0,
@@ -198,7 +198,7 @@ const home = () => {
           {
             image:
               "https://img.freepik.com/free-photo/photorealistic-portrait-african-rastafarian-woman-with-dreads_23-2151516463.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
-            title: "OUR LATEST MUSICS  IS READY NOW!",
+            title: "ALL KIND OF MUSICS  ARE AVAILABLE HERE!",
             artist: "BurnaBoy",
             likes: 4,
             track: 21,
@@ -209,7 +209,7 @@ const home = () => {
           {
             image:
               "https://img.freepik.com/free-photo/man-playing-instrument-international-jazz-day_23-2148927519.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
-            title: "OUR LATEST VIDEOS  IS READY NOW!",
+            title: "WATCH LATEST EVENTS AND MUSIC VIDEOS!",
             artist: "BurnaBoy",
             likes: 7,
             track: 21,
@@ -477,7 +477,7 @@ const home = () => {
                 <TwitterPostCard
                   post="                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus minima, omnis cumque deserunt ipsa fugit similique cupiditate quidem? Consequatur debitis suscipit impedit velit reiciendis tenetur.
 "
-                  datePosted="2024"
+                  datePosted="4 mins "
                 />
               </div>
             </section>

@@ -53,11 +53,11 @@ export const CommentInputField: React.FC<InputProps> = ({
       {type === "textarea" ? (
         <textarea
           required={required}
-          placeholder={`${placeholder} ${required ? "*" : ""}`}></textarea>
+          placeholder={`${placeholder} ${required ? "∗" : ""}`}></textarea>
       ) : (
         <input
           type={type}
-          placeholder={`${placeholder} ${required ? "*" : ""}`}
+          placeholder={`${placeholder} ${required ? "∗" : ""}`}
           name={name}
           required={required}
           value={value}
