@@ -281,13 +281,15 @@ const BlogDetail = () => {
                 </div>
               </div>
             </section>
-            <div className="twitter">
+            <section className="twitter">
               <TwitterPostCard
                 className="black"
                 post="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa laudantium veritatis blanditiis aliquid officia ratione est earum nihil consequatur ad!"
                 datePosted="10 mins"
               />
-            </div>
+            </section>
+
+            <section className="follow"></section>
           </div>
         </div>
       </Wrapper>
