@@ -1436,6 +1436,27 @@
       }
     }
   }
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+
+    .inner {
+      flex-direction: column;
+      align-items: center;
+
+      .image_cont {
+        width: 38%;
+      }
+      .text {
+        flex-direction: column;
+        width: 100%;
+
+        .name_role {
+          flex-direction: column;
+        }
+      }
+    }
+  }
 }
 
 .comment_box {

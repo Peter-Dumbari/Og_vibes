@@ -197,6 +197,20 @@
         .divider {
           background-color: $dark-white-color;
         }
+
+        @media screen and (max-width: 768px) {
+          .list {
+            flex-direction: column;
+
+            .collection_cont {
+              width: 100%;
+
+              .banner_sec {
+                height: 280px;
+              }
+            }
+          }
+        }
       }
 
       .comment_sec {
@@ -312,6 +326,7 @@
 
     .detail_cont {
       flex-direction: column;
+      padding: 0;
 
       .details {
         width: 100%;
