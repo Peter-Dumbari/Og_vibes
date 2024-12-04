@@ -1,7 +1,6 @@
 import {
   ArrowDownIcon,
   MusicalNoteIcon,
-  PlayPauseIcon,
   PlusIcon,
 } from "@heroicons/react/16/solid";
 import {
@@ -12,6 +11,14 @@ import { HeartIcon, PauseIcon, PlayIcon } from "@heroicons/react/24/solid";
 
 import React from "react";
 import { BsThreeDotsVertical, BsTwitterX } from "react-icons/bs";
+import { FaTwitter } from "react-icons/fa";
+import {
+  FaInstagram,
+  FaFacebookF,
+  FaSnapchat,
+  FaTiktok,
+  FaYoutube,
+} from "react-icons/fa6";
 
 interface CardProps {
   title: string;
@@ -129,6 +136,17 @@ interface CommentProps {
   comment: string;
   commentDate: string;
   reply: object[];
+}
+
+interface FollowCardProps {
+  socialMedia:
+    | "Facebook"
+    | "Twitter"
+    | "Instagram"
+    | "Snapchat"
+    | "TikTok"
+    | "YouTube";
+  link: string;
 }
 
 export const UpdateCard: React.FC<CardProps> = ({
@@ -639,3 +657,65 @@ export const CommentCard: React.FC<CommentProps> = ({
     </div>
   </div>
 );
+
+const socialMediaConfig: Record<
+  string,
+  { buttonText: string; color: string; icon: JSX.Element }
+> = {
+  Facebook: {
+    buttonText: "Like Page",
+    color: "#3b5998",
+    icon: <FaFacebookF size={15} />,
+  },
+  Twitter: {
+    buttonText: "Follow",
+    color: "#1DA1F2",
+    icon: <FaTwitter size={15} />,
+  }, // Twitter blue
+  Instagram: {
+    buttonText: "Follow",
+    color: "#E1306C",
+    icon: <FaInstagram size={15} />,
+  }, // Instagram pink
+  Snapchat: {
+    buttonText: "Add",
+    color: "#FFFC00",
+    icon: <FaSnapchat size={15} />,
+  }, // Snapchat yellow
+  TikTok: {
+    buttonText: "Follow",
+    color: "#010101",
+    icon: <FaTiktok size={15} />,
+  }, // TikTok black
+  YouTube: {
+    buttonText: "Subscribe",
+    color: "#FF0000",
+    icon: <FaYoutube size={15} />,
+  },
+};
+export const FollowCard: React.FC<FollowCardProps> = ({
+  socialMedia,
+  link,
+}) => {
+  const { buttonText, color, icon } = socialMediaConfig[socialMedia];
+  return (
+    <div className="follow_card_cont">
+      <div className="inner">
+        <div className="icon_sec">
+          <div className="icon" style={{ backgroundColor: color }}>
+            {icon}
+          </div>
+
+          <div className="statics">
+            <h6>3541+</h6>
+            <span>Fans</span>
+          </div>
+        </div>
+
+        <div className="btn_cont">
+          <button style={{ backgroundColor: color }}>{buttonText}</button>
+        </div>
+      </div>
+    </div>
+  );
+};
