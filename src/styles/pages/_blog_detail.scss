@@ -255,6 +255,12 @@
             transition: 0.5s;
           }
         }
+
+        @media screen and (max-width: 768px) {
+          .field {
+            width: 100%;
+          }
+        }
       }
     }
     .aob {
