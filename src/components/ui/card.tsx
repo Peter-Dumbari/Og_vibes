@@ -147,6 +147,7 @@ interface FollowCardProps {
     | "TikTok"
     | "YouTube";
   link: string;
+  followers: number;
 }
 
 export const UpdateCard: React.FC<CardProps> = ({
@@ -696,6 +697,7 @@ const socialMediaConfig: Record<
 export const FollowCard: React.FC<FollowCardProps> = ({
   socialMedia,
   link,
+  followers,
 }) => {
   const { buttonText, color, icon } = socialMediaConfig[socialMedia];
   return (
@@ -707,7 +709,7 @@ export const FollowCard: React.FC<FollowCardProps> = ({
           </div>
 
           <div className="statics">
-            <h6>3541+</h6>
+            <h6>{followers !== 0 ? followers : 0}+</h6>
             <span>Fans</span>
           </div>
         </div>

@@ -291,9 +291,9 @@ const BlogDetail = () => {
             </section>
 
             <section className="follow">
-              <FollowCard socialMedia="Facebook" />
-              <FollowCard socialMedia="Twitter" />
-              <FollowCard socialMedia="YouTube" />
+              <FollowCard socialMedia="Facebook" followers={20} />
+              <FollowCard socialMedia="Twitter" followers={200} />
+              <FollowCard socialMedia="YouTube" followers={39} />
             </section>
           </div>
         </div>
