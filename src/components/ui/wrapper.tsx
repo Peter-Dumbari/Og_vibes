@@ -5,7 +5,7 @@ interface WrapperProps {
 }
 
 const Wrapper: React.FC<WrapperProps> = ({ children }) => {
-  return <div className="px-[3%]">{children}</div>;
+  return <div className="wrapper">{children}</div>;
 };
 
 export default Wrapper;
