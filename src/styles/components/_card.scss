@@ -1547,6 +1547,12 @@
       }
     }
   }
+
+  @media screen and (max-width: 768px) {
+    .image_cont {
+      width: 120px;
+    }
+  }
 }
 
 .follow_card_cont {
