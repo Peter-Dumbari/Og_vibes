@@ -150,6 +150,13 @@ interface FollowCardProps {
   followers: number;
 }
 
+
+interface VideoCardProps {
+  thumbnail: string;
+  isPlaying: boolean;
+  description: string;
+
+}
 export const UpdateCard: React.FC<CardProps> = ({
   title,
   description,
@@ -721,3 +728,6 @@ export const FollowCard: React.FC<FollowCardProps> = ({
     </div>
   );
 };
+
+
+export VideoCard: React.FC<VideoCardProps> =({})
