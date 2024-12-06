@@ -1610,14 +1610,44 @@
 .vid_card_cont {
   width: 100%;
   background-color: $dark-background-color;
+  overflow: hidden;
 
   .thumb {
     height: 300px;
+    position: relative;
 
     img {
       height: 100%;
       width: 100%;
       object-fit: cover;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background-color: $transparent_primary-color;
+      animation: fadeOut 0.5s forwards;
+    }
+
+    .action {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      animation: slideOutRight 0.5s forwards;
+
+      button {
+        text-transform: capitalize;
+        font-weight: bold;
+        background-color: $default-text-color;
+        padding: 5px 10px;
+        color: $primary-color;
+        transition: 0.5s;
+
+        &:hover {
+          background-color: $dark-white-color;
+          color: $tabs-background-color;
+        }
+      }
     }
   }
 
@@ -1636,6 +1666,7 @@
         font-size: 1.3rem;
         color: $default-text-color;
         font-weight: bold;
+        transition: 0.5s;
       }
     }
 
@@ -1646,6 +1677,7 @@
       align-items: center;
       justify-content: center;
       background-color: $primary-color;
+      transition: 0.5s;
 
       .icon_cont {
         width: 50px;
@@ -1657,9 +1689,39 @@
         align-items: center;
         justify-content: center;
         border-radius: 50px;
+        color: $default-text-color;
+
         .icon {
           width: 80%;
-          color: $default-text-color;
+        }
+      }
+    }
+  }
+
+  &:hover {
+    .thumb {
+      .overlay {
+        animation: fadeIn 0.5s forwards;
+      }
+
+      .action {
+        animation: slideInRight 0.5s forwards;
+      }
+    }
+
+    .inner {
+      .descrip {
+        h3 {
+          color: $primary-color;
+          transition: 0.5s;
+        }
+      }
+
+      .controller {
+        background-color: $dark-background-color;
+        transition: 0.5s;
+        .icon_cont {
+          color: $primary-color;
         }
       }
     }

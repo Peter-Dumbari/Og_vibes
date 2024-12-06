@@ -737,6 +737,10 @@ export const VideoCard: React.FC<VideoCardProps> = ({
     <div className="vid_card_cont">
       <div className="thumb">
         <img src={thumbnail} alt="thumbnail" />
+        <div className="overlay"></div>
+        <div className="action">
+          <button>Discover more</button>
+        </div>
       </div>
       <div className="inner">
         <div className="descrip">
