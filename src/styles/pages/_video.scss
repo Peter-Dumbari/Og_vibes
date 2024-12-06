@@ -29,6 +29,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       gap: 30px;
+      margin-bottom: 30px;
 
       @media (max-width: 1200px) {
         grid-template-columns: 1fr 1fr;
