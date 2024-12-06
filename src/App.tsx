@@ -7,6 +7,7 @@ import {
   Event,
   Blog,
   BlogDetail,
+  Video,
 } from "./pages/index.tsx";
 import Layout from "./components/layout";
 
@@ -17,6 +18,7 @@ function App() {
         <Route index element={<Home />} />
         <Route path="/artist" element={<Artist />} />
         <Route path="/music" element={<Music />} />
+        <Route path="/media/video" element={<Video />} />
         <Route path="/event" element={<Event />} />
         <Route path="/blogs" element={<Blog />} />
         <Route path="/blog_detail" element={<BlogDetail />} />

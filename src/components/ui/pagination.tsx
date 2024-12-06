@@ -20,7 +20,7 @@ const PaginationComponent: React.FC<PaginationProps> = ({
         disabled={currentPage === 1}>
         <div className="flex gap-2">
           <ChevronLeftIcon className="w-4" />
-          <span>Previous</span>
+          <span>Prev</span>
         </div>
       </button>
       {pageNumbers.map((page) => (

@@ -1606,6 +1606,65 @@
     }
   }
 }
+
+.vid_card_cont {
+  width: 100%;
+  background-color: $dark-background-color;
+
+  .thumb {
+    height: 300px;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .inner {
+    display: flex;
+    height: 70px;
+
+    .descrip {
+      width: 80%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+
+      h3 {
+        font-size: 1.3rem;
+        color: $default-text-color;
+        font-weight: bold;
+      }
+    }
+
+    .controller {
+      width: 20%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $primary-color;
+
+      .icon_cont {
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+        text-align: center;
+        border: 1px solid;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50px;
+        .icon {
+          width: 80%;
+          color: $default-text-color;
+        }
+      }
+    }
+  }
+}
 @media screen and (max-width: 768px) {
   .event_card {
     .content {
