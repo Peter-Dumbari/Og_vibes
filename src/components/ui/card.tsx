@@ -6,8 +6,9 @@ import {
 import {
   ArrowDownCircleIcon,
   PlayCircleIcon,
+  PlayIcon,
 } from "@heroicons/react/24/outline";
-import { HeartIcon, PauseIcon, PlayIcon } from "@heroicons/react/24/solid";
+import { HeartIcon, PauseIcon } from "@heroicons/react/24/solid";
 
 import React from "react";
 import { BsThreeDotsVertical, BsTwitterX } from "react-icons/bs";
@@ -150,6 +151,11 @@ interface FollowCardProps {
   followers: number;
 }
 
+interface VideoCardProps {
+  thumbnail: string;
+  isPlaying: boolean;
+  title: string;
+}
 export const UpdateCard: React.FC<CardProps> = ({
   title,
   description,
@@ -716,6 +722,34 @@ export const FollowCard: React.FC<FollowCardProps> = ({
 
         <div className="btn_cont">
           <button style={{ backgroundColor: color }}>{buttonText}</button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export const VideoCard: React.FC<VideoCardProps> = ({
+  thumbnail,
+  isPlaying,
+  title,
+}) => {
+  return (
+    <div className="vid_card_cont">
+      <div className="thumb">
+        <img src={thumbnail} alt="thumbnail" />
+      </div>
+      <div className="inner">
+        <div className="descrip">
+          <h3>{title}</h3>
+        </div>
+        <div className="controller">
+          <div className="icon_cont">
+            {isPlaying ? (
+              <PauseIcon className="icon" />
+            ) : (
+              <PlayIcon className="icon" />
+            )}
+          </div>
         </div>
       </div>
     </div>
