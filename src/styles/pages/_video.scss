@@ -21,10 +21,31 @@
       font-family: "roboto", sans-serif;
       font-size: 14px;
     }
+
+    @media screen and (max-width: 768px) {
+      height: 400px;
+      h3 {
+        font-size: 1.8rem;
+        padding-top: 20px;
+        width: 80%;
+      }
+      P {
+        font-size: 14px;
+        width: 90%;
+      }
+    }
   }
 
   .videos {
     margin: 30px 0;
+
+    .vids_container {
+      height: 850px;
+
+      @media screen and (max-width: 768px) {
+        height: auto;
+      }
+    }
     .all_vid {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
