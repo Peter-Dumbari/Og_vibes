@@ -1024,8 +1024,8 @@
   }
 
   @media screen and (max-width: 768px) {
-    width: 100%;
-    min-width: 80%;
+    min-width: 100%;
+    max-width: 250px;
     .img_cont {
       min-width: 100%;
       height: 100%;
@@ -1615,11 +1615,13 @@
   .thumb {
     height: 300px;
     position: relative;
+    overflow: hidden;
 
     img {
       height: 100%;
       width: 100%;
       object-fit: cover;
+      transition: 0.5s;
     }
 
     .overlay {
@@ -1700,6 +1702,11 @@
 
   &:hover {
     .thumb {
+      overflow: hidden;
+      img {
+        transform: scale(1.2) rotate(10deg);
+        transition: 0.5s;
+      }
       .overlay {
         animation: fadeIn 0.5s forwards;
       }
