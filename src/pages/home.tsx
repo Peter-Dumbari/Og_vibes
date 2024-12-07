@@ -16,7 +16,7 @@ import {
 import { MusicalNoteIcon } from "@heroicons/react/16/solid";
 import { ListBulletIcon } from "@heroicons/react/24/outline";
 import { FaSliders } from "react-icons/fa6";
-import Player from "../components/ui/player";
+import { MusicPlayer } from "../components/ui/player";
 import {
   FaFacebookF,
   FaInstagram,
@@ -454,7 +454,7 @@ const home = () => {
             </div>
             <div className="music_player">
               <div className="music_player_inner">
-                <Player src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" />
+                <MusicPlayer src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" />
               </div>
             </div>
 
