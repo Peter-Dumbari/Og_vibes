@@ -212,6 +212,12 @@ export const SimpleVideoPlayer: React.FC<PlayerProps> = ({ src }) => {
     }
   };
 
+  React.useEffect(() => {
+    if (vidRef.current.paused) {
+      setIsPlaying(false);
+    }
+  }, [vidRef.current.paused]);
+
   const handleMute = () => {
     if (vidRef.current) {
       vidRef.current.muted = !isMuted;
@@ -235,13 +241,10 @@ export const SimpleVideoPlayer: React.FC<PlayerProps> = ({ src }) => {
     }
   };
   return (
-    <div className="simple">
+    <div className="simple_vid_cont">
       <div className="player">
         <video ref={vidRef} onTimeUpdate={handleTimeUpdate} src={src}></video>
 
-        <div className="head">
-          <h5>{vidRef.current && vidRef.current?.src}</h5>
-        </div>
         <div className="range">
           <input
             type="range"
@@ -252,9 +255,17 @@ export const SimpleVideoPlayer: React.FC<PlayerProps> = ({ src }) => {
             onChange={handleSeek}
           />
         </div>
-        <div className="poster"></div>
-        <div className="actions">
-          <button onClick={handlePlayPause}>Play/Pause</button>
+      </div>
+      <div className="info">
+        <div className="src">
+          <p>{vidRef.current && vidRef.current.src.slice(0, 35)}...</p>
+        </div>
+        <div className="icon_cont">
+          {isPlaying ? (
+            <PauseIcon className="icon" onClick={handlePlayPause} />
+          ) : (
+            <PlayIcon className="icon" onClick={handlePlayPause} />
+          )}
         </div>
       </div>
     </div>

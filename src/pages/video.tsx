@@ -2,38 +2,24 @@ import React from "react";
 import PaginationComponent from "../components/ui/pagination";
 import { VideoCard } from "../components/ui/card";
 import Wrapper from "../components/ui/wrapper";
+import { SimpleVideoPlayer } from "../components/ui/player";
 
 const Video = () => {
   const demoVideo = [
     {
-      thumbnail:
-        "https://trendybeatz.com/images/Asake-Work-Of-Art-AlbumArtwork1.jpg",
-      title: "Person wey go help you no go stress you - Asake",
-      isPlaying: true,
+      src: "https://videos.pexels.com/video-files/3209663/3209663-sd_640_360_25fps.mp4",
     },
     {
-      thumbnail:
-        "https://trendybeatz.com/images/Asake-Work-Of-Art-AlbumArtwork1.jpg",
-      title: "Lonely at the top",
-      isPlaying: false,
+      src: "https://videos.pexels.com/video-files/3209663/3209663-sd_640_360_25fps.mp4",
     },
     {
-      thumbnail:
-        "https://trendybeatz.com/images/Asake-Work-Of-Art-AlbumArtwork1.jpg",
-      title: "Lonely at the top",
-      isPlaying: false,
+      src: "https://videos.pexels.com/video-files/3209663/3209663-sd_640_360_25fps.mp4",
     },
     {
-      thumbnail:
-        "https://trendybeatz.com/images/Asake-Work-Of-Art-AlbumArtwork1.jpg",
-      title: "Lonely at the top",
-      isPlaying: false,
+      src: "https://videos.pexels.com/video-files/3209663/3209663-sd_640_360_25fps.mp4",
     },
     {
-      thumbnail:
-        "https://trendybeatz.com/images/Asake-Work-Of-Art-AlbumArtwork1.jpg",
-      title: "Lonely at the top",
-      isPlaying: false,
+      src: "https://videos.pexels.com/video-files/3209663/3209663-sd_640_360_25fps.mp4",
     },
   ];
 
@@ -64,14 +50,7 @@ const Video = () => {
           <div className="vids_container">
             <div className="all_vid">
               {currentVideos.map((item, idx) => {
-                return (
-                  <VideoCard
-                    key={idx}
-                    thumbnail={item.thumbnail}
-                    title={item.title}
-                    isPlaying={item.isPlaying}
-                  />
-                );
+                return <SimpleVideoPlayer src={item.src} key={idx} />;
               })}
             </div>
           </div>
