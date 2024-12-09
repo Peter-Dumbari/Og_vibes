@@ -193,3 +193,70 @@ export const VideoPlayer: React.FC<PlayerProps> = ({ src }) => {
     </div>
   );
 };
+
+export const SimpleVideoPlayer: React.FC<PlayerProps> = ({ src }) => {
+  const vidRef = React.useRef(null);
+  const [isPlaying, setIsPlaying] = React.useState<boolean>(false);
+  const [isMuted, setIsMuted] = React.useState<boolean>(false);
+  const [progress, setProgress] = React.useState<number>(0);
+
+  const handlePlayPause = () => {
+    if (vidRef.current) {
+      if (vidRef.current.paused) {
+        vidRef.current.play();
+        setIsPlaying(true);
+      } else {
+        vidRef.current.pause();
+        setIsPlaying(false);
+      }
+    }
+  };
+
+  const handleMute = () => {
+    if (vidRef.current) {
+      vidRef.current.muted = !isMuted;
+      setIsMuted(!isMuted);
+    }
+  };
+
+  const handleTimeUpdate = () => {
+    if (vidRef.current) {
+      const currentTime = vidRef.current.currentTime;
+      const duration = vidRef.current.duration;
+      setProgress((currentTime / duration) * 100);
+    }
+  };
+
+  const handleSeek = (e) => {
+    if (vidRef.current) {
+      const newTime = (e.target.value / 100) * vidRef.current.duration;
+      vidRef.current.currentTime = newTime;
+      setProgress(e.target.value);
+    }
+  };
+  return (
+    <div className="simple">
+      <div className="player">
+        <video ref={vidRef} onTimeUpdate={handleTimeUpdate} src={src}></video>
+
+        <div className="head">
+          <h5>{vidRef.current && vidRef.current?.src}</h5>
+        </div>
+        <div className="range">
+          <input
+            type="range"
+            name=""
+            min={0}
+            max={100}
+            value={progress}
+            onChange={handleSeek}
+          />
+        </div>
+        <div className="poster"></div>
+        <div className="actions">
+          <button onClick={handlePlayPause}>Play/Pause</button>
+        </div>
+      </div>
+    </div>
+  );
+};
