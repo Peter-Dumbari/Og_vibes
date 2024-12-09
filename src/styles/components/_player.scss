@@ -63,6 +63,7 @@
 .simple_vid_cont {
   background-color: $dark-background-color;
   height: auto;
+  overflow: hidden;
 
   .player {
     height: 280px;
@@ -135,6 +136,28 @@
         }
       }
     }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background-color: $transparent_primary-color;
+      animation: fadeOut 0.5s forwards;
+    }
+
+    .action {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      animation: slideOutRight 0.5s forwards;
+
+      button {
+        background-color: $primary-color;
+        padding: 5px;
+        font-weight: bold;
+        color: $default-text-color;
+        text-transform: capitalize;
+      }
+    }
   }
 
   .info {
@@ -163,6 +186,18 @@
 
       .icon {
         width: 100%;
+      }
+    }
+  }
+
+  &:hover {
+    .player {
+      .overlay {
+        animation: fadeIn 0.5s forwards;
+      }
+
+      .action {
+        animation: slideInRight 0.5s forwards;
       }
     }
   }
