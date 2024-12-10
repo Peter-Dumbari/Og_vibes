@@ -2,5 +2,15 @@
   .vid_detail {
     background-color: $tabs-background-color;
     padding: 40px 0;
+
+    .inner {
+      display: flex;
+      width: 100%;
+
+      .vidbox_container {
+        width: 70%;
+        background-color: $dark-background-color;
+      }
+    }
   }
 }

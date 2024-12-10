@@ -202,3 +202,163 @@
     }
   }
 }
+
+.video_player_cont {
+  width: 100%;
+  background-color: $dark-background-color;
+
+  .player {
+    width: 100%;
+    overflow: hidden;
+    height: 350px;
+    position: relative;
+
+    video {
+      width: 100%;
+    }
+
+    .controllers {
+      position: absolute;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      right: 0;
+      left: 0;
+      background-color: $trans_black_ground;
+      gap: 10px;
+      width: 100%;
+      padding: 0 10px;
+
+      .playpause {
+        .icon {
+          width: 20px;
+          cursor: pointer;
+        }
+      }
+
+      .timer {
+        display: flex;
+        align-items: center;
+        span {
+          font-size: smaller;
+          color: $dark-white-color;
+        }
+      }
+      .range {
+        width: 100%;
+        display: flex;
+        align-items: center;
+
+        input {
+          width: 100%;
+          -webkit-appearance: none;
+          appearance: none;
+          height: 5px;
+          background-color: $primary-color;
+          border-radius: 4px;
+          outline: none;
+          cursor: pointer;
+          border: none;
+
+          &::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 10px;
+            height: 10px;
+            // background-color: #4caf50;
+            // border: 2px solid #ffffff;
+            // border-radius: 50%;
+            // cursor: pointer;
+            // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            // transition: transform 0.2s ease;
+          }
+
+          .custom-range::-webkit-slider-thumb:hover {
+            transform: scale(1.2); /* Slightly enlarge the thumb on hover */
+            background-color: $default-text-color;
+          }
+
+          &::-moz-range-thumb {
+            width: 10px;
+            height: 10px;
+            background-color: $default-text-color;
+            border: 2px solid #ffffff;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease;
+          }
+
+          &::-moz-range-thumb:hover {
+            transform: scale(1.2);
+            background-color: $tabs-background-color;
+          }
+        }
+      }
+      .volume {
+        display: flex;
+        width: 20%;
+        align-items: center;
+
+        input {
+          width: 100%;
+          -webkit-appearance: none;
+          appearance: none;
+          height: 5px;
+          background-color: $primary-color;
+          border-radius: 4px;
+          outline: none;
+          cursor: pointer;
+          border: none;
+
+          &::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 10px;
+            height: 10px;
+            // background-color: #4caf50;
+            // border: 2px solid #ffffff;
+            // border-radius: 50%;
+            // cursor: pointer;
+            // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            // transition: transform 0.2s ease;
+          }
+
+          .custom-range::-webkit-slider-thumb:hover {
+            transform: scale(1.2); /* Slightly enlarge the thumb on hover */
+            background-color: $default-text-color;
+          }
+
+          &::-moz-range-thumb {
+            width: 10px;
+            height: 10px;
+            background-color: $default-text-color;
+            border: 2px solid #ffffff;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease;
+          }
+
+          &::-moz-range-thumb:hover {
+            transform: scale(1.2);
+            background-color: $tabs-background-color;
+          }
+        }
+      }
+    }
+  }
+
+  .details {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .src {
+      font-size: 1.3rem;
+      font-weight: bold;
+      text-transform: capitalize;
+    }
+  }
+}
