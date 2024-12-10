@@ -255,6 +255,11 @@ export const SimpleVideoPlayer: React.FC<PlayerProps> = ({ src }) => {
             onChange={handleSeek}
           />
         </div>
+
+        <div className="overlay"></div>
+        <div className="action">
+          <button>Discover more</button>
+        </div>
       </div>
       <div className="info">
         <div className="src">
