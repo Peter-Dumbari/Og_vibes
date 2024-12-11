@@ -97,7 +97,10 @@ const Vid_Detail = () => {
         <div className="vid_detail">
           <Wrapper>
             <div className="inner">
-              <VideoPlayer src="https://videos.pexels.com/video-files/3209663/3209663-sd_640_360_25fps.mp4" />
+              <div className="vidbox_container">
+                <VideoPlayer src="https://videos.pexels.com/video-files/3209663/3209663-sd_640_360_25fps.mp4" />
+              </div>
+              <div className="recentPosts"></div>
             </div>
           </Wrapper>
         </div>

@@ -159,6 +159,13 @@ export const VideoPlayer: React.FC<PlayerProps> = ({ src }) => {
     }
   };
 
+  const formatTime = (time) => {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+
+    return `${minutes}:${seconds < 10 ? `0${seconds}` : seconds}`;
+  };
+
   const handleSeek = (e) => {
     if (vidRef.current) {
       const newTime = (e.target.value / 100) * vidRef.current.duration;
@@ -170,21 +177,53 @@ export const VideoPlayer: React.FC<PlayerProps> = ({ src }) => {
     <div className="video_player_cont">
       <div className="player">
         <video ref={vidRef} onTimeUpdate={handleTimeUpdate} src={src}></video>
+        <div className="controllers">
+          <div className="playpause">
+            {isPlaying ? (
+              <PauseIcon className="icon" onClick={handlePlayPause} />
+            ) : (
+              <PlayIcon className="icon" onClick={handlePlayPause} />
+            )}
+          </div>
 
-        <div className="head">
+          <div className="range">
+            <input
+              type="range"
+              name=""
+              min={0}
+              max={100}
+              value={progress}
+              onChange={handleSeek}
+              id=""
+            />
+          </div>
+
+          <div className="timer">
+            <span>
+              {formatTime(vidRef.current && vidRef.current.currentTime)}
+            </span>
+            /
+            <span>{formatTime(vidRef.current && vidRef.current.duration)}</span>
+          </div>
+
+          <div className="volume">
+            <BiVolume size={20} onClick={handleMute} />
+            <input
+              type="range"
+              name=""
+              min={0}
+              max={100}
+              value={100}
+              id="" // id="volume"
+            />
+          </div>
+        </div>
+      </div>
+      <div className="details">
+        <div className="src">
           <h5>{vidRef.current && vidRef.current?.src}</h5>
         </div>
-        <div className="range">
-          <input
-            type="range"
-            name=""
-            min={0}
-            max={100}
-            value={progress}
-            onChange={handleSeek}
-            id=""
-          />
-        </div>
+
         <div className="poster"></div>
         <div className="actions">
           <button onClick={handlePlayPause}>Play/Pause</button>
@@ -216,7 +255,7 @@ export const SimpleVideoPlayer: React.FC<PlayerProps> = ({ src }) => {
     if (vidRef.current.paused) {
       setIsPlaying(false);
     }
-  }, [vidRef.current.paused]);
+  }, [vidRef.current && vidRef.current.paused]);
 
   const handleMute = () => {
     if (vidRef.current) {
