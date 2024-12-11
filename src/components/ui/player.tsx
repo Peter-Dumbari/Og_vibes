@@ -131,6 +131,7 @@ export const VideoPlayer: React.FC<PlayerProps> = ({ src }) => {
   const [isPlaying, setIsPlaying] = React.useState<boolean>(false);
   const [isMuted, setIsMuted] = React.useState<boolean>(false);
   const [progress, setProgress] = React.useState<number>(0);
+  const [volume, setVolume] = React.useState<number>(1);
 
   const handlePlayPause = () => {
     if (vidRef.current) {
@@ -173,10 +174,27 @@ export const VideoPlayer: React.FC<PlayerProps> = ({ src }) => {
       setProgress(e.target.value);
     }
   };
+
+  const handleVolume = (e) => {
+    const newVolume = parseFloat(e.target.value);
+    setVolume(newVolume);
+    vidRef.current.volume = newVolume;
+  };
+
+  React.useEffect(() => {
+    if (vidRef.current.paused) {
+      setIsPlaying(false);
+    }
+  }, [vidRef.current && vidRef.current.paused]);
+
   return (
     <div className="video_player_cont">
       <div className="player">
-        <video ref={vidRef} onTimeUpdate={handleTimeUpdate} src={src}></video>
+        <video
+          ref={vidRef}
+          onTimeUpdate={handleTimeUpdate}
+          src={src}
+          onClick={handlePlayPause}></video>
         <div className="controllers">
           <div className="playpause">
             {isPlaying ? (
@@ -207,13 +225,18 @@ export const VideoPlayer: React.FC<PlayerProps> = ({ src }) => {
           </div>
 
           <div className="volume">
-            <BiVolume size={20} onClick={handleMute} />
+            {isMuted ? (
+              <BiVolumeMute size={20} onClick={handleMute} />
+            ) : (
+              <BiVolume size={20} onClick={handleMute} />
+            )}
             <input
               type="range"
               name=""
               min={0}
               max={100}
-              value={100}
+              value={isMuted ? 0 : volume}
+              onChange={handleVolume}
               id="" // id="volume"
             />
           </div>
@@ -224,9 +247,23 @@ export const VideoPlayer: React.FC<PlayerProps> = ({ src }) => {
           <h5>{vidRef.current && vidRef.current?.src}</h5>
         </div>
 
-        <div className="poster"></div>
-        <div className="actions">
-          <button onClick={handlePlayPause}>Play/Pause</button>
+        <div className="poster">
+          <div className="img_cont">
+            <img
+              src="https://avatars.githubusercontent.com/u/101636035?v=4"
+              alt="poster"
+            />
+          </div>
+
+          <div className="text">
+            <h3>Peter Dumbari</h3>
+            <div className="statistic">
+              <div className="item">
+                <div className="icon"></div>
+                <div className="text">Views</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

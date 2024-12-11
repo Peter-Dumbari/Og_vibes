@@ -297,7 +297,8 @@
       }
       .volume {
         display: flex;
-        width: 20%;
+        gap: 5px;
+        width: 15%;
         align-items: center;
 
         input {
@@ -305,7 +306,7 @@
           -webkit-appearance: none;
           appearance: none;
           height: 5px;
-          background-color: $primary-color;
+          background-color: $default-text-color;
           border-radius: 4px;
           outline: none;
           cursor: pointer;
