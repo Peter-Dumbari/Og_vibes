@@ -2,10 +2,16 @@ import {
   ChevronDoubleLeftIcon,
   ChevronDoubleRightIcon,
   PauseIcon,
+  ArrowDownIcon,
   PlayIcon,
 } from "@heroicons/react/16/solid";
+import {
+  ClockIcon,
+  EyeIcon,
+  HandThumbUpIcon,
+} from "@heroicons/react/24/outline";
 import React from "react";
-import { BiVolume, BiVolumeMute } from "react-icons/bi";
+import { BiComment, BiVolume, BiVolumeMute } from "react-icons/bi";
 import { FaSliders } from "react-icons/fa6";
 
 interface PlayerProps {
@@ -256,11 +262,59 @@ export const VideoPlayer: React.FC<PlayerProps> = ({ src }) => {
           </div>
 
           <div className="text">
-            <h3>Peter Dumbari</h3>
+            <a href="">Peter Dumbari</a>
             <div className="statistic">
-              <div className="item">
-                <div className="icon"></div>
-                <div className="text">Views</div>
+              <div className="items">
+                <div className="item">
+                  <div className="icon_cont">
+                    <ClockIcon className="icon" />
+                  </div>
+                  <div className="text">
+                    <p>
+                      20/10/2024
+                      <span className="lab">Posted</span>
+                    </p>
+                  </div>
+                </div>
+                <div className="item">
+                  <div className="icon_cont">
+                    <HandThumbUpIcon className="icon" />
+                  </div>
+                  <div className="text">
+                    <p>
+                      {30}
+                      <span className="lab">Likes</span>
+                    </p>
+                  </div>
+                </div>
+                <div className="item">
+                  <div className="icon_cont">
+                    <BiComment className="icon" />
+                  </div>
+                  <div className="text">
+                    <p>
+                      {2}
+                      <span className="lab">Comments</span>
+                    </p>
+                  </div>
+                </div>
+                <div className="item">
+                  <div className="icon_cont">
+                    <EyeIcon className="icon" />
+                  </div>
+                  <div className="text">
+                    <p>
+                      {34}
+                      <span className="lab">Views</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="download">
+                <button>
+                  Download <ArrowDownIcon className="icon" />
+                </button>
               </div>
             </div>
           </div>

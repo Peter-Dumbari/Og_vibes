@@ -282,7 +282,7 @@
             width: 10px;
             height: 10px;
             background-color: $default-text-color;
-            border: 2px solid #ffffff;
+            border: 2px solid $default-text-color;
             border-radius: 50%;
             cursor: pointer;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -360,6 +360,82 @@
       font-size: 1.3rem;
       font-weight: bold;
       text-transform: capitalize;
+    }
+    .poster {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      .img_cont {
+        width: 50px;
+        border-radius: 50px;
+        overflow: hidden;
+        border: 3px solid $primary-color;
+        img {
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .text {
+        width: 100%;
+        a {
+          font-weight: bold;
+          font-size: 1.1rem;
+          font-family: "roboto", sans-serif;
+        }
+
+        .statistic {
+          display: flex;
+          width: 100%;
+          gap: 10px;
+          justify-content: space-between;
+
+          .items {
+            display: flex;
+            gap: 20px;
+            .item {
+              display: flex;
+              align-items: center;
+              gap: 5px;
+              width: 100%;
+
+              .icon_cont {
+                .icon {
+                  width: 15px;
+                  color: $dark-white-color;
+                }
+              }
+              .text {
+                color: $dark-white-color;
+                p {
+                  .lab {
+                    font-weight: bold;
+                    margin-left: 5px;
+                  }
+                }
+              }
+            }
+          }
+
+          .download {
+            button {
+              background-color: $primary-color;
+              padding: 5px 12px;
+              color: $default-text-color;
+              text-transform: capitalize;
+              display: flex;
+              gap: 5px;
+              border-radius: 50px;
+
+              .icon {
+                width: 20px;
+                font-weight: bold;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
