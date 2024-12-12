@@ -2,10 +2,16 @@ import {
   ChevronDoubleLeftIcon,
   ChevronDoubleRightIcon,
   PauseIcon,
+  ArrowDownIcon,
   PlayIcon,
 } from "@heroicons/react/16/solid";
+import {
+  ClockIcon,
+  EyeIcon,
+  HandThumbUpIcon,
+} from "@heroicons/react/24/outline";
 import React from "react";
-import { BiVolume, BiVolumeMute } from "react-icons/bi";
+import { BiComment, BiVolume, BiVolumeMute } from "react-icons/bi";
 import { FaSliders } from "react-icons/fa6";
 
 interface PlayerProps {
@@ -131,6 +137,7 @@ export const VideoPlayer: React.FC<PlayerProps> = ({ src }) => {
   const [isPlaying, setIsPlaying] = React.useState<boolean>(false);
   const [isMuted, setIsMuted] = React.useState<boolean>(false);
   const [progress, setProgress] = React.useState<number>(0);
+  const [volume, setVolume] = React.useState<number>(1);
 
   const handlePlayPause = () => {
     if (vidRef.current) {
@@ -173,10 +180,27 @@ export const VideoPlayer: React.FC<PlayerProps> = ({ src }) => {
       setProgress(e.target.value);
     }
   };
+
+  const handleVolume = (e) => {
+    const newVolume = parseFloat(e.target.value);
+    setVolume(newVolume);
+    vidRef.current.volume = newVolume;
+  };
+
+  React.useEffect(() => {
+    if (vidRef.current.paused) {
+      setIsPlaying(false);
+    }
+  }, [vidRef.current && vidRef.current.paused]);
+
   return (
     <div className="video_player_cont">
       <div className="player">
-        <video ref={vidRef} onTimeUpdate={handleTimeUpdate} src={src}></video>
+        <video
+          ref={vidRef}
+          onTimeUpdate={handleTimeUpdate}
+          src={src}
+          onClick={handlePlayPause}></video>
         <div className="controllers">
           <div className="playpause">
             {isPlaying ? (
@@ -207,13 +231,18 @@ export const VideoPlayer: React.FC<PlayerProps> = ({ src }) => {
           </div>
 
           <div className="volume">
-            <BiVolume size={20} onClick={handleMute} />
+            {isMuted ? (
+              <BiVolumeMute size={20} onClick={handleMute} />
+            ) : (
+              <BiVolume size={20} onClick={handleMute} />
+            )}
             <input
               type="range"
               name=""
               min={0}
               max={100}
-              value={100}
+              value={isMuted ? 0 : volume}
+              onChange={handleVolume}
               id="" // id="volume"
             />
           </div>
@@ -224,9 +253,71 @@ export const VideoPlayer: React.FC<PlayerProps> = ({ src }) => {
           <h5>{vidRef.current && vidRef.current?.src}</h5>
         </div>
 
-        <div className="poster"></div>
-        <div className="actions">
-          <button onClick={handlePlayPause}>Play/Pause</button>
+        <div className="poster">
+          <div className="img_cont">
+            <img
+              src="https://avatars.githubusercontent.com/u/101636035?v=4"
+              alt="poster"
+            />
+          </div>
+
+          <div className="text">
+            <a href="">Peter Dumbari</a>
+            <div className="statistic">
+              <div className="items">
+                <div className="item">
+                  <div className="icon_cont">
+                    <ClockIcon className="icon" />
+                  </div>
+                  <div className="text">
+                    <p>
+                      20/10/2024
+                      <span className="lab">Posted</span>
+                    </p>
+                  </div>
+                </div>
+                <div className="item">
+                  <div className="icon_cont">
+                    <HandThumbUpIcon className="icon" />
+                  </div>
+                  <div className="text">
+                    <p>
+                      {30}
+                      <span className="lab">Likes</span>
+                    </p>
+                  </div>
+                </div>
+                <div className="item">
+                  <div className="icon_cont">
+                    <BiComment className="icon" />
+                  </div>
+                  <div className="text">
+                    <p>
+                      {2}
+                      <span className="lab">Comments</span>
+                    </p>
+                  </div>
+                </div>
+                <div className="item">
+                  <div className="icon_cont">
+                    <EyeIcon className="icon" />
+                  </div>
+                  <div className="text">
+                    <p>
+                      {34}
+                      <span className="lab">Views</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="download">
+                <button>
+                  Download <ArrowDownIcon className="icon" />
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
