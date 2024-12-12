@@ -317,12 +317,6 @@
             appearance: none;
             width: 10px;
             height: 10px;
-            // background-color: #4caf50;
-            // border: 2px solid #ffffff;
-            // border-radius: 50%;
-            // cursor: pointer;
-            // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            // transition: transform 0.2s ease;
           }
 
           .custom-range::-webkit-slider-thumb:hover {
@@ -357,7 +351,7 @@
     gap: 10px;
 
     .src {
-      font-size: 1.3rem;
+      font-size: 1.1rem;
       font-weight: bold;
       text-transform: capitalize;
     }
