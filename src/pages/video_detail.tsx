@@ -222,7 +222,7 @@ const Vid_Detail = () => {
             <div className="details">
               <section className="comment_sec">
                 <div className="blog_detail_page_header">
-                  <span>There are 02 comment For this Blog</span>
+                  <span>Comments</span>
                 </div>
 
                 <div className="lists">
