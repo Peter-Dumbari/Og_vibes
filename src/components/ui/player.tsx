@@ -217,6 +217,9 @@ export const VideoPlayer: React.FC<PlayerProps> = ({ src }) => {
               min={0}
               max={100}
               value={progress}
+              style={{
+                background: `linear-gradient(to right, #dc1937 0%, #dc1937 ${progress}%, #323d46 ${progress}%, #323d46 100%)`,
+              }}
               onChange={handleSeek}
               id=""
             />
@@ -242,6 +245,9 @@ export const VideoPlayer: React.FC<PlayerProps> = ({ src }) => {
               min={0}
               max={100}
               value={isMuted ? 0 : volume}
+              style={{
+                background: `linear-gradient(to right, #dc1937 0%, #dc1937 ${volume}%, #323d46 ${volume}%, #323d46 100%)`,
+              }}
               onChange={handleVolume}
               id="" // id="volume"
             />
@@ -382,6 +388,9 @@ export const SimpleVideoPlayer: React.FC<PlayerProps> = ({ src }) => {
             min={0}
             max={100}
             value={progress}
+            style={{
+              background: `linear-gradient(to right, #dc1937 0%, #dc1937 ${progress}%, #323d46 ${progress}%, #ffffff21 100%)`,
+            }}
             onChange={handleSeek}
           />
         </div>
