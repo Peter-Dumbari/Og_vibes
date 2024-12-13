@@ -18,10 +18,11 @@ import {
   FollowCard,
   MiniCollection,
   MusicListCard,
+  PlaylistCard,
   TwitterPostCard,
 } from "../components/ui/card";
 import { CommentInputField } from "../components/ui/inputComponent";
-import { VideoPlayer } from "../components/ui/player";
+import { MusicPlayer, VideoPlayer } from "../components/ui/player";
 
 const Vid_Detail = () => {
   const dummyComments = [
@@ -84,6 +85,51 @@ const Vid_Detail = () => {
     },
   ];
 
+  const recentlyPlayed = [
+    {
+      album:
+        "https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+      artist: "Davido ft Wizkid",
+      song: "FEM (remix)",
+      playing: true,
+    },
+    {
+      album:
+        "https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+      artist: "Davido ft Wizkid",
+      song: "A Better Time",
+      playing: false,
+    },
+    {
+      album:
+        "https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+      artist: "Davido ft Wizkid",
+      song: "FEM",
+      playing: false,
+    },
+    {
+      album:
+        "https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+      artist: "Davido ft Wizkid",
+      song: "FEM",
+      playing: false,
+    },
+    {
+      album:
+        "https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+      artist: "Davido ft Wizkid",
+      song: "FEM",
+      playing: false,
+    },
+    {
+      album:
+        "https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+      artist: "Davido ft Wizkid",
+      song: "Crazy Love",
+      playing: false,
+    },
+  ];
+
   const topListed = [
     {
       sn: 1,
@@ -107,21 +153,21 @@ const Vid_Detail = () => {
       song: "FEM",
     },
     {
-      sn: 3,
-      album:
-        "https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
-      artist: "Davido ft Wizkid",
-      song: "FEM",
-    },
-    {
-      sn: 3,
-      album:
-        "https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
-      artist: "Davido ft Wizkid",
-      song: "FEM",
-    },
-    {
       sn: 4,
+      album:
+        "https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+      artist: "Davido ft Wizkid",
+      song: "FEM",
+    },
+    {
+      sn: 5,
+      album:
+        "https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+      artist: "Davido ft Wizkid",
+      song: "FEM",
+    },
+    {
+      sn: 6,
       album:
         "https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
       artist: "Davido ft Wizkid",
@@ -247,12 +293,33 @@ const Vid_Detail = () => {
             </div>
 
             <div className="aob">
-              <div className="head bg-tabsBackground">
-                <h4 className="title">Top 10 Artists </h4>
-              </div>
-              {topListed.map((item, index) => (
-                <MusicListCard item={[item]} key={index} />
-              ))}
+              <section className="artist">
+                <div className="head bg-tabsBackground">
+                  <h4 className="title">Top Album </h4>
+                </div>
+                {topListed.map((item, index) => (
+                  <MusicListCard item={[item]} key={index} />
+                ))}
+
+                <div className="divider"></div>
+              </section>
+
+              <section className="bloggers">
+                <div className="head bg-tabsBackground">
+                  <h4 className="title">Top Playlist</h4>
+                </div>
+
+                <div className="playlist">
+                  {recentlyPlayed.map((item, index) => (
+                    <PlaylistCard item={[item]} key={index} />
+                  ))}
+                </div>
+                <div className="music_player">
+                  <div className="music_player_inner">
+                    <MusicPlayer src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" />
+                  </div>
+                </div>
+              </section>
             </div>
           </div>
         </Wrapper>

@@ -227,7 +227,8 @@
       background-color: $trans_black_ground;
       gap: 10px;
       width: 100%;
-      padding: 0 10px;
+      padding: 6px 10px;
+      animation: fadeOut forwards 0.5s;
 
       .playpause {
         .icon {
@@ -429,6 +430,14 @@
             }
           }
         }
+      }
+    }
+  }
+
+  &:hover {
+    .player {
+      .controllers {
+        animation: fadeIn forwards 0.5s;
       }
     }
   }
