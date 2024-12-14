@@ -25,6 +25,42 @@
   }
 }
 
+.banner {
+  height: 350px;
+  background-color: $primary-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  color: $default-text-color;
+
+  h3 {
+    font-size: 2.9rem;
+    font-weight: 600;
+    font-family: "Exo", Regular;
+    word-spacing: 5px;
+  }
+
+  p {
+    width: 50%;
+    font-family: "roboto", sans-serif;
+    font-size: 14px;
+  }
+
+  @media screen and (max-width: 768px) {
+    h3 {
+      font-size: 1.8rem;
+      padding-top: 20px;
+      width: 80%;
+    }
+    P {
+      font-size: 14px;
+      width: 90%;
+    }
+  }
+}
+
 .wrapper {
   padding: 0 70px;
 
