@@ -6,10 +6,63 @@
     .inner {
       display: flex;
       width: 100%;
+      gap: 30px;
 
       .vidbox_container {
-        width: 70%;
+        width: 68%;
         background-color: $dark-background-color;
+      }
+
+      .recentPosts {
+        width: 35%;
+        background-color: $dark-background-color;
+
+        .title {
+          padding: 20px 20px 0 20px;
+        }
+
+        .blogs {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        flex-direction: column;
+        gap: 20px;
+
+        .vidbox_container {
+          width: 100%;
+        }
+
+        .recentPosts {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .detail_cont {
+    gap: 30px;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+
+    .details {
+      width: 68%;
+    }
+    .aob {
+      width: 35%;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .detail_cont {
+      .details {
+        width: 100%;
+      }
+      .aob {
+        width: 100%;
       }
     }
   }

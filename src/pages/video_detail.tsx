@@ -12,14 +12,17 @@ import {
 } from "react-icons/fa6";
 import { BiMessageAlt } from "react-icons/bi";
 import {
+  BlogCard,
   BlogPosterCard,
   CommentCard,
   FollowCard,
   MiniCollection,
+  MusicListCard,
+  PlaylistCard,
   TwitterPostCard,
 } from "../components/ui/card";
 import { CommentInputField } from "../components/ui/inputComponent";
-import { VideoPlayer } from "../components/ui/player";
+import { MusicPlayer, VideoPlayer } from "../components/ui/player";
 
 const Vid_Detail = () => {
   const dummyComments = [
@@ -82,6 +85,96 @@ const Vid_Detail = () => {
     },
   ];
 
+  const recentlyPlayed = [
+    {
+      album:
+        "https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+      artist: "Davido ft Wizkid",
+      song: "FEM (remix)",
+      playing: true,
+    },
+    {
+      album:
+        "https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+      artist: "Davido ft Wizkid",
+      song: "A Better Time",
+      playing: false,
+    },
+    {
+      album:
+        "https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+      artist: "Davido ft Wizkid",
+      song: "FEM",
+      playing: false,
+    },
+    {
+      album:
+        "https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+      artist: "Davido ft Wizkid",
+      song: "FEM",
+      playing: false,
+    },
+    {
+      album:
+        "https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+      artist: "Davido ft Wizkid",
+      song: "FEM",
+      playing: false,
+    },
+    {
+      album:
+        "https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+      artist: "Davido ft Wizkid",
+      song: "Crazy Love",
+      playing: false,
+    },
+  ];
+
+  const topListed = [
+    {
+      sn: 1,
+      album:
+        "https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+      artist: "Davido ft Wizkid",
+      song: "FEM (remix)",
+    },
+    {
+      sn: 2,
+      album:
+        "https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+      artist: "Davido ft Wizkid",
+      song: "A Better Time",
+    },
+    {
+      sn: 3,
+      album:
+        "https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+      artist: "Davido ft Wizkid",
+      song: "FEM",
+    },
+    {
+      sn: 4,
+      album:
+        "https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+      artist: "Davido ft Wizkid",
+      song: "FEM",
+    },
+    {
+      sn: 5,
+      album:
+        "https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+      artist: "Davido ft Wizkid",
+      song: "FEM",
+    },
+    {
+      sn: 6,
+      album:
+        "https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid",
+      artist: "Davido ft Wizkid",
+      song: "Crazy Love",
+    },
+  ];
+
   return (
     <div className="blog_detail_container">
       <div className="banner">
@@ -100,7 +193,27 @@ const Vid_Detail = () => {
               <div className="vidbox_container">
                 <VideoPlayer src="https://videos.pexels.com/video-files/3209663/3209663-sd_640_360_25fps.mp4" />
               </div>
-              <div className="recentPosts"></div>
+              <div className="recentPosts">
+                <h4 className="title">Recent Post</h4>
+
+                <div className="blogs">
+                  <BlogCard
+                    title="The Adventure of Kuru"
+                    blog_date="31/12/2024"
+                    image="https://img.freepik.com/free-vector/flat-africa-day-celebration-illustration_23-2149371069.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid"
+                  />
+                  <BlogCard
+                    title="The Adventure of Kuru"
+                    blog_date="31/12/2024"
+                    image="https://img.freepik.com/free-vector/flat-africa-day-celebration-illustration_23-2149371069.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid"
+                  />
+                  <BlogCard
+                    title="The Adventure of Kuru"
+                    blog_date="31/12/2024"
+                    image="https://img.freepik.com/free-vector/flat-africa-day-celebration-illustration_23-2149371069.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid"
+                  />
+                </div>
+              </div>
             </div>
           </Wrapper>
         </div>
@@ -109,7 +222,7 @@ const Vid_Detail = () => {
             <div className="details">
               <section className="comment_sec">
                 <div className="blog_detail_page_header">
-                  <span>There are 02 comment For this Blog</span>
+                  <span>Comments</span>
                 </div>
 
                 <div className="lists">
@@ -180,39 +293,32 @@ const Vid_Detail = () => {
             </div>
 
             <div className="aob">
-              <section className="socials">
-                <div className="inner">
-                  <div className="connect_head">
-                    <h3>connect with Me</h3>
-                  </div>
+              <section className="artist">
+                <div className="head bg-tabsBackground">
+                  <h4 className="title">Top Album </h4>
+                </div>
+                {topListed.map((item, index) => (
+                  <MusicListCard item={[item]} key={index} />
+                ))}
 
-                  <div className="links">
-                    {Links.map((link, idx) => (
-                      <a
-                        href={link.link}
-                        key={idx}
-                        className="icon"
-                        style={{
-                          backgroundColor: link.color,
-                        }}>
-                        {link.icon}
-                      </a>
-                    ))}
+                <div className="divider"></div>
+              </section>
+
+              <section className="bloggers">
+                <div className="head bg-tabsBackground">
+                  <h4 className="title">Top Playlist</h4>
+                </div>
+
+                <div className="playlist">
+                  {recentlyPlayed.map((item, index) => (
+                    <PlaylistCard item={[item]} key={index} />
+                  ))}
+                </div>
+                <div className="music_player">
+                  <div className="music_player_inner">
+                    <MusicPlayer src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" />
                   </div>
                 </div>
-              </section>
-              <section className="twitter">
-                <TwitterPostCard
-                  className="black"
-                  post="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa laudantium veritatis blanditiis aliquid officia ratione est earum nihil consequatur ad!"
-                  datePosted="10 mins"
-                />
-              </section>
-
-              <section className="follow">
-                <FollowCard socialMedia="Facebook" followers={20} />
-                <FollowCard socialMedia="Twitter" followers={200} />
-                <FollowCard socialMedia="YouTube" followers={39} />
               </section>
             </div>
           </div>
