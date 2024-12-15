@@ -14,33 +14,78 @@ const Contact = () => {
         </p>
       </div>
 
-      <section className="contacts_means">
-        <h3>Get in Touch</h3>
+      <section className="contact_means">
         <div className="inner">
-          <div className="office_Add">
-            <MapPinIcon className="icon" />
+          <div className="means">
+            <div className="headin">
+              <MapPinIcon className="icon" />
+              <h4>Address</h4>
+            </div>
+
+            <div className="details">
+              <p>
+                Garrison office: No.5 Ogbunabali Road, Port Harcourt, Rivers
+                State, NG
+              </p>
+
+              <p>
+                Postal Address: P.O. Box 1234, Port Harcourt, Rivers State, NG
+              </p>
+            </div>
           </div>
-          <div className="phone">
-            <PhoneIcon className="icon" />
+          <div className="means">
+            <div className="headin">
+              <PhoneIcon className="icon" />
+              <h4>Phone</h4>
+            </div>
+
+            <div className="details">
+              <p>WhatsApp: +2348169204689</p>
+
+              <p>Calls: +2348052027785</p>
+            </div>
           </div>
-          <div className="email">
-            <EnvelopeOpenIcon className="icon" />
+          <div className="means">
+            <div className="headin">
+              <EnvelopeOpenIcon className="icon" />
+              <h4>Email</h4>
+            </div>
+
+            <div className="details">
+              <p>peterdumbari08@gmail.com</p>
+
+              <p>dummytwiz@gmail.com</p>
+            </div>
           </div>
         </div>
 
-        <div className="form">
+        <div className="message">
           <h3>Send Us a Message</h3>
-          <form action="">
-            <input type="text" placeholder="Name" />
-            <input type="email" placeholder="Email" />
-            <textarea
-              name=""
-              id=""
-              cols={30}
-              rows={10}
-              placeholder="Message"></textarea>
-            <button>Send</button>
-          </form>
+
+          <div className="message_inner">
+            <div className="contact_message">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod,
+                officia beatae. Dolorem praesentium modi quod ratione
+                reiciendis, sunt neque assumenda similique rem excepturi
+                obcaecati quo debitis quos asperiores quaerat pariatur.
+              </p>
+            </div>
+
+            <div className="form_cont">
+              <form action="">
+                <input type="text" placeholder="Name" />
+                <input type="email" placeholder="Email" />
+                <textarea
+                  name=""
+                  id=""
+                  cols={30}
+                  rows={10}
+                  placeholder="Message"></textarea>
+                <button>Send</button>
+              </form>
+            </div>
+          </div>
         </div>
       </section>
     </div>
