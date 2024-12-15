@@ -143,7 +143,7 @@ export default function Navbar() {
     },
     {
       page: "Contact Us",
-      link: "#contact-us",
+      link: "/contact",
     },
   ];
 
