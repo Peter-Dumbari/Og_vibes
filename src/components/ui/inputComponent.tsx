@@ -25,14 +25,23 @@ export const InputFieldComponent: React.FC<InputProps> = ({
     <div className="input_container">
       <label htmlFor={id}>{label}</label>
 
-      <input
-        type={type}
-        placeholder={placeholder}
-        value={value}
-        onChange={onChange}
-        name={name}
-        id={id}
-      />
+      {type === "textarea" ? (
+        <textarea
+          placeholder={placeholder}
+          value={value}
+          name={name}
+          id={id}></textarea>
+      ) : (
+        <input
+          type={type}
+          placeholder={placeholder}
+          value={value}
+          onChange={onChange}
+          name={name}
+          id={id}
+        />
+      )}
+
       <span className="error">{error}</span>
     </div>
   );
