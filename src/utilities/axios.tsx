@@ -1,9 +1,8 @@
 import axios from "axios";
 
-const BaseURL = process.env.VITE_APP_HOST_URL;
-
-const setBaseurl = (endpoint) => {
-  BaseURL + endpoint;
+const BaseURL = import.meta.env.VITE_APP_HOST_URL;
+const setBaseurl = (endpoint: string): string => {
+  return `${BaseURL}${endpoint}`;
 };
 
 const axiosInstance = axios.create({
