@@ -1,6 +1,7 @@
 import { MapPinIcon } from "@heroicons/react/16/solid";
 import { EnvelopeOpenIcon, PhoneIcon } from "@heroicons/react/24/outline";
 import React from "react";
+import { InputFieldComponent } from "../components/ui/inputComponent";
 
 const Contact = () => {
   return (
@@ -60,10 +61,10 @@ const Contact = () => {
         </div>
 
         <div className="message">
-          <h3>Send Us a Message</h3>
-
           <div className="message_inner">
             <div className="contact_message">
+              <h3>Send Us a Message</h3>
+
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod,
                 officia beatae. Dolorem praesentium modi quod ratione
@@ -74,15 +75,11 @@ const Contact = () => {
 
             <div className="form_cont">
               <form action="">
-                <input type="text" placeholder="Name" />
-                <input type="email" placeholder="Email" />
-                <textarea
-                  name=""
-                  id=""
-                  cols={30}
-                  rows={10}
-                  placeholder="Message"></textarea>
-                <button>Send</button>
+                <InputFieldComponent type="text" placeholder="Name" />
+                <InputFieldComponent type="email" placeholder="Email" />
+                <InputFieldComponent type="text" placeholder="Subject" />
+                <InputFieldComponent type="textarea" placeholder="Message" />
+                <button className="btn_">Send</button>
               </form>
             </div>
           </div>
