@@ -2,6 +2,10 @@ import React from "react";
 import Wrapper from "../components/ui/wrapper";
 import { BlogMainCard } from "../components/ui/card";
 import PaginationComponent from "../components/ui/pagination";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../redux/store";
+import { getAllBlogs } from "../redux/features/blogs/blogSlice";
+import { AppDispatch } from "../redux/store";
 
 /**
  * 
@@ -50,6 +54,16 @@ const Blogs = () => {
       },
     },
   ];
+
+  const dispatch: AppDispatch = useDispatch();
+
+  const [blogs] = useSelector((state: RootState) => [state.blogs.blogs]);
+
+  React.useEffect(() => {
+    dispatch(getAllBlogs());
+  }, []);
+
+  console.log("blogs", blogs);
 
   const [currentPage, setCurrentPage] = React.useState<number>(1);
   const blogsPerPage = 6;
