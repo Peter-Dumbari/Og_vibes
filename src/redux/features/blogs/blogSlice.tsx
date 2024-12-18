@@ -17,6 +17,15 @@ export const postBlog = createAsyncThunk("blog/postBlog", async (data) => {
   }
 });
 
+export const getAllBlogs = createAsyncThunk("blog/getAllBlogs", async () => {
+  try {
+    const response = await axiosInstance.get("/blog");
+    return response.data;
+  } catch (error) {
+    return error;
+  }
+});
+
 const blogSlice = createSlice({
   name: "blog",
   initialState,
@@ -33,6 +42,22 @@ const blogSlice = createSlice({
         state.message = action.payload.message;
       })
       .addCase(postBlog.rejected, (state, action) => {
+        state.isloading = false;
+        state.error = action.error.message ?? null;
+      });
+
+    builder
+      .addCase(getAllBlogs.pending, (state) => {
+        state.isloading = true;
+        state.error = null;
+        state.message = null;
+      })
+      .addCase(getAllBlogs.fulfilled, (state, action) => {
+        state.isloading = false;
+
+        state.blogs = action.payload;
+      })
+      .addCase(getAllBlogs.rejected, (state, action) => {
         state.isloading = false;
         state.error = action.error.message ?? null;
       });
