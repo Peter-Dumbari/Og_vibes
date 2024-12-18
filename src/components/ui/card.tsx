@@ -114,7 +114,7 @@ interface MainBlogProps {
   title: string;
   image: string;
   description: string;
-  author_data: object[];
+  author: object[];
 }
 
 interface BlogPosterProps {
@@ -563,7 +563,7 @@ export const BlogMainCard: React.FC<MainBlogProps> = ({
   title,
   image,
   description,
-  author_data,
+  author,
 }) => (
   <div className="main_blog_card">
     <div className="inner">
@@ -579,11 +579,21 @@ export const BlogMainCard: React.FC<MainBlogProps> = ({
           <div className="author_info">
             <div className="profile">
               <div className="img_cont">
-                <img src={author_data?.profile} alt={author_data?.name} />
+                {author.profile ? (
+                  <img src={author?.profile} alt={author?.firstname} />
+                ) : (
+                  <div className="placeholder">
+                    <h3>
+                      {author?.firstname[0]} {author?.lastname[0]}
+                    </h3>
+                  </div>
+                )}
               </div>
             </div>
 
-            <h5>{author_data?.name}</h5>
+            <h5>
+              {author?.firstname} {author?.lastname}
+            </h5>
           </div>
         </div>
       </div>
