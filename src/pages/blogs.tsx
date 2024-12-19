@@ -89,13 +89,13 @@ const Blogs = () => {
 
       <Wrapper>
         <div className="blogs_holder">
-          {currentBlog.map((item, idx) => (
+          {blogs.map((item, idx) => (
             <BlogMainCard
               key={idx}
               title={item.title}
-              author_data={item.author_data}
+              author={item.author}
               description={item.description}
-              image={item.image}
+              image={item.blogImg}
             />
           ))}
         </div>
