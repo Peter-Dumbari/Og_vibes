@@ -20,6 +20,7 @@ import {
   FaTiktok,
   FaYoutube,
 } from "react-icons/fa6";
+import { useNavigate } from "react-router";
 
 interface CardProps {
   title: string;
@@ -111,6 +112,7 @@ interface ArtistCardProps {
 }
 
 interface MainBlogProps {
+  id: string;
   title: string;
   image: string;
   description: string;
@@ -490,10 +492,10 @@ export const ArtistCard: React.FC<ArtistCardProps> = ({ artist }) => {
   return (
     <div className="artist_card">
       <div className="img_cont">
-        <img src={artist.artistImg} alt={artist.artist} />
+        <img src={artist?.profilePictureUrl} alt={artist?.name} />
       </div>
       <div className="content">
-        <h3>{artist.artist}</h3>
+        <h3>{artist?.name}</h3>
         <p>{artist.location}</p>
       </div>
       <div className="hover_items">
@@ -502,11 +504,11 @@ export const ArtistCard: React.FC<ArtistCardProps> = ({ artist }) => {
         <p>{artist.bio}</p>
 
         <div className="contact">
-          {artist.contacts.map((contact) => (
+          {/* {artist.socialLinks.map((contact) => (
             <div className="icon">
               <a href={contact.link}>{contact.icon}</a>
             </div>
-          ))}
+          ))} */}
         </div>
       </div>
       <div className="bar_loader"></div>
@@ -563,43 +565,52 @@ export const BlogMainCard: React.FC<MainBlogProps> = ({
   title,
   image,
   description,
+  id,
   author,
-}) => (
-  <div className="main_blog_card">
-    <div className="inner">
-      <div className="img_cont">
-        <img src={image} alt="blog_image" />
-      </div>
-      <div className="text_cont">
-        <h3>{title}</h3>
-        <p>{description}</p>
-        <div className="card_footer">
-          <button>Read More</button>
+}) => {
+  const navigate = useNavigate();
+  const handleReadMore = () => {
+    // Add your read more logic here
+    navigate(`/blogs/${id}`);
+  };
 
-          <div className="author_info">
-            <div className="profile">
-              <div className="img_cont">
-                {author.profile ? (
-                  <img src={author?.profile} alt={author?.firstname} />
-                ) : (
-                  <div className="placeholder">
-                    <h3>
-                      {author?.firstname[0]} {author?.lastname[0]}
-                    </h3>
-                  </div>
-                )}
+  return (
+    <div className="main_blog_card">
+      <div className="inner">
+        <div className="img_cont">
+          <img src={image} alt="blog_image" />
+        </div>
+        <div className="text_cont">
+          <h3>{title}</h3>
+          <p>{description}</p>
+          <div className="card_footer">
+            <button onClick={handleReadMore}>Read More</button>
+
+            <div className="author_info">
+              <div className="profile">
+                <div className="img_cont">
+                  {author.profile ? (
+                    <img src={author?.profile} alt={author?.firstname} />
+                  ) : (
+                    <div className="placeholder">
+                      <h3>
+                        {author?.firstname[0]} {author?.lastname[0]}
+                      </h3>
+                    </div>
+                  )}
+                </div>
               </div>
-            </div>
 
-            <h5>
-              {author?.firstname} {author?.lastname}
-            </h5>
+              <h5>
+                {author?.firstname} {author?.lastname}
+              </h5>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 export const BlogPosterCard: React.FC<BlogPosterProps> = ({
   name,

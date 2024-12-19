@@ -24,7 +24,7 @@ function App() {
         <Route path="/media/video" element={<Video />} />
         <Route path="/event" element={<Event />} />
         <Route path="/blogs" element={<Blog />} />
-        <Route path="/blog_detail" element={<BlogDetail />} />
+        <Route path="/blogs/:id" element={<BlogDetail />} />
         <Route path="/media/video/detail" element={<VideoDetail />} />
       </Route>
     </Routes>
