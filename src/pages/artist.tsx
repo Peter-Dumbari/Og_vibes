@@ -35,19 +35,15 @@ const Artist = () => {
       contacts: [
         {
           link: "https://www.linkedin.com",
-          icon: <FaLinkedin size={13} />,
         },
         {
           link: "https://www.twitter.com",
-          icon: <FaTwitter size={13} />,
         },
         {
           link: "https://www.facebook.com",
-          icon: <FaFacebookF size={13} />,
         },
         {
           link: "https://www.instagram.com",
-          icon: <FaInstagram size={13} />,
         },
       ],
     },

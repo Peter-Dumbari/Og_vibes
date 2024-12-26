@@ -504,11 +504,26 @@ export const ArtistCard: React.FC<ArtistCardProps> = ({ artist }) => {
         <p>{artist.bio}</p>
 
         <div className="contact">
-          {/* {artist.socialLinks.map((contact) => (
-            <div className="icon">
-              <a href={contact.link}>{contact.icon}</a>
-            </div>
-          ))} */}
+          <div className="icon">
+            <a href={artist.socialLinks.facebook}>
+              {artist.socialLinks.facebook ? <FaFacebookF size={15} /> : null}
+            </a>
+          </div>
+          <div className="icon">
+            <a href={artist.socialLinks.twitter}>
+              {artist.socialLinks.twitter ? <FaTwitter size={15} /> : null}
+            </a>
+          </div>
+          <div className="icon">
+            <a href={artist.socialLinks.instagram}>
+              {artist.socialLinks.instagram ? <FaInstagram size={15} /> : null}
+            </a>
+          </div>
+          <div className="icon">
+            <a href={artist.socialLinks.youtube}>
+              {artist.socialLinks.instagram ? <FaYoutube size={15} /> : null}
+            </a>
+          </div>
         </div>
       </div>
       <div className="bar_loader"></div>
