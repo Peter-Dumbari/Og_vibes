@@ -89,15 +89,17 @@ const Blogs = () => {
 
       <Wrapper>
         <div className="blogs_holder">
-          {blogs.map((item, idx) => (
-            <BlogMainCard
-              key={idx}
-              title={item.title}
-              author={item.author}
-              description={item.description}
-              image={item.blogImg}
-            />
-          ))}
+          {blogs.length > 0 &&
+            blogs.map((item, idx) => (
+              <BlogMainCard
+                key={idx}
+                title={item.title}
+                author={item.author}
+                description={item.description}
+                image={item.blogImg}
+                id={item._id}
+              />
+            ))}
         </div>
 
         <PaginationComponent

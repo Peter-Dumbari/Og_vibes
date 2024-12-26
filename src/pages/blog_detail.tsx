@@ -19,8 +19,24 @@ import {
   TwitterPostCard,
 } from "../components/ui/card";
 import { CommentInputField } from "../components/ui/inputComponent";
+import { useParams } from "react-router";
+import { useDispatch, useSelector } from "react-redux";
+import { getBlog } from "../redux/features/blogs/blogSlice";
+import { RootState } from "../redux/store";
 
 const BlogDetail = () => {
+  const { id } = useParams();
+  const dispatch = useDispatch();
+  const { blogs } = useSelector((state: RootState) => state.blogs);
+
+  React.useEffect(() => {
+    try {
+      dispatch(getBlog(id));
+    } catch (error) {
+      console.log(error);
+    }
+  }, [id]);
+
   const dummyComments = [
     {
       author: {
@@ -96,10 +112,7 @@ const BlogDetail = () => {
           <div className="details">
             <div className="main_details">
               <div className="img_cont">
-                <img
-                  src="https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid"
-                  alt="blog image"
-                />
+                <img src={blogs?.blogImg} alt="blog image" />
                 <div className="date">
                   <h5 className="month">Feb</h5>
                   <span className="day">14</span>
@@ -107,32 +120,24 @@ const BlogDetail = () => {
               </div>
               <div className="text_sec">
                 <h3>
-                  This year concerts conference create a window for concerts
-                  groups
+                  {blogs?.title ||
+                    "Lorem ipsum dolor sit amet consectetur adipisicing elit."}
                 </h3>
 
                 <div className="reactions">
                   <div className="inner">
                     <FaThumbsUp size={20} />
-                    <span>3</span>
+                    <span>{blogs?.likes?.length}</span>
                     <h5>Likes</h5>
                   </div>
                   <div className="inner">
                     <BiMessageAlt size={20} />
-                    <span>3</span>
+                    <span>{blogs?.comments?.length}</span>
                     <h5>Comments</h5>
                   </div>
                 </div>
                 <div className="blog">
-                  <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Laborum, cumque temporibus corrupti autem in nulla quidem
-                    possimus iste, laudantium doloremque necessitatibus eius?
-                    Quo ex esse ducimus soluta aliquam? Libero repellendus eum
-                    minima fuga numquam, similique quasi placeat iure atque.
-                    Fugiat quod ipsum reprehenderit dicta quisquam cumque
-                    repellendus nam recusandae cum.
-                  </p>
+                  <p>{blogs?.content}</p>
 
                   <div className="seperator">
                     <FaQuoteRight size={60} className="w-50 h-50 icon" />
@@ -158,8 +163,8 @@ const BlogDetail = () => {
 
             <section className="poster_cont">
               <BlogPosterCard
-                name="James Lio"
-                role="Admin"
+                name={blogs?.author?.firstname + " " + blogs?.author?.lastname}
+                role={blogs?.author?.role}
                 tag="Master Developer"
                 bio="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, accusamus, adipisicing elit. Quas, accusamus."
                 profile="https://img.freepik.com/free-photo/man-blows-cheeks-has-discontent-expression-being-dissatisfied-with-something_273609-17085.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid"
@@ -195,14 +200,16 @@ const BlogDetail = () => {
               </div>
 
               <div className="lists">
-                {dummyComments.map((comment, idx) => (
-                  <CommentCard
-                    author={comment.author}
-                    commentDate={comment.commendDate}
-                    comment={comment.comment}
-                    reply={comment.reply}
-                  />
-                ))}
+                {blogs.length > 0 &&
+                  blogs?.comments &&
+                  blogs?.comments.map((comment, idx) => (
+                    <CommentCard
+                      author={comment.author}
+                      commentDate={comment.commendDate}
+                      comment={comment.content}
+                      reply={comment?.reply || []}
+                    />
+                  ))}
               </div>
 
               <div className="divider_cont">
