@@ -16,6 +16,15 @@ const uploadMusic = createAsyncThunk("music/uploadMusic", async (data) => {
   }
 });
 
+const getAllMusic = createAsyncThunk("music/getAllMusic", async () => {
+  try {
+    const response = await axiosInstance.get("/music");
+    return response.data;
+  } catch (error) {
+    return error;
+  }
+});
+
 export const musicSlice = createSlice({
   name: "music",
   initialState,
@@ -31,6 +40,20 @@ export const musicSlice = createSlice({
         state.musics = action.payload;
       })
       .addCase(uploadMusic.rejected, (state, action) => {
+        state.isloading = false;
+        state.error = action.error.message ?? null;
+      });
+
+    builder
+      .addCase(getAllMusic.pending, (state) => {
+        state.isloading = true;
+        state.error = null;
+      })
+      .addCase(getAllMusic.fulfilled, (state, action) => {
+        state.isloading = false;
+        state.musics = action.payload;
+      })
+      .addCase(getAllMusic.rejected, (state, action) => {
         state.isloading = false;
         state.error = action.error.message ?? null;
       });
