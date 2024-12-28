@@ -88,6 +88,20 @@ export const updateCommentMusic = createAsyncThunk(
   }
 );
 
+export const deleteCommentMusic = createAsyncThunk(
+  "music/deleteCommentMusic",
+  async (musicId, commentId) => {
+    try {
+      const response = await axiosInstance.delete(
+        `/comment/music/${musicId}/comments/${commentId}`
+      );
+      return response.data;
+    } catch (error) {
+      return error;
+    }
+  }
+);
+
 export const musicSlice = createSlice({
   name: "music",
   initialState,
@@ -150,3 +164,5 @@ export const musicSlice = createSlice({
       });
   },
 });
+
+export default musicSlice.reducer;
