@@ -20,9 +20,9 @@ const TableComponent: React.FC<TableProps> = ({
   rowsPerPage = 5,
 }) => {
   const [currentPage, setCurrentPage] = React.useState<number>(1);
-  const totalPage = Math.ceil(data.length / rowsPerPage);
+  const totalPage = Math.ceil(data?.length / rowsPerPage);
   const startIndex = (currentPage - 1) * rowsPerPage;
-  const currentData = data.slice(startIndex, startIndex + rowsPerPage);
+  const currentData = data?.slice(startIndex, startIndex + rowsPerPage);
 
   const handlePageChange = (page: number) => {
     if (page >= 1 && page <= totalPage) {
@@ -47,7 +47,7 @@ const TableComponent: React.FC<TableProps> = ({
           </tr>
         </thead>
         <tbody>
-          {currentData.map((row, rowIndex) => (
+          {currentData?.map((row, rowIndex) => (
             <tr key={rowIndex}>
               {columns.map((column, colIndex) =>
                 isSmallScreen && column.hideOnSmall ? null : (

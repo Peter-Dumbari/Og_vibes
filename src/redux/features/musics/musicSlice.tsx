@@ -62,27 +62,45 @@ export const deleteMusic = createAsyncThunk("music/deleteMusic", async (id) => {
 });
 
 export const commentMusic = createAsyncThunk(
-    "music/commentMusic",
-    async ({ id, musicId, data }, { rejectWithValue }) => {
-      try {
-        const response = await axiosInstance.post(`music/${musicId}/comment/${id}`, data);
-        return response.data;
-      } catch (error) {
-        // Use rejectWithValue to properly handle errors
-        return rejectWithValue(error);
-      }
+  "music/commentMusic",
+  async (id, data) => {
+    try {
+      const response = await axiosInstance.post(`comment/music/${id}`, data);
+      return response.data;
+    } catch (error) {
+      return error;
     }
-  );
-  
-
-export const updateCommentMusic = createAsyncThunk("music/updateCommentMusic", async (id, data) => {
-  try {
-    const response = await axiosInstance.put(`music/comment/${id}`, data);
-    return response.data;
-  } catch (error) {
-    return error;
   }
-}
+);
+
+export const updateCommentMusic = createAsyncThunk(
+  "music/updateCommentMusic",
+  async (musicId, comment) => {
+    try {
+      const response = await axiosInstance.put(
+        `/comment/music/${musicId}/comments/${comment?.id}`,
+        comment
+      );
+      return response.data;
+    } catch (error) {
+      return error;
+    }
+  }
+);
+
+export const deleteCommentMusic = createAsyncThunk(
+  "music/deleteCommentMusic",
+  async (musicId, commentId) => {
+    try {
+      const response = await axiosInstance.delete(
+        `/comment/music/${musicId}/comments/${commentId}`
+      );
+      return response.data;
+    } catch (error) {
+      return error;
+    }
+  }
+);
 
 export const musicSlice = createSlice({
   name: "music",
@@ -132,17 +150,19 @@ export const musicSlice = createSlice({
       });
 
     builder
-    .addCase(updateMusic.pending, (state) => {
-      state.isloading = true;
-      state.error = null;
-    })
-    .addCase(updateMusic.fulfilled, (state, action) => {
-      state.isloading = false;
-      state.musics = action.payload;
-    })
-    .addCase(updateMusic.rejected, (state, action) => {
-      state.isloading = false;
-      state.error = action.error.message ?? null;
-    });
+      .addCase(updateMusic.pending, (state) => {
+        state.isloading = true;
+        state.error = null;
+      })
+      .addCase(updateMusic.fulfilled, (state, action) => {
+        state.isloading = false;
+        state.musics = action.payload;
+      })
+      .addCase(updateMusic.rejected, (state, action) => {
+        state.isloading = false;
+        state.error = action.error.message ?? null;
+      });
+  },
+});
 
-}});
+export default musicSlice.reducer;
