@@ -8,7 +8,6 @@ import { getAllMusic } from "../redux/features/musics/musicSlice";
 const Music = () => {
   const { musics } = useSelector((state: RootState) => state.music);
   const dispatch = useDispatch();
-  console.log("musics", musics);
   useEffect(() => {
     try {
       dispatch(getAllMusic());
@@ -51,7 +50,7 @@ const Music = () => {
       render: (row) => (
         <div className="music_img">
           <div className="img_cont">
-            <img src={row.fileUrl} alt={row.title} />
+            <img src={row.thumbnailUrl} alt={row.title} />
             <div className="overlay"></div>
           </div>
 
@@ -62,9 +61,12 @@ const Music = () => {
       ),
       hideOnSmall: false,
     },
-    { header: "Artist", accessor: "artist", hideOnSmall: false },
-    { header: "Genre", accessor: "genre", hideOnSmall: true },
-    { header: "Released", accessor: "released", hideOnSmall: true },
+    {
+      header: "Artist",
+      render: (row) => <>{row?.artist?.name}</>,
+    },
+    { header: "Genre", accessor: "category", hideOnSmall: true },
+    { header: "Released", accessor: "postDate", hideOnSmall: true },
   ];
 
   return (

@@ -10,6 +10,7 @@ import {
   Video,
   VideoDetail,
   Contact,
+  MusicDetail,
 } from "./pages/index.tsx";
 import Layout from "./components/layout";
 
@@ -20,6 +21,7 @@ function App() {
         <Route index element={<Home />} />
         <Route path="/artist" element={<Artist />} />
         <Route path="/music" element={<Music />} />
+        <Route path="/music/:id" element={<MusicDetail />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/media/video" element={<Video />} />
         <Route path="/event" element={<Event />} />

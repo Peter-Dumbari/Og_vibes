@@ -1,6 +1,7 @@
 export { default as Home } from "./home";
 export { default as Artist } from "./artist";
 export { default as Music } from "./music";
+export { default as MusicDetail } from "./music_detail";
 export { default as Video } from "./video";
 export { default as Event } from "./event";
 export { default as Contact } from "./contact";
