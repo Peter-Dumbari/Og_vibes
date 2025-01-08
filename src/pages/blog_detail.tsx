@@ -111,7 +111,7 @@ const BlogDetail = () => {
       <Wrapper>
         <div>
           <DetailPage>
-            <div className="">
+            <div>
               <div className="main_details">
                 <div className="img_cont">
                   <img src={blogs?.blogImg} alt="blog image" />
