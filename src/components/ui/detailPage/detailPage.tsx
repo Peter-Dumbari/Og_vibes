@@ -10,7 +10,7 @@ import {
 interface detailPageProps {
   children?: React.ReactNode;
 }
-const detailPage: React.FC<detailPageProps> = ({ children }) => {
+const DetailPage: React.FC<detailPageProps> = ({ children }) => {
   const Links = [
     {
       icon: <FaFacebookF size={15} />,
@@ -77,4 +77,4 @@ const detailPage: React.FC<detailPageProps> = ({ children }) => {
   );
 };
 
-export default detailPage;
+export default DetailPage;
