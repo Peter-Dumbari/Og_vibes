@@ -23,11 +23,11 @@ function App() {
         <Route path="/music" element={<Music />} />
         <Route path="/music/:id" element={<MusicDetail />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/media/video" element={<Video />} />
+        <Route path="/video" element={<Video />} />
         <Route path="/event" element={<Event />} />
         <Route path="/blogs" element={<Blog />} />
         <Route path="/blogs/:id" element={<BlogDetail />} />
-        <Route path="/media/video/detail" element={<VideoDetail />} />
+        <Route path="/video/detail/:id" element={<VideoDetail />} />
       </Route>
     </Routes>
   );
