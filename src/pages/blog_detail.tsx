@@ -23,6 +23,7 @@ import { useParams } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { getBlog } from "../redux/features/blogs/blogSlice";
 import { RootState } from "../redux/store";
+import DetailPage from "../components/ui/detailPage/detailPage";
 
 const BlogDetail = () => {
   const { id } = useParams();
@@ -107,204 +108,172 @@ const BlogDetail = () => {
         </p>
       </div>
 
-      <Wrapper>
-        <div className="detail_cont">
-          <div className="details">
-            <div className="main_details">
-              <div className="img_cont">
-                <img src={blogs?.blogImg} alt="blog image" />
-                <div className="date">
-                  <h5 className="month">Feb</h5>
-                  <span className="day">14</span>
-                </div>
-              </div>
-              <div className="text_sec">
-                <h3>
-                  {blogs?.title ||
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit."}
-                </h3>
-
-                <div className="reactions">
-                  <div className="inner">
-                    <FaThumbsUp size={20} />
-                    <span>{blogs?.likes?.length}</span>
-                    <h5>Likes</h5>
-                  </div>
-                  <div className="inner">
-                    <BiMessageAlt size={20} />
-                    <span>{blogs?.comments?.length}</span>
-                    <h5>Comments</h5>
+      <div>
+        <Wrapper>
+          <DetailPage>
+            <div>
+              <div className="main_details">
+                <div className="img_cont">
+                  <img src={blogs?.blogImg} alt="blog image" />
+                  <div className="date">
+                    <h5 className="month">Feb</h5>
+                    <span className="day">14</span>
                   </div>
                 </div>
-                <div className="blog">
-                  <p>{blogs?.content}</p>
+                <div className="text_sec">
+                  <h3>
+                    {blogs?.title ||
+                      "Lorem ipsum dolor sit amet consectetur adipisicing elit."}
+                  </h3>
 
-                  <div className="seperator">
-                    <FaQuoteRight size={60} className="w-50 h-50 icon" />
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Error doloremque quas totam illo non officiis quia vero
-                      sequi consequuntur corrupti laboriosam quasi odio sunt
-                      sapiente temporibus eaque.
-                    </p>
-
-                    <div className="divider_cont">
-                      <div className="divider"></div>
+                  <div className="reactions">
+                    <div className="inner">
+                      <FaThumbsUp size={20} />
+                      <span>{blogs?.likes?.length}</span>
+                      <h5>Likes</h5>
+                    </div>
+                    <div className="inner">
+                      <BiMessageAlt size={20} />
+                      <span>{blogs?.comments?.length}</span>
+                      <h5>Comments</h5>
                     </div>
                   </div>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Nemo maiores voluptatem exercitationem at earum repellat,
-                    consectetur labore ex! Sapiente, eveniet!
-                  </p>
+                  <div className="blog">
+                    <p>{blogs?.content}</p>
+
+                    <div className="seperator">
+                      <FaQuoteRight size={60} className="w-50 h-50 icon" />
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Error doloremque quas totam illo non officiis quia vero
+                        sequi consequuntur corrupti laboriosam quasi odio sunt
+                        sapiente temporibus eaque.
+                      </p>
+
+                      <div className="divider_cont">
+                        <div className="divider"></div>
+                      </div>
+                    </div>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Nemo maiores voluptatem exercitationem at earum repellat,
+                      consectetur labore ex! Sapiente, eveniet!
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <section className="poster_cont">
-              <BlogPosterCard
-                name={blogs?.author?.firstname + " " + blogs?.author?.lastname}
-                role={blogs?.author?.role}
-                tag="Master Developer"
-                bio="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, accusamus, adipisicing elit. Quas, accusamus."
-                profile="https://img.freepik.com/free-photo/man-blows-cheeks-has-discontent-expression-being-dissatisfied-with-something_273609-17085.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid"
-              />
-            </section>
-
-            <section className="related_art">
-              <div className="blog_detail_page_header">
-                <span>Related Blogs</span>
-              </div>
-
-              <div className="list">
-                <MiniCollection
-                  image="https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid"
-                  title="Tradition is Gradually Erasing"
-                  author="Nelson Mandella"
-                  blogDate="29 Nov 2024"
+              <section className="poster_cont">
+                <BlogPosterCard
+                  name={
+                    blogs?.author?.firstname + " " + blogs?.author?.lastname
+                  }
+                  role={blogs?.author?.role}
+                  tag="Master Developer"
+                  bio="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, accusamus, adipisicing elit. Quas, accusamus."
+                  profile="https://img.freepik.com/free-photo/man-blows-cheeks-has-discontent-expression-being-dissatisfied-with-something_273609-17085.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid"
                 />
-                <MiniCollection
-                  image="https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid"
-                  title="Tradition is Gradually Erasing"
-                  author="Nelson Mandella"
-                  blogDate="29 Nov 2024"
-                />
-              </div>
+              </section>
 
-              <div className="divider"></div>
-            </section>
+              <section className="related_art">
+                <div className="blog_detail_page_header">
+                  <span>Related Blogs</span>
+                </div>
 
-            <section className="comment_sec">
-              <div className="blog_detail_page_header">
-                <span>There are 02 comment For this Blog</span>
-              </div>
+                <div className="list">
+                  <MiniCollection
+                    image="https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid"
+                    title="Tradition is Gradually Erasing"
+                    author="Nelson Mandella"
+                    blogDate="29 Nov 2024"
+                  />
+                  <MiniCollection
+                    image="https://img.freepik.com/free-photo/medium-shot-nigerian-woman-dancing_23-2149029480.jpg?ga=GA1.1.1972802843.1703769385&semt=ais_hybrid"
+                    title="Tradition is Gradually Erasing"
+                    author="Nelson Mandella"
+                    blogDate="29 Nov 2024"
+                  />
+                </div>
 
-              <div className="lists">
-                {blogs.length > 0 &&
-                  blogs?.comments &&
-                  blogs?.comments.map((comment, idx) => (
-                    <CommentCard
-                      author={comment.author}
-                      commentDate={comment.commendDate}
-                      comment={comment.content}
-                      reply={comment?.reply || []}
-                    />
-                  ))}
-              </div>
-
-              <div className="divider_cont">
                 <div className="divider"></div>
-              </div>
-            </section>
+              </section>
 
-            <section className="commentform">
-              <div className="blog_detail_page_header">
-                <span>Add Your Comments</span>
-              </div>
-
-              <form action="" className="comment_form">
-                <div className="field">
-                  <CommentInputField
-                    placeholder="Full Name"
-                    type="text"
-                    required
-                    name="full_name"
-                  />
+              <section className="comment_sec">
+                <div className="blog_detail_page_header">
+                  <span>There are 02 comment For this Blog</span>
                 </div>
 
-                <div className="field">
-                  <CommentInputField
-                    placeholder="Phone Number"
-                    type="number"
-                    name="phone_number"
-                  />
-                </div>
-                <div className="field">
-                  <CommentInputField
-                    placeholder="Email Address"
-                    type="email"
-                    name="email_address"
-                    required
-                  />
-                </div>
-                <div className="field">
-                  <CommentInputField
-                    placeholder="Website"
-                    type="text"
-                    name="website"
-                  />
+                <div className="lists">
+                  {blogs.length > 0 &&
+                    blogs?.comments &&
+                    blogs?.comments.map((comment, idx) => (
+                      <CommentCard
+                        author={comment.author}
+                        commentDate={comment.commendDate}
+                        comment={comment.content}
+                        reply={comment?.reply || []}
+                      />
+                    ))}
                 </div>
 
-                <div className="area">
-                  <CommentInputField
-                    placeholder="Type your comment"
-                    type="textarea"
-                    name="comment"
-                    required
-                  />
+                <div className="divider_cont">
+                  <div className="divider"></div>
                 </div>
-                <button className="comment_btn">Send Now</button>
-              </form>
-            </section>
-          </div>
-          <div className="aob">
-            <section className="socials">
-              <div className="inner">
-                <div className="connect_head">
-                  <h3>connect with Me</h3>
+              </section>
+
+              <section className="commentform">
+                <div className="blog_detail_page_header">
+                  <span>Add Your Comments</span>
                 </div>
 
-                <div className="links">
-                  {Links.map((link, idx) => (
-                    <a
-                      href={link.link}
-                      key={idx}
-                      className="icon"
-                      style={{
-                        backgroundColor: link.color,
-                      }}>
-                      {link.icon}
-                    </a>
-                  ))}
-                </div>
-              </div>
-            </section>
-            <section className="twitter">
-              <TwitterPostCard
-                className="black"
-                post="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa laudantium veritatis blanditiis aliquid officia ratione est earum nihil consequatur ad!"
-                datePosted="10 mins"
-              />
-            </section>
+                <form action="" className="comment_form">
+                  <div className="field">
+                    <CommentInputField
+                      placeholder="Full Name"
+                      type="text"
+                      required
+                      name="full_name"
+                    />
+                  </div>
 
-            <section className="follow">
-              <FollowCard socialMedia="Facebook" followers={20} />
-              <FollowCard socialMedia="Twitter" followers={200} />
-              <FollowCard socialMedia="YouTube" followers={39} />
-            </section>
-          </div>
-        </div>
-      </Wrapper>
+                  <div className="field">
+                    <CommentInputField
+                      placeholder="Phone Number"
+                      type="number"
+                      name="phone_number"
+                    />
+                  </div>
+                  <div className="field">
+                    <CommentInputField
+                      placeholder="Email Address"
+                      type="email"
+                      name="email_address"
+                      required
+                    />
+                  </div>
+                  <div className="field">
+                    <CommentInputField
+                      placeholder="Website"
+                      type="text"
+                      name="website"
+                    />
+                  </div>
+
+                  <div className="area">
+                    <CommentInputField
+                      placeholder="Type your comment"
+                      type="textarea"
+                      name="comment"
+                      required
+                    />
+                  </div>
+                  <button className="comment_btn">Send Now</button>
+                </form>
+              </section>
+            </div>
+          </DetailPage>
+        </Wrapper>
+      </div>
     </div>
   );
 };

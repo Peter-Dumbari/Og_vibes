@@ -352,17 +352,18 @@
     gap: 10px;
 
     .src {
-      font-size: 1.1rem;
+      font-size: 0.7rem;
       font-weight: bold;
       text-transform: capitalize;
     }
     .poster {
       display: flex;
       align-items: center;
+      width: 100%;
       gap: 20px;
 
       .img_cont {
-        width: 50px;
+        width: 500px;
         border-radius: 50px;
         overflow: hidden;
         border: 3px solid $primary-color;

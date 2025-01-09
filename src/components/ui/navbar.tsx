@@ -98,7 +98,7 @@ export default function Navbar() {
         },
         {
           page: "Videos",
-          link: "/media/video",
+          link: "/video",
         },
 
         {

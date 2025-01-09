@@ -157,7 +157,9 @@ interface VideoCardProps {
   thumbnail: string;
   isPlaying: boolean;
   title: string;
+  id: string;
 }
+
 export const UpdateCard: React.FC<CardProps> = ({
   title,
   description,
@@ -768,14 +770,19 @@ export const VideoCard: React.FC<VideoCardProps> = ({
   thumbnail,
   isPlaying,
   title,
+  id,
 }) => {
+  const navigate = useNavigate();
+
   return (
     <div className="vid_card_cont">
       <div className="thumb">
         <img src={thumbnail} alt="thumbnail" />
         <div className="overlay"></div>
         <div className="action">
-          <button>Discover more</button>
+          <button onClick={() => navigate(`/video/detail/:${id}`)}>
+            Discover more
+          </button>
         </div>
       </div>
       <div className="inner">
