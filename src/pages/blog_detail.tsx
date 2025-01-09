@@ -108,8 +108,8 @@ const BlogDetail = () => {
         </p>
       </div>
 
-      <Wrapper>
-        <div>
+      <div>
+        <Wrapper>
           <DetailPage>
             <div>
               <div className="main_details">
@@ -272,8 +272,8 @@ const BlogDetail = () => {
               </section>
             </div>
           </DetailPage>
-        </div>
-      </Wrapper>
+        </Wrapper>
+      </div>
     </div>
   );
 };
